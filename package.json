@@ -1,0 +1,19 @@
+{
+  "name": "shoshanDev",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Jonatan-bs/shoshanDev",
+  "author": "Jonatan Shoshan <jonatan-bs@live.dk>",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^10.0.6",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "styled-components": "^5.2.1"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  }
+}
