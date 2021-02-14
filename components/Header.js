@@ -12,6 +12,11 @@ const Container = styled.header`
 
 const SubText = styled.h1`
     color: ${ ({theme}) => theme.colors.primaryDark }; 
+    font-size: 40px;
+    font-weight: normal;
+    max-width: 1000px;
+    padding: 20px 80px;
+    text-align: center;
 `
 
 const Logo = styled.img.attrs({ src:"/images/logo-light.svg" })`
