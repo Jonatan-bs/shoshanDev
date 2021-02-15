@@ -1,4 +1,7 @@
 import {createGlobalStyle} from 'styled-components';
+import theme from "./theme"
+
+
 
 const GlobalStyle = createGlobalStyle`
 
@@ -51,6 +54,7 @@ const GlobalStyle = createGlobalStyle`
   a {
     color: inherit;
     text-decoration: none;
+    color: ${()=>theme().colors.primary}; 
   }
 `
 
