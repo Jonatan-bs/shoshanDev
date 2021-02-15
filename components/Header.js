@@ -11,7 +11,7 @@ const Container = styled.header`
     background: ${ ({theme}) => theme.colors.primary };
 `;
 
-const SubText = styled.h1`
+const SubText = styled.h2`
     color: ${ ({theme}) => theme.colors.primaryDark }; 
     font-size: 40px;
     font-weight: normal;
@@ -20,8 +20,12 @@ const SubText = styled.h1`
     text-align: center;
 `
 
-const Logo = styled.img.attrs({ src:"/images/logo-light.svg" })`
+const LogoWrap = styled.h1`
     max-width: 1000px; 
+    width:100%;
+`
+
+const Logo = styled.img.attrs({ src:"/images/logo-light.svg", alt: "Shoshan Development" })`
     width:100%;
 `
 
@@ -34,7 +38,7 @@ const Rose = styled(AspectRatio)`
 const Header = () => (
     <Container> 
         <Rose src="/images/rose.jpg" pct="68" width="100%" maxWidth="730px" max/>
-        <Logo/> 
+        <LogoWrap><Logo/></LogoWrap>
         <SubText>Digitale løsninger til mindre virksomheder med store ambitioner</SubText>
     </Container>
 )
