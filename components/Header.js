@@ -37,7 +37,7 @@ const Rose = styled(AspectRatio)`
 
 const Header = () => (
     <Container> 
-        <Rose src="/images/rose.jpg" pct="68" width="100%" maxWidth="730px" max/>
+        <Rose src="/images/rose.jpg" pct="68" width="100%" maxWidth="730px"/>
         <LogoWrap><Logo/></LogoWrap>
         <SubText>Digitale løsninger til mindre virksomheder med store ambitioner</SubText>
     </Container>

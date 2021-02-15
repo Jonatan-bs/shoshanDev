@@ -50,12 +50,19 @@ export const Section = styled.section`
 //
 //  Container
 //
-export const Container = styled.section`
-    padding: 0 50px;
+export const Container = styled.div`
+    padding: ${ ({py}) => py? py*50 + "px" : "0"} 50px;
     max-width:1300px;
     width:100%;
     margin: 0 auto;
     box-sizing: border-box
 `
-
+//
+//  Heading
+//
+export const Heading = styled.h1`
+    ${ ({py}) => py ? "padding-top: " + py*50 + "px; padding-bottom:" + py*50 + "px;" : ""}
+    font-size: 8rem;
+    font-weight: bold;
+`
 

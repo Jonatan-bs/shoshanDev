@@ -36,8 +36,9 @@ const GlobalStyle = createGlobalStyle`
   h3,
   h4,
   h5,
-  h6 {
-    font-weight: bold;
+  h6,
+  p {
+    color: ${()=>theme().colors.dark}; 
     font-size: 100%;
   }
 
