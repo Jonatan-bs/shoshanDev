@@ -20,6 +20,7 @@ export const Link = ({href, name}) => (
 //
 
 const ApectWrap = styled.div`
+    ${ ({circle}) => circle && "border-radius: 100%;"}
     max-width: ${ ({maxWidth}) => maxWidth || "inherit" };
     width: ${ ({width}) => width || "auto" };
     background-image: url(${ ({src}) => src });
@@ -31,8 +32,8 @@ const Aspect = styled.div`
     padding-bottom: ${ ({pct}) => pct }%;
 `
 
-export const AspectRatio = ({src, pct, width, maxWidth, className}) => (
-    <ApectWrap width={width} maxWidth={maxWidth} className={className} src={src}>
+export const AspectRatio = ({src, pct, width, maxWidth, className, circle}) => (
+    <ApectWrap width={width} maxWidth={maxWidth} circle={circle} className={className} src={src}>
         <Aspect pct={pct}/>
     </ApectWrap>
 )
@@ -62,7 +63,8 @@ export const Container = styled.div`
 //
 export const Heading = styled.h1`
     ${ ({py}) => py ? "padding-top: " + py*50 + "px; padding-bottom:" + py*50 + "px;" : ""}
-    font-size: 8rem;
+    font-size: ${({size}) => size==="xl"? "8" : size==="lg"? "5" : size==="md"? "3"  : size==="sm"? "2" : "1" }rem;
     font-weight: bold;
+    ${ ({caps}) => caps && "text-transform: uppercase;" }
 `
 

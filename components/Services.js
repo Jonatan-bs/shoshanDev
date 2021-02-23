@@ -23,13 +23,13 @@ const ServiceGrid = styled.div`
 const Services = () => (
     <section>
         <Container py={2}>
-            <Heading as="h3"  py={1}>
+            <Heading as="h3"  py={1} size="xl">
                 Skræddersyede Webløsninger
             </Heading>
             <ServiceGrid>
                 <ServiceCard> 
                     <AspectRatio src="/images/service_icons/1.svg" pct="100" width="100%" maxWidth="100px" />
-                    <h4>Hjemmeside</h4>
+                    <Heading as="h4" size="sm" caps>Hjemmeside</Heading>
                     <p>Responsive</p>
                     <p>UX</p>
                     <p>Wordress</p>
@@ -39,7 +39,7 @@ const Services = () => (
                 </ServiceCard>
                 <ServiceCard> 
                     <AspectRatio src="/images/service_icons/2.svg" pct="100" width="100%" maxWidth="100px" />
-                    <h4>Hjemmeside</h4>
+                    <Heading as="h4" size="sm" caps>Hjemmeside</Heading>
                     <p>Responsive</p>
                     <p>UX</p>
                     <p>Wordress</p>
@@ -49,7 +49,7 @@ const Services = () => (
                 </ServiceCard>
                 <ServiceCard> 
                     <AspectRatio src="/images/service_icons/3.svg" pct="100" width="100%" maxWidth="100px" />
-                    <h4>Hjemmeside</h4>
+                    <Heading as="h4" size="sm" caps>Hjemmeside</Heading>
                     <p>Responsive</p>
                     <p>UX</p>
                     <p>Wordress</p>
@@ -59,7 +59,7 @@ const Services = () => (
                 </ServiceCard>
                 <ServiceCard> 
                     <AspectRatio src="/images/service_icons/4.svg" pct="100" width="100%" maxWidth="100px" />
-                    <h4>Hjemmeside</h4>
+                    <Heading as="h4" size="sm" caps>Hjemmeside</Heading>
                     <p>Responsive</p>
                     <p>UX</p>
                     <p>Wordress</p>
