@@ -3,9 +3,11 @@ const theme = () => ({
     primary: '#bf2742',
     primaryDark: '#7d0319',
     dark: '#343434',
-    light: '#afadad',
+    dark2: '#1a1919',
+    light: '#fff',
     light2: '#f3f3f3',
-    light3: '#fae9ec',
+    light3: '#afadad',
+    // light3: '#fae9ec',
   },
   mediaQueries: {
     md: 'only screen and (min-width: 769px)'

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link, Section, Container } from "./partials";
+import { Link, Section, Container, Text, Heading } from "./partials";
 
 
 
@@ -9,6 +9,11 @@ const Logo = styled.img.attrs({ src:"/images/logo-light.svg" })`
 
 const ContainerMod = styled(Container)`
     display: flex; 
+`
+const ContainerMod2 = styled(Container)`
+    display: flex; 
+    color:#fff;
+    padding: 20px 0 20px 0;
 `
 
 const Left = styled.div`
@@ -21,8 +26,12 @@ const Left = styled.div`
 const Right = styled.div`
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
     align-items: center; 
+    &>div{
+        display:flex;
+        width: 100%;
+        justify-content: space-evenly;
+    }
 ` 
 
 const MenuList = styled.ul`
@@ -34,47 +43,54 @@ const MenuList = styled.ul`
 `
 
 const Footer = () => (
-    <Section>
-        <ContainerMod>
-            
-            <Left>
-                <Logo/>
-                <p>
-                    Søndermarksvej 114 stmf.<br/>
-                    7000 Fredericia <br/><br/>
+    <>
+        <Section dark>
+            <ContainerMod>
+                
+                <Left>
+                    <Logo/>
+                    <Text>
+                        Søndermarksvej 114 stmf.<br/>
+                        7000 Fredericia <br/><br/>
 
-                    CVR.: 00000000<br/>
-                </p>
-                <a href="#"> 
-                    kontakt@shoshandevelopment.dk
-                </a> 
-            </Left>
-            <Right>
-                <MenuList>
-                    <li>SERVICES</li>
-                    <li>Hjemmeside</li>
-                    <li>Webshop</li>
-                    <li>Webapplikation</li>
-                    <li>Support</li>
-                </MenuList>
-                <MenuList>
-                    <li>SHOSHAN DEV.</li>
-                    <li>Om mig</li>
-                    <li>Teknologier</li>
-                    <li>Designprocess</li>
-                </MenuList>
-            </Right>
-           <div>
-               Credit:
-               <div>Icons made by: <br/>| <a href="https://www.flaticon.com/authors/iconixar" title="iconixar">iconixar</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-                               <div>| <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-                               <div>| <a href="https://www.flaticon.com/authors/srip" title="srip">srip</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-                               <div>| <a href="https://www.flaticon.com/authors/nhor-phai" title="Nhor Phai">Nhor Phai</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-           </div>
-         
-
+                        CVR.: 00000000<br/>
+                        <Link href="#" name="kontakt@shoshandevelopment.dk"/> 
+                    </Text>
+                </Left>
+                <Right>
+                    <div>
+                        <MenuList>
+                            <li><Heading as="h3" light caps size="xs">SERVICES</Heading></li>
+                            <li><Link href="#" color="light" name="Hjemmeside"/></li>
+                            <li><Link href="#" color="light" name="Webshop"/></li>
+                            <li><Link href="#" color="light" name="Webapplikation"/></li>
+                            <li><Link href="#" color="light" name="Support"/></li>
+                        </MenuList>
+                        <MenuList>
+                            <li><Heading as="h3" light caps size="xs">SHOSHAN DEV.</Heading></li>
+                            <li><Link href="#" color="light" name="Om mig"/></li>
+                            <li><Link href="#" color="light" name="Teknologier"/></li>
+                            <li><Link href="#" color="light" name="Designprocess"/></li>
+                        </MenuList>
+                    </div>                    
+                </Right>
             
-        </ContainerMod>
-    </Section>
+
+                
+            </ContainerMod>
+        </Section>
+        <div style={{"backgroundColor":"rgb(17 17 17)"}}>
+            <ContainerMod2>
+                <br/>
+                <Text size="sm">
+                    Icons made by: 
+                    <Link size="inherit" href="https://www.flaticon.com/authors/iconixar" title="iconixar" name="iconixar"/>  from <Link size="inherit" href="https://www.flaticon.com/" name="www.flaticon.com" title="Flaticon"/> | 
+                    <Link size="inherit" href="https://www.freepik.com" name="Freepik" title="Freepik"/>  from <Link size="inherit" href="https://www.flaticon.com/" name="www.flaticon.com" title="Flaticon"/>| 
+                    <Link size="inherit" href="https://www.flaticon.com/authors/srip" name="srip" title="srip"/>  from <Link size="inherit" href="https://www.flaticon.com/" name="www.flaticon.com" title="Flaticon"/>| 
+                    <Link size="inherit" href="https://www.flaticon.com/authors/nhor-phai" name="Nhor Phai" title="Nhor Phai"/> from <Link size="inherit" href="https://www.flaticon.com/" name="www.flaticon.com" title="Flaticon"/>
+                </Text>
+            </ContainerMod2>
+        </div>
+    </>
 )
 export default Footer 
