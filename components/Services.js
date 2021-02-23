@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {AspectRatio, Container, Heading} from "./partials"
+import {AspectRatio, Container, Heading, Text, Image} from "./partials"
 
 const ServiceCard = styled.article`
     width: 200px;
@@ -7,12 +7,30 @@ const ServiceCard = styled.article`
 `
 const Price = styled.p`
     font-weight:bold;
+    margin-top:10px;
 `
 
 const ServiceGrid = styled.div`
     display:flex;
     width:100%;
     justify-content: space-evenly;
+`
+
+
+const AspectRatioMod = styled(AspectRatio)`
+    margin: 0 auto;
+`
+const HeadingImgWrap = styled.div`
+    display:flex;
+    align-items: center;
+`
+const HeadingWrap = styled.div`
+    width: 70%;
+`
+const ImgWrap = styled.div`
+    width: 30%;
+    padding-right: 30px;
+    box-sizing: border-box;
 `
 
 // const Heading = styled.h3`
@@ -22,49 +40,63 @@ const ServiceGrid = styled.div`
 
 const Services = () => (
     <section>
-        <Container py={2}>
-            <Heading as="h3"  py={1} size="xl">
-                Skræddersyede Webløsninger
-            </Heading>
+        <Container pb={3}>
+            <HeadingImgWrap>
+                <ImgWrap>
+                    <Image src="/images/sewing-machine.png" alt="skræddersyget - illustration" />
+                </ImgWrap>
+                <HeadingWrap>
+                    <Heading as="h3" py={3} size="xl">
+                        Skræddersyede Webløsninger
+                    </Heading>
+                </HeadingWrap>
+            </HeadingImgWrap>
             <ServiceGrid>
                 <ServiceCard> 
-                    <AspectRatio src="/images/service_icons/1.svg" pct="100" width="100%" maxWidth="100px" />
-                    <Heading as="h4" size="sm" caps>Hjemmeside</Heading>
-                    <p>Responsive</p>
-                    <p>UX</p>
-                    <p>Wordress</p>
-                    <p>React</p>
-                    <p>SEO</p>
+                    <AspectRatioMod src="/images/service_icons/1.svg" pct="100" width="100%" maxWidth="100px" />
+                    <Heading center as="h4" py={.2} size="sm" caps>Hjemmeside</Heading>
+                    <Text>
+                        Responsive<br/>
+                        UX<br/>
+                        Wordress<br/>
+                        React<br/>
+                        SEO<br/>
+                    </Text>
                     <Price>Fra 10.000 kr.</Price>
                 </ServiceCard>
                 <ServiceCard> 
-                    <AspectRatio src="/images/service_icons/2.svg" pct="100" width="100%" maxWidth="100px" />
-                    <Heading as="h4" size="sm" caps>Hjemmeside</Heading>
-                    <p>Responsive</p>
-                    <p>UX</p>
-                    <p>Wordress</p>
-                    <p>React</p>
-                    <p>SEO</p>
+                    <AspectRatioMod src="/images/service_icons/2.svg" pct="100" width="100%" maxWidth="100px" />
+                    <Heading center as="h4" py={.2} size="sm" caps>Webshop</Heading>
+                    <Text>
+                        Responsive<br/>
+                        UX<br/>
+                        Wordress<br/>
+                        React<br/>
+                        SEO<br/>
+                    </Text>
                     <Price>Fra 10.000 kr.</Price>
                 </ServiceCard>
                 <ServiceCard> 
-                    <AspectRatio src="/images/service_icons/3.svg" pct="100" width="100%" maxWidth="100px" />
-                    <Heading as="h4" size="sm" caps>Hjemmeside</Heading>
-                    <p>Responsive</p>
-                    <p>UX</p>
-                    <p>Wordress</p>
-                    <p>React</p>
-                    <p>SEO</p>
-                    <Price>Fra 10.000 kr.</Price>
+                    <AspectRatioMod src="/images/service_icons/3.svg" pct="100" width="100%" maxWidth="100px" />
+                    <Heading center as="h4" py={.2} size="sm" caps>Web app</Heading>
+                    <Text>
+                        Responsive<br/>
+                        UX<br/>
+                        Wordress<br/>
+                        React<br/>
+                        SEO<br/>
+                    </Text>
                 </ServiceCard>
                 <ServiceCard> 
-                    <AspectRatio src="/images/service_icons/4.svg" pct="100" width="100%" maxWidth="100px" />
-                    <Heading as="h4" size="sm" caps>Hjemmeside</Heading>
-                    <p>Responsive</p>
-                    <p>UX</p>
-                    <p>Wordress</p>
-                    <p>React</p>
-                    <p>SEO</p>
+                    <AspectRatioMod src="/images/service_icons/4.svg" pct="100" width="100%" maxWidth="100px" />
+                    <Heading center as="h4" py={.2} size="sm" caps>Support</Heading>
+                    <Text>
+                        Responsive<br/>
+                        UX<br/>
+                        Wordress<br/>
+                        React<br/>
+                        SEO<br/>
+                    </Text>
                     <Price>Fra 10.000 kr.</Price>
                 </ServiceCard>
             </ServiceGrid>        

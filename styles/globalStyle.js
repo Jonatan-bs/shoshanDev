@@ -39,7 +39,7 @@ const GlobalStyle = createGlobalStyle`
   h6,
   p {
     color: ${()=>theme().colors.dark}; 
-    font-size: 100%;
+    font-size: 1.4rem;
   }
 
   ol,
@@ -54,9 +54,18 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     color: inherit;
+    font-size: 1.4rem;
     text-decoration: none;
     color: ${()=>theme().colors.primary}; 
   }
+
+  .gap > *:nth-child(2n) {
+    margin: 12px 0 0 6px;
+  }
+  .gap > *:nth-child(2n + 1) {
+    margin: 12px 6px 0 0;
+  }
+  
 `
 
 export default GlobalStyle
