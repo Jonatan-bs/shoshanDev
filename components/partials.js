@@ -101,7 +101,10 @@ export const Heading = styled.h1`
 //  Text
 //
 export const Text = styled.p`
-    ${ ({py}) => py ? "padding-top: " + py*50 + "px; padding-bottom:" + py*50 + "px;" : ""}
+    padding-bottom: ${ ({pb, py}) => pb? pb*50 + "px" : py ? py*50 + "px" : "0"};
+    padding-top: ${ ({pt, py}) => pt? pt*50 + "px" : py ? py*50 + "px" : "0"};
+    padding-left: ${ ({px}) => px? px*50 + "px" : "0"};
+    padding-right: ${ ({px}) => px? px*50 + "px" : "0"};
     font-size: ${({size}) => size==="xl"? "4rem" : size==="lg"? "3rem" : size==="md"? "2rem"  : size==="sm"? "1rem" : size==="inherit"? "inherit" : "1.4rem" };
     ${ ({bold}) => bold && "font-weight: bold;" }
     color: ${ ({color,theme}) => theme.colors[color] || "inherit"};

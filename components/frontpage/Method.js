@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link, Section, Container, Heading, Text } from "./partials";
+import { Link, Section, Container, Heading, Text } from "./../partials";
 
 const ContainerMod = styled(Container)`
     display: flex; 

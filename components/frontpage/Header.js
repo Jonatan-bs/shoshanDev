@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {AspectRatio, Image} from "./partials"
+import {AspectRatio, Image} from "./../partials"
 
 const Container = styled.header`
     display: flex;

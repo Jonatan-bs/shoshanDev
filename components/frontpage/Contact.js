@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {AspectRatio, Container, Heading, Text} from "./partials"
+import {AspectRatio, Container, Heading, Text} from "../partials"
 
 const ContactCard = styled(Container)`
     width: 100%;

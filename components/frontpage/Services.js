@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {AspectRatio, Container, Heading, Text, Image} from "./partials"
+import {AspectRatio, Container, Heading, Text, Image} from "./../partials"
 
 const ServiceCard = styled.article`
     width: 200px;
