@@ -11,11 +11,12 @@ const StyledLink = styled.a`
     ${ ({bold}) => bold && "font-weight: bold;" }
     ${ ({caps}) => caps && "text-transform: uppercase;" }
     color: ${ ({color,theme}) => theme.colors[color] || theme.colors.primary };
+    width: ${ ({width}) => width || '100%' };
 `
 
-export const Link = ({href, name, title, size, color}) => (
+export const Link = ({href, name, title, size, color, children}) => (
     <NextLink href={href}>
-        <StyledLink title={title} size={size} color={color}> {name} </StyledLink>
+        <StyledLink title={title} size={size} color={color}> {name} {children}</StyledLink>
     </NextLink>
 )
 

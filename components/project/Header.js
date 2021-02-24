@@ -40,21 +40,24 @@ const Logo = styled.img.attrs({ src:"/images/logo.svg", alt: "Shoshan Developmen
 
 const Header = () => (
     <>
-        <LogoWrap>
-            <Logo/>
-        </LogoWrap>
-    <Container>
-        <ProjectImage  width="50%" bgColor="#e7e7e7" moveLeft="200px" src="https://dailymockup.com/wp-content/uploads/edd/2019/07/free-logo-psd-mockup-1000x750.jpg" pct="100"/>
-        <MethodDiv>
-            <Heading as="h1" size="md" color="light" caps>Greeny</Heading>
-            <Subtext as="h2" size="sm" caps bold pb=".5">
-                Website + Grafisk design  
-            </Subtext>
-            <StyledText color="light">
-                Læs om hvordan jeg finder frem til
-                det perfekte design til dit projekt. 
-            </StyledText>
-        </MethodDiv>
-    </Container></>
+         <Link href="project" width="100%">
+            <LogoWrap>
+                <Logo/>
+            </LogoWrap>
+         </Link>
+        <Container>
+            <ProjectImage  width="50%" bgColor="#e7e7e7" moveLeft="200px" src="https://dailymockup.com/wp-content/uploads/edd/2019/07/free-logo-psd-mockup-1000x750.jpg" pct="100"/>
+            <MethodDiv>
+                <Heading as="h1" size="md" color="light" caps>Greeny</Heading>
+                <Subtext as="h2" size="sm" caps bold pb=".5">
+                    Website + Grafisk design  
+                </Subtext>
+                <StyledText color="light">
+                    Læs om hvordan jeg finder frem til
+                    det perfekte design til dit projekt. 
+                </StyledText>
+            </MethodDiv>
+        </Container>
+    </>
 )
 export default Header 
