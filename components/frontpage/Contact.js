@@ -18,7 +18,7 @@ const ContactImage = styled(AspectRatio)`
 
 
 const Contact = () => (
-    <section>
+    <section data-aos="fade-up">
         <Container pb="3">
             <ContactCard>
                 <ContactImage maxWidth="400px" width="100%" src="/images/portrait.jpg" pct="100" circle/>

@@ -29,7 +29,8 @@ const ApectWrap = styled.div.attrs( ({lazy,src}) => lazy && ({ "data-src" : src}
     width: ${ ({width}) => width || "auto" };
     ${ ({src, lazy}) => !lazy && "background-image: url(" + src + ")" };
     ${ ({bgColor}) => bgColor && "background-color:" + bgColor };
-    background-size: cover;
+    background-size: ${ ({size}) => size || "cover" };
+    background-position: center;
     background-repeat: no-repeat;
     
 `
@@ -39,8 +40,8 @@ const Aspect = styled.div`
     padding-bottom: ${ ({pct}) => pct }%;
 `
 
-export const AspectRatio = ({lazy, src, pct, width, maxWidth, className, circle, bgColor}) => (
-    <ApectWrap width={width} maxWidth={maxWidth} circle={circle} src={src} className={className} lazy={lazy} bgColor={bgColor}>
+export const AspectRatio = ({size, lazy, src, pct, width, maxWidth, className, circle, bgColor}) => (
+    <ApectWrap width={width} size={size} maxWidth={maxWidth} circle={circle} src={src} className={className} lazy={lazy} bgColor={bgColor}>
         <Aspect pct={pct}/>
     </ApectWrap>
 )
@@ -80,7 +81,7 @@ export const Container = styled.div`
     padding-top: ${ ({pt, py}) => pt? pt*50 + "px" : py ? py*50 + "px" : "0"};
     padding-left: ${ ({px}) => px? px*50 + "px" : "50px"};
     padding-right: ${ ({px}) => px? px*50 + "px" : "50px"};
-    max-width:1500px;
+    max-width:1800px;
     width:100%;
     margin: 0 auto;
     box-sizing: border-box

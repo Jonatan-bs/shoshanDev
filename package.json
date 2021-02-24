@@ -6,6 +6,7 @@
   "author": "Jonatan Shoshan <jonatan-bs@live.dk>",
   "license": "MIT",
   "dependencies": {
+    "aos": "^2.3.4",
     "next": "^10.0.6",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

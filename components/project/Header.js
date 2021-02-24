@@ -5,19 +5,20 @@ const Container = styled.header`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 50px 0px;
-    background: #a82323;
+    // padding: 50px 0px;
+    background: #2b9558;
     flex-wrap:wrap;
 `;
 
 
 const MethodDiv = styled.div`
-    width: 60%;
+    // width: 60%;
+    width: 620px;
     padding: 0 80px 0 80px;
 `
 const ProjectImage = styled(AspectRatio)`
-    margin-left: -10%;
-    max-width: 800px;
+    // margin-left: -30%;
+    // max-width: 800px;
 `
 
 const Subtext = styled(Text)`
@@ -40,19 +41,19 @@ const Logo = styled.img.attrs({ src:"/images/logo.svg", alt: "Shoshan Developmen
 
 const Header = () => (
     <>
-         <Link href="project" width="100%">
+         <Link href="/" width="100%">
             <LogoWrap>
                 <Logo/>
             </LogoWrap>
          </Link>
         <Container>
-            <ProjectImage  width="50%" bgColor="#e7e7e7" moveLeft="200px" src="https://dailymockup.com/wp-content/uploads/edd/2019/07/free-logo-psd-mockup-1000x750.jpg" pct="100"/>
+            <ProjectImage  width="600px" bgColor="" size="contain" src="/images/greenyThumb.png" pct="100"/>
             <MethodDiv>
-                <Heading as="h1" size="md" color="light" caps>Greeny</Heading>
+                <Heading as="h1" size="lg" color="light" caps>Greeny</Heading>
                 <Subtext as="h2" size="sm" caps bold pb=".5">
                     Website + Grafisk design  
                 </Subtext>
-                <StyledText color="light">
+                <StyledText color="light" size="md">
                     Læs om hvordan jeg finder frem til
                     det perfekte design til dit projekt. 
                 </StyledText>

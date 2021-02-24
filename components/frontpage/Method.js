@@ -14,14 +14,14 @@ const MethodDiv = styled.div`
 const Method = () => (
     <section>
         <ContainerMod pb={3}>
-            <MethodDiv>
+            <MethodDiv data-aos="fade-right">
                 <Heading as="h3" size="md" caps>DESIGNPROCES</Heading>
                 <Text>
                     Læs om hvordan jeg finder frem til
                     det perfekte design til dit projekt. 
                 </Text>
             </MethodDiv>
-            <MethodDiv>
+            <MethodDiv data-aos="fade-left">
                 <Heading as="h3" size="md" caps>Teknologier</Heading>
                 <Text>
                     Ethvert projekt kræver et godt

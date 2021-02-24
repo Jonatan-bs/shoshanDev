@@ -2,10 +2,22 @@ import React, { useState, useEffect } from 'react';
 import {ThemeProvider} from "styled-components";
 import theme from "./../styles/theme";
 import GlobalStyle from "./../styles/GlobalStyle";
+import AOS from "aos";
 
-// import App from 'next/app'
+import "aos/dist/aos.css";
+// import "../scss/style.scss";
+
+
 
 function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    AOS.init({
+      easing: "ease-out-cubic",
+      // once: true,
+      offset: 100,
+      delay:100
+    });
+  }, []);
 
     return (
       <ThemeProvider theme={theme}>

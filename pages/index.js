@@ -11,7 +11,7 @@ import Layout from '../components/Layout';
 
 const Index = () => (
     <Layout>  
-        <Header/>
+        <Header />
         <Services/>
         <Projects/>
         <Method/>

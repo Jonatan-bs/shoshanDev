@@ -23,6 +23,8 @@ const AspectRatioMod = styled(AspectRatio)`
 const HeadingImgWrap = styled.div`
     display:flex;
     align-items: center;
+    padding: 150px 0;
+
 `
 const HeadingWrap = styled.div`
     width: 70%;
@@ -43,16 +45,20 @@ const Services = () => (
         <Container pb={3}>
             <HeadingImgWrap>
                 <ImgWrap>
-                    <Image src="/images/sewing-machine.png" alt="skræddersyget - illustration" />
+                    <div data-aos="fade-right">
+                        <Image src="/images/sewing-machine.png" alt="skræddersyget - illustration" />
+                    </div>
                 </ImgWrap>
                 <HeadingWrap>
-                    <Heading as="h3" py={3} size="xl">
-                        Skræddersyede Webløsninger
-                    </Heading>
+                    <div data-aos="fade-left">
+                        <Heading as="h3" size="xl">
+                            Skræddersyede Webløsninger
+                        </Heading>
+                    </div>
                 </HeadingWrap>
             </HeadingImgWrap>
             <ServiceGrid>
-                <ServiceCard> 
+                <ServiceCard data-aos="fade-up"> 
                     <AspectRatioMod src="/images/service_icons/1.svg" pct="100" width="100%" maxWidth="100px" />
                     <Heading center as="h4" py={.2} size="sm" caps>Hjemmeside</Heading>
                     <Text>
@@ -64,7 +70,7 @@ const Services = () => (
                     </Text>
                     <Price>Fra 10.000 kr.</Price>
                 </ServiceCard>
-                <ServiceCard> 
+                <ServiceCard data-aos="fade-up"> 
                     <AspectRatioMod src="/images/service_icons/2.svg" pct="100" width="100%" maxWidth="100px" />
                     <Heading center as="h4" py={.2} size="sm" caps>Webshop</Heading>
                     <Text>
@@ -76,7 +82,7 @@ const Services = () => (
                     </Text>
                     <Price>Fra 10.000 kr.</Price>
                 </ServiceCard>
-                <ServiceCard> 
+                <ServiceCard data-aos="fade-up"> 
                     <AspectRatioMod src="/images/service_icons/3.svg" pct="100" width="100%" maxWidth="100px" />
                     <Heading center as="h4" py={.2} size="sm" caps>Web app</Heading>
                     <Text>
@@ -87,7 +93,7 @@ const Services = () => (
                         SEO<br/>
                     </Text>
                 </ServiceCard>
-                <ServiceCard> 
+                <ServiceCard data-aos="fade-up"> 
                     <AspectRatioMod src="/images/service_icons/4.svg" pct="100" width="100%" maxWidth="100px" />
                     <Heading center as="h4" py={.2} size="sm" caps>Support</Heading>
                     <Text>

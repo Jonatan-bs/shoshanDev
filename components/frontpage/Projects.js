@@ -11,25 +11,27 @@ const ContainerMod = styled(Container)`
 const Projects = () => (
     <ContainerMod pb="3" className="gap">
         <Link href="project/test">
-            <a style={{ "width":"calc(50% - 6px)"}}>
-                <AspectRatio  bgColor="#e7e7e7" src="https://dailymockup.com/wp-content/uploads/edd/2019/07/free-logo-psd-mockup-1000x750.jpg" pct="100"/>
+            <a style={{ "width":"calc(33.333333% - 6px)"}} >
+                <div data-aos="fade-up">
+                    <AspectRatio size="80%" bgColor="#2b9558" src="images/greenyThumb.png" pct="100"/>
+                </div>
             </a>
         </Link>
         <Link href="project/test">
-            <a style={{ "width":"calc(50% - 6px)"}}>
-                <AspectRatio  bgColor="#e7e7e7" src="https://dailymockup.com/wp-content/uploads/edd/2019/07/free-logo-psd-mockup-1000x750.jpg" pct="100"/>
+            <a style={{ "width":"calc(33.333333% - 6px)"}} >
+                <div data-aos="fade-up">
+                    <AspectRatio size="80%" bgColor="#2b9558" src="images/greenyThumb.png" pct="100"/>
+                </div>           
             </a>
         </Link>
         <Link href="project/test">
-            <a style={{ "width":"calc(50% - 6px)"}}>
-                <AspectRatio  bgColor="#e7e7e7" src="https://dailymockup.com/wp-content/uploads/edd/2019/07/free-logo-psd-mockup-1000x750.jpg" pct="100"/>
+            <a style={{ "width":"calc(33.333333% - 6px)"}} >
+                <div data-aos="fade-up">
+                    <AspectRatio size="80%" bgColor="#2b9558" src="images/greenyThumb.png" pct="100"/>
+                </div>           
             </a>
         </Link>
-        <Link href="project/test">
-            <a style={{ "width":"calc(50% - 6px)"}}>
-                <AspectRatio  bgColor="#e7e7e7" src="https://dailymockup.com/wp-content/uploads/edd/2019/07/free-logo-psd-mockup-1000x750.jpg" pct="100"/>
-            </a>
-        </Link>
+       
         
        
     </ContainerMod>
