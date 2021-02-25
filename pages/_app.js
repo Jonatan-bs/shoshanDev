@@ -3,13 +3,13 @@ import {ThemeProvider} from "styled-components";
 import theme from "./../styles/theme";
 import GlobalStyle from "./../styles/GlobalStyle";
 import AOS from "aos";
-
 import "aos/dist/aos.css";
+import {motion, AnimatePresence} from "framer-motion"
 // import "../scss/style.scss";
 
 
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, router }) {
   useEffect(() => {
     AOS.init({
       easing: "ease-out-cubic",
@@ -22,7 +22,9 @@ function MyApp({ Component, pageProps }) {
     return (
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <Component {...pageProps} />
+        <AnimatePresence initial={false} exitBeforeEnter>
+          <Component {...pageProps} key={router.route} />
+        </AnimatePresence>
       </ThemeProvider>
     )
   
