@@ -8,7 +8,7 @@ import Content from './../../components/project/Content';
 const ProjectIndex = () => (
     <Layout>  
         <Header/>
-        <Content/>
+        <Content></Content>
     </Layout>
 )
 

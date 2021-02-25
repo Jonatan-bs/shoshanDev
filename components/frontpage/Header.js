@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import {AspectRatio, Image} from "./../partials"
+import {motion, animatePresence} from "framer-motion"
+import animation from "./../../scripts/animations"
 
 const Container = styled.header`
     display: flex;
@@ -36,12 +38,22 @@ const Rose = styled(AspectRatio)`
 
 
 const Header = () => (
-    <Container> 
-        <Rose src="/images/rose.jpg" pct="68" width="100%" maxWidth="730px"/>
-        <LogoWrap>
-            <Image src="/images/logo-light.svg" alt="Shoshan Development" />
-        </LogoWrap>
-        <SubText>Digitale løsninger til mindre virksomheder med store ambitioner</SubText>
-    </Container>
+    <motion.div initial='initial' animate='animate'>
+            <Container> 
+                <motion.div variants={animation.fade}  style={{width:"100%", maxWidth: "730px"}}>
+                    <Rose src="/images/rose.jpg" pct="68" width="100%" maxWidth="730px"/>
+                </motion.div>
+                <motion.div variants={animation.stagger}>
+                    <motion.div variants={animation.fadeUp}  style={{width:"100%"}}>
+                        <LogoWrap>
+                            <Image src="/images/logo-light.svg" alt="Shoshan Development" />
+                        </LogoWrap>
+                    </motion.div>
+                    <motion.div variants={animation.fadeUp}  style={{width:"100%"}}>
+                        <SubText>Digitale løsninger til mindre virksomheder med store ambitioner</SubText>
+                    </motion.div>
+                </motion.div>
+            </Container>
+    </motion.div>
 )
 export default Header 

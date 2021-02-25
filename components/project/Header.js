@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import {AspectRatio, Image, Heading, Text, Link} from "./../partials"
+import {motion, animatePresence} from "framer-motion"
+import animation from "./../../scripts/animations"
 
 const Container = styled.header`
     display: flex;
@@ -8,6 +10,8 @@ const Container = styled.header`
     // padding: 50px 0px;
     background: #2b9558;
     flex-wrap:wrap;
+    min-height: 600px;
+    padding-bottom: 50px;
 `;
 
 
@@ -22,7 +26,7 @@ const ProjectImage = styled(AspectRatio)`
 `
 
 const Subtext = styled(Text)`
-    mix-blend-mode: soft-light;
+    opacity: .4;
 `
 const StyledText = styled(Text)`
     opacity: 0.5;
@@ -39,26 +43,52 @@ const Logo = styled.img.attrs({ src:"/images/logo.svg", alt: "Shoshan Developmen
 `
 
 
+
 const Header = () => (
-    <>
-         <Link href="/" width="100%">
+    <motion.div initial='initial' animate='animate'>
+            
+            
+            
+        <Link href="/" width="100%">
             <LogoWrap>
                 <Logo/>
             </LogoWrap>
-         </Link>
-        <Container>
-            <ProjectImage  width="600px" bgColor="" size="contain" src="/images/greenyThumb.png" pct="100"/>
-            <MethodDiv>
-                <Heading as="h1" size="lg" color="light" caps>Greeny</Heading>
-                <Subtext as="h2" size="sm" caps bold pb=".5">
-                    Website + Grafisk design  
-                </Subtext>
-                <StyledText color="light" size="md">
-                    Læs om hvordan jeg finder frem til
-                    det perfekte design til dit projekt. 
-                </StyledText>
-            </MethodDiv>
-        </Container>
-    </>
+        </Link>
+        <motion.div variants={animation.stagger}>
+            <Container>
+                <motion.div variants={animation.fadeRight}>
+                    <ProjectImage  
+                        width="600px" 
+                        size="contain" 
+                        src="/images/greenyThumb.png" pct="100"
+                    />
+                </motion.div>
+                <MethodDiv>
+                    
+                        <motion.div variants={animation.fadeUp}>
+                            <Heading as="h1" size="lg" color="light" caps>Greeny</Heading>
+                        </motion.div>
+                        
+                        <motion.div variants={animation.fadeUp}>
+                            <Subtext as="h2" size="sm" caps bold pb=".5">
+                                Website + Grafisk design  
+                            </Subtext>                    
+                        </motion.div>
+                        
+                        <motion.div variants={animation.fadeUp}>
+                            <StyledText color="light" size="md">
+                                Læs om hvordan jeg finder frem til
+                                det perfekte design til dit projekt. 
+                            </StyledText>                    
+                        </motion.div>
+
+                        
+                        
+                </MethodDiv>
+            </Container>
+        </motion.div>
+
+    </motion.div>
 )
+
 export default Header 

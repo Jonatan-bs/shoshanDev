@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps, router }) {
     return (
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <AnimatePresence initial={false} exitBeforeEnter>
+        <AnimatePresence initial={true} exitBeforeEnter>
           <Component {...pageProps} key={router.route} />
         </AnimatePresence>
       </ThemeProvider>
