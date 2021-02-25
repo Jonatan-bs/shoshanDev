@@ -59,10 +59,12 @@ const GlobalStyle = createGlobalStyle`
     color: ${()=>theme().colors.primary}; 
   }
 
-  .gap > *:not(3n) {
-    margin: 0 6px 0 0px;
+  .gap > *:nth-child(2n) {
+    margin: 12px 0 0 6px;
   }
- 
+  .gap > *:nth-child(2n + 1) {
+    margin: 12px 6px 0 0;
+  }
   
 `
 
