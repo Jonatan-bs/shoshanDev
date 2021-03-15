@@ -13,28 +13,28 @@ const Projects = () => (
         <Link  href="project/test">
             <a style={{ "width":"calc(50% - 6px)"}} >
                 <div data-aos="fade-up">
-                    <AspectRatio size="80%" bgColor="#2b9558" src="images/greenyThumb.png" pct="80"/>
+                    <AspectRatio size="80%" bgColor="#2b9558" src="/images/greenyThumb.png" pct="80"/>
                 </div>
             </a>
         </Link>
         <Link  href="project/test">
             <a style={{ "width":"calc(50% - 6px)"}} >
                 <div data-aos="fade-up">
-                    <AspectRatio size="80%" bgColor="#2b9558" src="images/greenyThumb.png" pct="80"/>
+                    <AspectRatio size="80%" bgColor="#2b9558" src="/images/greenyThumb.png" pct="80"/>
                 </div>           
             </a>
         </Link>
         <Link  href="project/test">
             <a style={{ "width":"calc(50% - 6px)"}} >
                 <div data-aos="fade-up">
-                    <AspectRatio size="80%" bgColor="#2b9558" src="images/greenyThumb.png" pct="80"/>
+                    <AspectRatio size="80%" bgColor="#2b9558" src="/images/greenyThumb.png" pct="80"/>
                 </div>           
             </a>
         </Link>
         <Link  href="project/test">
             <a style={{ "width":"calc(50% - 6px)"}} >
                 <div data-aos="fade-up">
-                    <AspectRatio size="80%" bgColor="#2b9558" src="images/greenyThumb.png" pct="80"/>
+                    <AspectRatio size="80%" bgColor="#2b9558" src="/images/greenyThumb.png" pct="80"/>
                 </div>           
             </a>
         </Link>
