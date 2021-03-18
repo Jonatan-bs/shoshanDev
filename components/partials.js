@@ -32,6 +32,7 @@ const ApectWrap = styled.div.attrs( ({lazy,src}) => lazy && ({ "data-src" : src}
     background-size: ${ ({size}) => size || "cover" };
     background-position: center;
     background-repeat: no-repeat;
+    position: relative;
     
 `
 
@@ -40,9 +41,11 @@ const Aspect = styled.div`
     padding-bottom: ${ ({pct}) => pct }%;
 `
 
-export const AspectRatio = ({size, lazy, src, pct, width, maxWidth, className, circle, bgColor}) => (
+
+export const AspectRatio = ({size, lazy, src, pct, width, maxWidth, className, circle, bgColor, children}) => (
     <ApectWrap width={width} size={size} maxWidth={maxWidth} circle={circle} src={src} className={className} lazy={lazy} bgColor={bgColor}>
         <Aspect pct={pct}/>
+        {children}
     </ApectWrap>
 )
 

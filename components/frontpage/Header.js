@@ -50,7 +50,7 @@ const Header = () => (
                         </LogoWrap>
                     </motion.div>
                     <motion.div variants={animation.fadeUp}  style={{width:"100%"}}>
-                        <SubText>Digitale løsninger til mindre virksomheder med store ambitioner</SubText>
+                        <SubText>En erfaren design- og udviklingspartner til din virksomhed </SubText>
                     </motion.div>
                 </motion.div>
             </Container>
