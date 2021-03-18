@@ -7,7 +7,8 @@ const Info = styled.div`
 `
 
 const Products = styled.img.attrs({src: "/images/projects/greeny/products.png"})`
-    max-width: 1000px;   
+    max-width: 1000px;
+    width: 80%;   
 `
 const Mobile = styled.img.attrs({src: "/images/projects/greeny/mobile.png"})`
 `
