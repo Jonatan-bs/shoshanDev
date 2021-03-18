@@ -75,12 +75,12 @@ const Header = () => (
                             </Subtext>                    
                         </motion.div>
                         
-                        <motion.div variants={animation.fadeUp}>
+                        {/* <motion.div variants={animation.fadeUp}>
                             <StyledText color="light" size="md">
                                 Læs om hvordan jeg finder frem til
                                 det perfekte design til dit projekt. 
                             </StyledText>                    
-                        </motion.div>
+                        </motion.div> */}
 
                         
                         

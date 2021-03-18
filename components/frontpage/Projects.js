@@ -53,9 +53,7 @@ const Projects = () => (
                                 </li>
                             </ul>
                         </TextWrap>
-
                         <Gradient/>
-
                     </AspectRatio>
                 </div>
             </a>
@@ -63,27 +61,63 @@ const Projects = () => (
         <Link  href="project/test">
             <a style={{ "width":"calc(50% - 6px)"}} >
                 <div data-aos="fade-up">
-                    <AspectRatio size="80%" bgColor="#2b9558" src="/images/greenyThumb.png" pct="80"/>
-                </div>           
+                    <AspectRatio gradient size="cover" bgColor="#2b9558" src="/images/project-thumb-greeny.jpg" pct="80">
+                        <TextWrap>
+                            <Title as="p" size="lg">Greeny</Title>
+                            <ul>
+                                <li>
+                                    Webshop
+                                </li>
+                                <li>
+                                    Design
+                                </li>
+                            </ul>
+                        </TextWrap>
+                        <Gradient/>
+                    </AspectRatio>
+                </div>
             </a>
         </Link>
         <Link  href="project/test">
             <a style={{ "width":"calc(50% - 6px)"}} >
                 <div data-aos="fade-up">
-                    <AspectRatio size="80%" bgColor="#2b9558" src="/images/greenyThumb.png" pct="80"/>
-                </div>           
+                    <AspectRatio gradient size="cover" bgColor="#2b9558" src="/images/project-thumb-greeny.jpg" pct="80">
+                        <TextWrap>
+                            <Title as="p" size="lg">Greeny</Title>
+                            <ul>
+                                <li>
+                                    Webshop
+                                </li>
+                                <li>
+                                    Design
+                                </li>
+                            </ul>
+                        </TextWrap>
+                        <Gradient/>
+                    </AspectRatio>
+                </div>
             </a>
         </Link>
         <Link  href="project/test">
             <a style={{ "width":"calc(50% - 6px)"}} >
                 <div data-aos="fade-up">
-                    <AspectRatio size="80%" bgColor="#2b9558" src="/images/greenyThumb.png" pct="80"/>
-                </div>           
+                    <AspectRatio gradient size="cover" bgColor="#2b9558" src="/images/project-thumb-greeny.jpg" pct="80">
+                        <TextWrap>
+                            <Title as="p" size="lg">Greeny</Title>
+                            <ul>
+                                <li>
+                                    Webshop
+                                </li>
+                                <li>
+                                    Design
+                                </li>
+                            </ul>
+                        </TextWrap>
+                        <Gradient/>
+                    </AspectRatio>
+                </div>
             </a>
-        </Link>
-       
-        
-       
+        </Link>     
     </ContainerMod>
 )
 export default Projects 
