@@ -8,7 +8,7 @@ const Container = styled.header`
     align-items: center;
     justify-content: center;
     // padding: 50px 0px;
-    background: #2b9558;
+    background: ${({bgColor}) => (bgColor || "#333")};
     flex-wrap:wrap;
     min-height: 600px;
     padding-bottom: 50px;
@@ -44,34 +44,34 @@ const Logo = styled.img.attrs({ src:"/images/logo.svg", alt: "Shoshan Developmen
 
 
 
-const Header = () => (
+const Header = ({src, alt, title, subtext, bgColor }) => (
     <motion.div initial='initial' animate='animate'>
-            
-            
-            
+                        
         <Link href="/" width="100%">
             <LogoWrap>
                 <Logo/>
             </LogoWrap>
         </Link>
         <motion.div variants={animation.stagger}>
-            <Container>
+            <Container bgColor={bgColor}>
                 <motion.div variants={animation.fadeRight}>
                     <ProjectImage  
                         width="600px" 
                         size="contain" 
-                        src="/images/greenyThumb.png" pct="100"
+                        src={src} 
+                        alt={alt} 
+                        pct="100"
                     />
                 </motion.div>
                 <MethodDiv>
                     
                         <motion.div variants={animation.fadeUp}>
-                            <Heading as="h1" size="lg" color="light" caps>Greeny</Heading>
+                            <Heading as="h1" size="lg" color="light" caps>{title}</Heading>
                         </motion.div>
                         
                         <motion.div variants={animation.fadeUp}>
                             <Subtext as="h2" size="sm" caps bold pb=".5">
-                                Website + Grafisk design  
+                                {subtext}
                             </Subtext>                    
                         </motion.div>
                         

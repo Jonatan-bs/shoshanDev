@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import {Container, Text, Grid, Span, Center, Heading} from "./../partials"
+import {Container, Text, Grid, Span, Center, Heading} from "./../partials";
+import {InfoBox} from "./partials/InfoBox"
 
 const Info = styled.div`
     padding: 50px;
@@ -21,18 +22,15 @@ const Content = () => (
                     <Text size="md" pr="1" lh="1.6" data-aos="fade-right">
                         As a leading private school for over 1,400 students, Wesley College approached Humaan to modernise their digital presence to represent the quality, community and excellence of the school. With a focus of driving increased student enrolments, we imagined a contemporary experience that would engage and delight.
                     </Text>
-                    <Info data-aos="fade-left">
-                            <ul>
-                                <li><Text>Digital Strategy</Text></li>
-                                <li><Text>Education Best Practice</Text></li>
-                                <li><Text>UX Design</Text></li>
-                                <li><Text>MultiLingual</Text></li>
-                                <br/>
-                                <li> <Text><Span bold>Tech:</Span></Text></li>
-                                <li><Text>Wordpress</Text></li>
-                                <li><Text>Woocommerce</Text></li>
-                            </ul>
-                    </Info>
+                    <InfoBox entries={[
+                        {title: "Digital Strategy"},
+                        {title: "Education Best Practice"},
+                        {title: "UX Design"},
+                        {title: "MultiLingual"},
+                        {title: "Tech", heading: true},
+                        {title: "Wordpress"},
+                        {title: "Woocommerce"}
+                    ]}/>
                 </Grid>
         </Container>
         <Computer data-aos="fade-up"/>

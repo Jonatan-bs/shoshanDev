@@ -38,10 +38,10 @@ const Title = styled(Heading)`
 
 const Projects = () => (
     <ContainerMod pb="3" className="gap">
-        <Link  href="project/test">
+        <Link  href="project/greeny">
             <a style={{ "width":"calc(50% - 6px)"}} >
                 <div data-aos="fade-up">
-                    <AspectRatio gradient size="cover" bgColor="#2b9558" src="/images/project-thumb-greeny.jpg" pct="80">
+                    <AspectRatio gradient size="cover" bgColor="#2b9558" src="/images/projects/greeny/thumb.jpg" pct="80">
                         <TextWrap>
                             <Title as="p" size="lg">Greeny</Title>
                             <ul>
@@ -58,10 +58,27 @@ const Projects = () => (
                 </div>
             </a>
         </Link>
-        <Link  href="project/test">
+        <Link  href="project/infotavle">
             <a style={{ "width":"calc(50% - 6px)"}} >
                 <div data-aos="fade-up">
-                    <AspectRatio gradient size="cover" bgColor="#2b9558" src="/images/project-thumb-greeny.jpg" pct="80">
+                    <AspectRatio gradient size="cover" bgColor="#2b9558" src="/images/projects/infotavle/thumb.jpg" pct="80">
+                        <TextWrap>
+                            <Title as="p" size="lg">Infotavle</Title>
+                            <ul>
+                                <li>
+                                    Webapp
+                                </li>
+                            </ul>
+                        </TextWrap>
+                        <Gradient/>
+                    </AspectRatio>
+                </div>
+            </a>
+        </Link>
+        <Link  href="project/greeny">
+            <a style={{ "width":"calc(50% - 6px)"}} >
+                <div data-aos="fade-up">
+                    <AspectRatio gradient size="cover" bgColor="#2b9558" src="/images/projects/greeny/thumb.jpg" pct="80">
                         <TextWrap>
                             <Title as="p" size="lg">Greeny</Title>
                             <ul>
@@ -78,10 +95,10 @@ const Projects = () => (
                 </div>
             </a>
         </Link>
-        <Link  href="project/test">
+        <Link  href="project/greeny">
             <a style={{ "width":"calc(50% - 6px)"}} >
                 <div data-aos="fade-up">
-                    <AspectRatio gradient size="cover" bgColor="#2b9558" src="/images/project-thumb-greeny.jpg" pct="80">
+                    <AspectRatio gradient size="cover" bgColor="#2b9558" src="/images/projects/greeny/thumb.jpg" pct="80">
                         <TextWrap>
                             <Title as="p" size="lg">Greeny</Title>
                             <ul>
@@ -98,26 +115,7 @@ const Projects = () => (
                 </div>
             </a>
         </Link>
-        <Link  href="project/test">
-            <a style={{ "width":"calc(50% - 6px)"}} >
-                <div data-aos="fade-up">
-                    <AspectRatio gradient size="cover" bgColor="#2b9558" src="/images/project-thumb-greeny.jpg" pct="80">
-                        <TextWrap>
-                            <Title as="p" size="lg">Greeny</Title>
-                            <ul>
-                                <li>
-                                    Webshop
-                                </li>
-                                <li>
-                                    Design
-                                </li>
-                            </ul>
-                        </TextWrap>
-                        <Gradient/>
-                    </AspectRatio>
-                </div>
-            </a>
-        </Link>     
+        
     </ContainerMod>
 )
 export default Projects 
