@@ -23,6 +23,12 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "maxWidth": {
+      "type": "string"
+    },
+    "width": {
+      "type": "string"
     }
   }
 }

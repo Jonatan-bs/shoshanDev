@@ -27,6 +27,16 @@ const ProjectImage = styled(AspectRatio)`
 
 const Subtext = styled(Text)`
     opacity: .4;
+    & p{
+        display: inline;
+    }
+    &>ul li{
+        display: inline;
+        font-weight: bold;
+    }
+    &>ul li:not(:last-child):after{
+        content: " | "
+    }
 `
 const StyledText = styled(Text)`
     opacity: 0.5;
@@ -44,7 +54,7 @@ const Logo = styled.img.attrs({ src:"/images/logo.svg", alt: "Shoshan Developmen
 
 
 
-const Header = ({src, alt, title, subtext, bgColor }) => (
+const Header = ({src, alt, title, subtitle, bgColor }) => (
     <motion.div initial='initial' animate='animate'>
                         
         <Link href="/" width="100%">
@@ -71,7 +81,11 @@ const Header = ({src, alt, title, subtext, bgColor }) => (
                         
                         <motion.div variants={animation.fadeUp}>
                             <Subtext as="h2" size="sm" caps bold pb=".5">
-                                {subtext}
+                                <ul>
+                                    {subtitle.map( ({element}) => (
+                                        <li>{element}</li>
+                                    ))}
+                                </ul>
                             </Subtext>                    
                         </motion.div>
                         

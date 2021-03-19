@@ -40,10 +40,10 @@ const Title = styled(Heading)`
 const Projects = ({projects}) => (
     <ContainerMod pb="3" className="gap">
         {projects.map(project => (
-            <Link  href="project/greeny">
+            <Link  href={"project/" + project.slug}>
                 <a style={{ "width":"calc(50% - 6px)"}} >
                     <div data-aos="fade-up">
-                        <AspectRatio gradient size="cover" bgColor="#2b9558" src={getStrapiMedia(project.thumbnail)} pct="80">
+                        <AspectRatio gradient size="cover" bgColor={project.bgColor || "#333"} src={getStrapiMedia(project.thumbnail)} pct="80">
                             <TextWrap>
                                 <Title as="p" size="lg">{project.title}</Title>
                                 <ul>

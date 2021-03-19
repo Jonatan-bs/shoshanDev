@@ -53,6 +53,12 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "slug": {
+      "type": "string"
+    },
+    "bgColor": {
+      "type": "string"
     }
   }
 }
