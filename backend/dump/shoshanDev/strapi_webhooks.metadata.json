@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"d368ece1a0044f3681c63bf3505f0033","collectionName":"strapi_webhooks"}
