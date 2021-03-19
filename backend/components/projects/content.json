@@ -1,18 +1,19 @@
 {
   "collectionName": "components_projects_contents",
   "info": {
-    "name": "Content",
-    "icon": "align-left"
+    "name": "content",
+    "icon": "align-left",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Text": {
+    "text": {
       "type": "richtext"
     },
-    "Title": {
+    "title": {
       "type": "string"
     },
-    "Image": {
+    "image": {
       "model": "file",
       "via": "related",
       "allowedTypes": [

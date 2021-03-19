@@ -2,7 +2,8 @@
   "kind": "singleType",
   "collectionName": "frontpages",
   "info": {
-    "name": "Frontpage"
+    "name": "Frontpage",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -10,7 +11,7 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "Subtext": {
+    "subtext": {
       "type": "string"
     }
   }

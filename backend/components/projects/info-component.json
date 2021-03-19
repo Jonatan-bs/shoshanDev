@@ -1,16 +1,16 @@
 {
   "collectionName": "components_projects_info_components",
   "info": {
-    "name": "Info",
+    "name": "info",
     "icon": "align-justify",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "Element": {
+    "entry": {
       "type": "string"
     },
-    "Heading": {
+    "heading": {
       "type": "boolean",
       "default": false
     }

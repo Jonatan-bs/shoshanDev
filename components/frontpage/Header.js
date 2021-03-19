@@ -37,7 +37,7 @@ const Rose = styled(AspectRatio)`
 `
 
 
-const Header = () => (
+const Header = ({subtext}) => (
     <motion.div initial='initial' animate='animate'>
             <Container> 
                 <motion.div variants={animation.fade}  style={{width:"100%", maxWidth: "730px"}}>
@@ -50,7 +50,7 @@ const Header = () => (
                         </LogoWrap>
                     </motion.div>
                     <motion.div variants={animation.fadeUp}  style={{width:"100%"}}>
-                        <SubText>En erfaren design- og udviklingspartner til din virksomhed </SubText>
+                        <SubText>{subtext} </SubText>
                     </motion.div>
                 </motion.div>
             </Container>

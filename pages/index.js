@@ -6,17 +6,23 @@ import Projects from '../components/frontpage/Projects';
 import Method from '../components/frontpage/Method';
 import Contact from '../components/frontpage/Contact';
 import Layout from '../components/Layout';
+import { getStrapiMedia, fetchAPI } from "../lib/api";
 
 
-
-const Index = () => (
+const Index = ({projects, frontpage}) => (
     <Layout>  
-        <Header />
+        <Header subtext={frontpage.subtext}/>
         <Services/>
-        <Projects/>
+        <Projects projects={projects}/>
         <Method/>
         <Contact/>
     </Layout>
 )
 
 export default Index;
+
+Index.getInitialProps = async (ctx) => {
+    const projects = await fetchAPI('/projects')
+    const frontpage = await fetchAPI('/frontpage')
+    return { projects, frontpage }
+}

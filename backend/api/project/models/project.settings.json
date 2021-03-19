@@ -14,25 +14,36 @@
     "title": {
       "type": "string"
     },
-    "Subtitle": {
+    "subtitle": {
       "type": "component",
       "repeatable": true,
       "component": "projects.project-elements"
     },
-    "Text": {
+    "text": {
       "type": "richtext"
     },
-    "Info": {
+    "info": {
       "type": "component",
       "repeatable": true,
       "component": "projects.info-component"
     },
-    "Content": {
+    "content": {
       "type": "component",
       "repeatable": true,
       "component": "projects.content"
     },
-    "Thumbnail": {
+    "thumbnail": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "headerImage": {
       "model": "file",
       "via": "related",
       "allowedTypes": [

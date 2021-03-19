@@ -1,13 +1,13 @@
 {
   "collectionName": "components_projects_project_elements",
   "info": {
-    "name": "Subtitle",
+    "name": "subtitle",
     "icon": "align-center",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "Element": {
+    "element": {
       "type": "string"
     }
   }

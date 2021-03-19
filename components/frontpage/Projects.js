@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Link from "next/link";
 import { Container, AspectRatio, Heading }  from "./../partials";
+import { getStrapiMedia, fetchAPI } from "../../lib/api";
 
 const ContainerMod = styled(Container)`
     display: flex; 
@@ -36,9 +37,30 @@ const Title = styled(Heading)`
 `
 
 
-const Projects = () => (
+const Projects = ({projects}) => (
     <ContainerMod pb="3" className="gap">
-        <Link  href="project/greeny">
+        {projects.map(project => (
+            <Link  href="project/greeny">
+                <a style={{ "width":"calc(50% - 6px)"}} >
+                    <div data-aos="fade-up">
+                        <AspectRatio gradient size="cover" bgColor="#2b9558" src={getStrapiMedia(project.thumbnail)} pct="80">
+                            <TextWrap>
+                                <Title as="p" size="lg">{project.title}</Title>
+                                <ul>
+                                    { project.subtitle.map( ({element}) => (
+                                        <li>
+                                            {element}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </TextWrap>
+                            <Gradient/>
+                        </AspectRatio>
+                    </div>
+                </a>
+            </Link>
+        ))}
+        {/* <Link  href="project/greeny">
             <a style={{ "width":"calc(50% - 6px)"}} >
                 <div data-aos="fade-up">
                     <AspectRatio gradient size="cover" bgColor="#2b9558" src="/images/projects/greeny/thumb.jpg" pct="80">
@@ -114,7 +136,7 @@ const Projects = () => (
                     </AspectRatio>
                 </div>
             </a>
-        </Link>
+        </Link> */}
         
     </ContainerMod>
 )
