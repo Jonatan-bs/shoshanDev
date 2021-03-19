@@ -22,18 +22,16 @@ const Content = () => (
                         As a leading private school for over 1,400 students, Wesley College approached Humaan to modernise their digital presence to represent the quality, community and excellence of the school. With a focus of driving increased student enrolments, we imagined a contemporary experience that would engage and delight.
                     </Text>
                     <Info data-aos="fade-left">
-                        <Text>
                             <ul>
-                                <li>Digital Strategy</li>
-                                <li>Education Best Practice</li>
-                                <li>UX Design</li>
-                                <li>MultiLingual</li>
+                                <li><Text>Digital Strategy</Text></li>
+                                <li><Text>Education Best Practice</Text></li>
+                                <li><Text>UX Design</Text></li>
+                                <li><Text>MultiLingual</Text></li>
                                 <br/>
-                                <li> <Span bold>Tech:</Span></li>
-                                <li>Wordpress</li>
-                                <li>Woocommerce</li>
+                                <li> <Text><Span bold>Tech:</Span></Text></li>
+                                <li><Text>Wordpress</Text></li>
+                                <li><Text>Woocommerce</Text></li>
                             </ul>
-                        </Text>
                     </Info>
                 </Grid>
         </Container>
