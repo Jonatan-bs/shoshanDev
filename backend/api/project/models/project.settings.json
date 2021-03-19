@@ -27,11 +27,6 @@
       "repeatable": true,
       "component": "projects.info-component"
     },
-    "content": {
-      "type": "component",
-      "repeatable": true,
-      "component": "projects.content"
-    },
     "thumbnail": {
       "model": "file",
       "via": "related",
@@ -59,6 +54,13 @@
     },
     "bgColor": {
       "type": "string"
+    },
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "projects.title",
+        "projects.image"
+      ]
     }
   }
 }

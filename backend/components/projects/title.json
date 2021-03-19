@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_projects_titles",
+  "info": {
+    "name": "title",
+    "icon": "angle-right"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

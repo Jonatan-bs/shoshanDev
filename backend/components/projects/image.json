@@ -1,18 +1,11 @@
 {
-  "collectionName": "components_projects_contents",
+  "collectionName": "components_projects_images",
   "info": {
-    "name": "content",
-    "icon": "align-left",
-    "description": ""
+    "name": "image",
+    "icon": "adjust"
   },
   "options": {},
   "attributes": {
-    "text": {
-      "type": "richtext"
-    },
-    "title": {
-      "type": "string"
-    },
     "image": {
       "model": "file",
       "via": "related",
@@ -24,10 +17,10 @@
       "plugin": "upload",
       "required": false
     },
-    "maxWidth": {
+    "width": {
       "type": "string"
     },
-    "width": {
+    "maxWidth": {
       "type": "string"
     }
   }
