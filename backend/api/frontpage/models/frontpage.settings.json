@@ -1,0 +1,17 @@
+{
+  "kind": "singleType",
+  "collectionName": "frontpages",
+  "info": {
+    "name": "Frontpage"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Subtext": {
+      "type": "string"
+    }
+  }
+}

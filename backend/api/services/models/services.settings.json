@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "service",
+  "info": {
+    "name": "Service",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Price": {
+      "type": "string"
+    },
+    "Services": {
+      "type": "component",
+      "repeatable": true,
+      "component": "services.services"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_projects_info_components",
+  "info": {
+    "name": "Info",
+    "icon": "align-justify",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Element": {
+      "type": "string"
+    },
+    "Heading": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

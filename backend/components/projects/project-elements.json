@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_projects_project_elements",
+  "info": {
+    "name": "Subtitle",
+    "icon": "align-center",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Element": {
+      "type": "string"
+    }
+  }
+}

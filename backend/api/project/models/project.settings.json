@@ -14,8 +14,34 @@
     "title": {
       "type": "string"
     },
-    "content": {
+    "Subtitle": {
+      "type": "component",
+      "repeatable": true,
+      "component": "projects.project-elements"
+    },
+    "Text": {
       "type": "richtext"
+    },
+    "Info": {
+      "type": "component",
+      "repeatable": true,
+      "component": "projects.info-component"
+    },
+    "Content": {
+      "type": "component",
+      "repeatable": true,
+      "component": "projects.content"
+    },
+    "Thumbnail": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
     }
   }
 }

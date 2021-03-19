@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_services_services",
+  "info": {
+    "name": "Services",
+    "icon": "align-right"
+  },
+  "options": {},
+  "attributes": {
+    "Entry": {
+      "type": "string"
+    }
+  }
+}
