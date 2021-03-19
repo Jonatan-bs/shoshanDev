@@ -29,8 +29,8 @@ const Content = ({project}) => (
         </Container>
         {project.content.map( ({image, title, text, maxWidth, width}) => (
             <>
-                {title && <Heading as="h2" center size="lg" pt="5" pb="3">{title}</Heading>} 
-                {image && <Center><img data-aos="fade-up" style={{"maxWidth": maxWidth || "initial", width: width || "100%"} } src={getStrapiMedia(image)}/></Center>}
+                {title && <Heading as="h2" center size="lg" pb="2">{title}</Heading>} 
+                {image && <Center><img data-aos="fade-up" style={{paddingBottom: "250px" ,"maxWidth": maxWidth || "initial", width: width || "100%"} } src={getStrapiMedia(image)}/></Center>}
                 {text && <p data-aos="fade-up">{text}</p>}
             </>
          ) )}

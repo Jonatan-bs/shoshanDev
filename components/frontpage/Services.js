@@ -24,13 +24,15 @@ const HeadingImgWrap = styled.div`
     display:flex;
     align-items: center;
     padding: 150px 0;
+    justify-content: center;
 
 `
 const HeadingWrap = styled.div`
-    width: 70%;
+    // width: 70%;
 `
 const ImgWrap = styled.div`
-    width: 30%;
+    // width: 30%;
+    max-width: 400px;
     padding-right: 30px;
     box-sizing: border-box;
 `
@@ -44,18 +46,12 @@ const Services = () => (
     <section>
         <Container pb={3}>
             <HeadingImgWrap>
-                <ImgWrap>
-                    <div data-aos="fade-right">
-                        <Image src="/images/sewing-machine.png" alt="skræddersyget - illustration" />
-                    </div>
+                <ImgWrap data-aos="fade-right">
+                    <Image src="/images/sewing-machine.png" alt="skræddersyget - illustration" />
                 </ImgWrap>
-                <HeadingWrap>
-                    <div data-aos="fade-left">
-                        <Heading as="h3" size="xl">
-                            Skræddersyede Webløsninger
-                        </Heading>
-                    </div>
-                </HeadingWrap>
+                <Heading as="h3" size="xl"  data-aos="fade-left">
+                    Skræddersyede <br/> Webløsninger
+                </Heading>
             </HeadingImgWrap>
             <ServiceGrid>
                 <ServiceCard data-aos="fade-up"> 
