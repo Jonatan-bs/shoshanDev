@@ -62,7 +62,7 @@ const Footer = () => (
                         </MenuList>
                         <MenuList>
                             <li><Heading as="h3" light caps size="xs">SHOSHAN DEV.</Heading></li>
-                            <li><Link href="#" color="light" name="Om mig"/></li>
+                            <li><Link href="/om" color="light" name="Om mig"/></li>
                             <li><Link href="#" color="light" name="Teknologier"/></li>
                             <li><Link href="#" color="light" name="Designprocess"/></li>
                         </MenuList>

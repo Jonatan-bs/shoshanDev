@@ -2,6 +2,7 @@ import styled from "styled-components";
 import {AspectRatio, Image, Heading, Text, Link} from "./../partials"
 import {motion, animatePresence} from "framer-motion"
 import animation from "./../../scripts/animations"
+import HeaderLogo from "./../partials/headerLogo"
 
 const Container = styled.header`
     display: flex;
@@ -42,26 +43,11 @@ const StyledText = styled(Text)`
     opacity: 0.5;
 `
 
-const LogoWrap = styled.div`
-    width: 100%;
-    text-align: center;
-`
-const Logo = styled.img.attrs({ src:"/images/logo.svg", alt: "Shoshan Development" })`
-    width:100%;
-    max-width:330px;
-    margin: 50px;
-`
-
 
 
 const Header = ({src, alt, title, subtitle, bgColor }) => (
     <motion.div initial='initial' animate='animate'>
-                        
-        <Link href="/" width="100%">
-            <LogoWrap>
-                <Logo/>
-            </LogoWrap>
-        </Link>
+        <HeaderLogo/>  
         <motion.div variants={animation.stagger}>
             <Container bgColor={bgColor}>
                 <motion.div variants={animation.fadeRight}>
