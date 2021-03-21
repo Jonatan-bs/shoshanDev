@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {AspectRatio, Image, Heading, Text, Link} from "./../partials"
 import {motion, animatePresence} from "framer-motion"
 import animation from "./../../scripts/animations"
-import HeaderLogo from "./../partials/headerLogo"
+import HeaderLogo from "./../partials/HeaderLogo"
 
 const Container = styled.header`
     display: flex;
@@ -74,14 +74,6 @@ const Header = ({src, alt, title, subtitle, bgColor }) => (
                                 </ul>
                             </Subtext>                    
                         </motion.div>
-                        
-                        {/* <motion.div variants={animation.fadeUp}>
-                            <StyledText color="light" size="md">
-                                Læs om hvordan jeg finder frem til
-                                det perfekte design til dit projekt. 
-                            </StyledText>                    
-                        </motion.div> */}
-
                         
                         
                 </MethodDiv>

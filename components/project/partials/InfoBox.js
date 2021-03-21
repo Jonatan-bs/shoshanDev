@@ -6,10 +6,11 @@ const Info = styled.div`
     background: ${({theme}) => theme.colors.light2}
 `
 
-export const InfoBox = ({entries}) => (
+const InfoBox = ({entries}) => (
     <Info data-aos="fade-left">
             <ul>
                 {entries.map( e => !e.heading? (<li><Text>{e.entry}</Text></li>) : (<><br/><li> <Text><Span bold>{e.entry}:</Span></Text></li></>))}
             </ul>
     </Info>
 ) 
+export default InfoBox

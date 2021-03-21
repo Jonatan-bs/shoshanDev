@@ -12,7 +12,7 @@ const Logo = styled.img.attrs({ src:"/images/logo.svg", alt: "Shoshan Developmen
 `
 
 
-const headerLogo = () => (
+const HeaderLogo = () => (
     <Link href="/" width="100%">
         <LogoWrap>
             <Logo/>
@@ -20,4 +20,4 @@ const headerLogo = () => (
     </Link>
 )
 
-export default headerLogo;
+export default HeaderLogo;

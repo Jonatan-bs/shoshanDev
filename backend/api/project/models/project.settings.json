@@ -61,7 +61,8 @@
         "page-content.banner",
         "page-content.heading",
         "page-content.image",
-        "page-content.small-boxes"
+        "page-content.small-boxes",
+        "page-content.image-and-text"
       ]
     }
   }

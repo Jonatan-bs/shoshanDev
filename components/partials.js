@@ -102,6 +102,7 @@ export const Heading = styled.h1`
     ${ ({caps}) => caps && "text-transform: uppercase;" }
     color: ${ ({color,theme}) => theme.colors[color] || "inherit"};
     ${ ({center}) => center && "text-align: center;" }
+    ${ ({align}) => align && "text-align:" + align }
 
 `
 

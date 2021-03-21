@@ -3,7 +3,8 @@ import Layout from './../components/Layout';
 import {motion, animatePresence} from "framer-motion"
 import { getStrapiMedia, fetchAPI } from "./../lib/api";
 import {Container, AspectRatio, Image, Heading, Text, Link, Center} from "./../components/partials"
-import HeaderLogo from "./../components/partials/headerLogo"
+import HeaderLogo from "./../components/partials/HeaderLogo"
+import DynamicContent from "./../components/partials/DynamicContent"
 import Banner from "./../components/page/Banner"
 
 const SmallBoxes = styled.div`
@@ -32,38 +33,22 @@ const SmallBoxImage = styled.img`
     width: 100%;
     padding: 10px;
 `
+const ImageAndText = styled.div`
+    display:flex;
+    &>:nth-child(1){
+        width: 50%;
+        padding-right: 25px;
+    }
+    &>:nth-child(2){
+        width: 50%;
+        padding-left: 25px;
+    }
+`
 
 const Page = ({page}) => (
         <Layout>  
                 <HeaderLogo/>
-                { page.content && page.content.map( content => {
-                    switch(content.__component){
-                        case("page-content.smallBox"):
-                            return 
-                            (
-                            <Container pb="2">
-                                <SmallBoxes>
-                                    {smallBox.map( box => (
-                                        <SmallBox color={box.bgColor} bgImage={box.image && getStrapiMedia(box.image)}>
-                                            { box.title && !box.image && <Text bold size="md">{box.title}</Text> }
-                                        </SmallBox>
-                                    ))}
-                                </SmallBoxes>
-                            </Container>
-                            )
-                            break
-                        case("page-content.banner"):
-                            return <Container pb="2"><Banner src={getStrapiMedia(content.image)}/></Container>
-                            break
-                        case("page-content.image"):
-                            return <Container pb="2"><Center><img data-aos="fade-up" style={{paddingBottom: "250px" ,"maxWidth": content.maxWidth || "initial", width: content.width || "100%"} } src={getStrapiMedia(content.image)}/></Center></Container>
-                            break
-                        case("page-content.heading"):
-                            return <Container pb="1"><Heading as={content.tag || "h2"} size={content.size || "md"}>{content.heading}</Heading></Container>
-                            break
-
-                    }  
-                })}
+                <DynamicContent content={page.content}/>
         </Layout>
 )
 
