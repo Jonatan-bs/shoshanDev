@@ -1,6 +1,5 @@
 # Strapi application
 
-A quick description of your strapi application
 
 Seed database:
 mongorestore --uri mongodb+srv://jonatanbs:<PASSWORD>@cluster0.sbzvi.mongodb.net 

@@ -11,9 +11,9 @@ import { getStrapiMedia, fetchAPI } from "../lib/api";
 
 const Index = ({projects, frontpage}) => (
     <Layout>  
-        <Header subtext={frontpage.subtext}/>
+        <Header subtext={(!frontpage || frontpage.error) ? [] : frontpage}/>
         <Services/>
-        <Projects projects={projects}/>
+        <Projects projects={(!projects || projects.error )? [] : projects }/>
         <Method/>
         <Contact/>
     </Layout>
@@ -22,7 +22,7 @@ const Index = ({projects, frontpage}) => (
 export default Index;
 
 Index.getInitialProps = async (ctx) => {
-    const projects = await fetchAPI('/projects')
-    const frontpage = await fetchAPI('/frontpage')
+    const projects = await fetchAPI('/projects');
+    const frontpage = await fetchAPI('/frontpage');
     return { projects, frontpage }
 }

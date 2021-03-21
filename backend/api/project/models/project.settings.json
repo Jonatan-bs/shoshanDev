@@ -58,8 +58,10 @@
     "content": {
       "type": "dynamiczone",
       "components": [
-        "projects.title",
-        "projects.image"
+        "page-content.banner",
+        "page-content.heading",
+        "page-content.image",
+        "page-content.small-boxes"
       ]
     }
   }

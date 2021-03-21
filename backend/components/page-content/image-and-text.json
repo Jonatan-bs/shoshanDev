@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_page_content_image_and_texts",
+  "info": {
+    "name": "imageAndText",
+    "icon": "archway"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "richtext"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "imageRight": {
+      "type": "boolean"
+    }
+  }
+}

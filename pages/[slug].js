@@ -2,17 +2,10 @@ import styled from "styled-components";
 import Layout from './../components/Layout';
 import {motion, animatePresence} from "framer-motion"
 import { getStrapiMedia, fetchAPI } from "./../lib/api";
-import {Container, AspectRatio, Image, Heading, Text, Link} from "./../components/partials"
+import {Container, AspectRatio, Image, Heading, Text, Link, Center} from "./../components/partials"
 import HeaderLogo from "./../components/partials/headerLogo"
+import Banner from "./../components/page/Banner"
 
-const Banner = styled.div`
-    width: 100%;
-    height: 500px;
-    background: url(${ ({src}) => src });
-    background-size: cover;
-    background-position: center center;
-    margin:  0;
-`
 const SmallBoxes = styled.div`
     width: 100%;
     display: flex;
@@ -42,30 +35,35 @@ const SmallBoxImage = styled.img`
 
 const Page = ({page}) => (
         <Layout>  
-            <Container>
                 <HeaderLogo/>
-                { page.banner && <Banner src={getStrapiMedia(page.banner)}></Banner>}
-                { page.title && <Heading size="xl" py="1">{page.title}</Heading>}
-                { page.text && <Text size="md" pb="1">
-                    {page.text}
-                </Text>}
-                { page.content && page.content.map( ({smallBox}) => {
-                    if(smallBox){
-                        return(
-                            <SmallBoxes>
-                                {console.log(smallBox)}
-                                {smallBox.map( box => (
-                                    <SmallBox color={box.bgColor} bgImage={box.image && getStrapiMedia(box.image)}>
-                                        {/* { box.image && <SmallBoxImage src={getStrapiMedia(box.image)}/> } */}
-                                        { box.title && !box.image && <Text bold size="md">{box.title}</Text> }
-                                    </SmallBox>
-                                ))}
-                            </SmallBoxes>
-                        )
-                    }
-                    
+                { page.content && page.content.map( content => {
+                    switch(content.__component){
+                        case("page-content.smallBox"):
+                            return 
+                            (
+                            <Container pb="2">
+                                <SmallBoxes>
+                                    {smallBox.map( box => (
+                                        <SmallBox color={box.bgColor} bgImage={box.image && getStrapiMedia(box.image)}>
+                                            { box.title && !box.image && <Text bold size="md">{box.title}</Text> }
+                                        </SmallBox>
+                                    ))}
+                                </SmallBoxes>
+                            </Container>
+                            )
+                            break
+                        case("page-content.banner"):
+                            return <Container pb="2"><Banner src={getStrapiMedia(content.image)}/></Container>
+                            break
+                        case("page-content.image"):
+                            return <Container pb="2"><Center><img data-aos="fade-up" style={{paddingBottom: "250px" ,"maxWidth": content.maxWidth || "initial", width: content.width || "100%"} } src={getStrapiMedia(content.image)}/></Center></Container>
+                            break
+                        case("page-content.heading"):
+                            return <Container pb="1"><Heading as={content.tag || "h2"} size={content.size || "md"}>{content.heading}</Heading></Container>
+                            break
+
+                    }  
                 })}
-            </Container>
         </Layout>
 )
 
@@ -74,6 +72,5 @@ export default Page;
 Page.getInitialProps = async (ctx) => {
     const {slug} = ctx.query
     let page = await fetchAPI('/pages?slug=' + slug)
-    page = page[0]
-    return {page} 
+    return page.error? {page: {}} : {page: page[0]}     
 }
