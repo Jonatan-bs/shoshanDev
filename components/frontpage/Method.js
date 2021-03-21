@@ -15,19 +15,23 @@ const Method = () => (
     <section>
         <ContainerMod pb={3}>
             <MethodDiv data-aos="fade-right">
-                <Heading as="h3" size="md" caps>DESIGNPROCES</Heading>
-                <Text>
-                    Læs om hvordan jeg finder frem til
-                    det perfekte design til dit projekt. 
-                </Text>
+                <Link color="dark2" href="/designprocess">
+                    <Heading as="h3" size="md" caps>DESIGNPROCES</Heading>
+                    <Text>
+                        Læs om hvordan jeg finder frem til
+                        det perfekte design til dit projekt. 
+                    </Text>
+                 </Link>
             </MethodDiv>
             <MethodDiv data-aos="fade-left">
-                <Heading as="h3" size="md" caps>Teknologier</Heading>
-                <Text>
-                    Ethvert projekt kræver et godt
-                    fundament. <br/>
-                    Se hvilke teknologier jeg arbejder med. 
-                </Text>
+                <Link color="dark2" href="/teknologier">
+                    <Heading as="h3" size="md" caps>Teknologier</Heading>
+                    <Text>
+                        Ethvert projekt kræver et godt
+                        fundament. <br/>
+                        Se hvilke teknologier jeg arbejder med. 
+                    </Text>
+                </Link>
             </MethodDiv>
         </ContainerMod>
     </section>

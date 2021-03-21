@@ -11,7 +11,7 @@ import { getStrapiMedia, fetchAPI } from "../lib/api";
 
 const Index = ({projects, frontpage}) => (
     <Layout>  
-        <Header subtext={(!frontpage || frontpage.error) ? [] : frontpage}/>
+        <Header subtext={(!frontpage || frontpage.error || !frontpage.subtext  ) ? [] :frontpage.subtext}/>
         <Services/>
         <Projects projects={(!projects || projects.error )? [] : projects }/>
         <Method/>
