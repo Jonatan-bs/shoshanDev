@@ -27,20 +27,22 @@ const Content = ({project}) => (
                     <InfoBox entries={project.info}/>
                 </Grid>
         </Container>
-        {project.content.map( ({image, title, text, maxWidth, width}) => (
-            <>
-                {title && <Heading as="h2" center size="lg" pb="2">{title}</Heading>} 
-                {image && <Center><img data-aos="fade-up" style={{paddingBottom: "250px" ,"maxWidth": maxWidth || "initial", width: width || "100%"} } src={getStrapiMedia(image)}/></Center>}
-                {text && <p data-aos="fade-up">{text}</p>}
-            </>
-         ) )}
-        {/* <Computer data-aos="fade-up"/>
-        <Heading as="h2" center size="lg" pt="5">MobileFirst Design</Heading>
-        <Mobile data-aos="fade-up"/>
-        <Heading as="h2" center size="lg" pt="5" pb="3">Product Visuals</Heading>
-        <Center>
-            <Products data-aos="fade-up"/>
-        </Center> */}
+        { project.content && project.content.map( (content) => {
+            console.log(content.image)
+            switch(content.__component){
+                case("page-content.heading"):
+                    return <Heading as="h2" center size="lg" pb="2">{content.heading}</Heading>;
+                    break
+                case("page-content.image"):
+                    return <Center><img data-aos="fade-up" style={{paddingBottom: "250px" ,"maxWidth": content.maxWidth || "initial", width: content.width || "100%"} } src={getStrapiMedia(content.image)}/></Center>
+                    break
+                case("page-content.text"):
+                    return <Text data-aos="fade-up">{content.text}</Text>
+                    break
+            }  
+        })}
+        
+
     </>
 )
 export default Content 
