@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_partials_menu_links",
+  "info": {
+    "name": "menu link",
+    "icon": "align-right",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

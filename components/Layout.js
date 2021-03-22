@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Head from "next/head"
 import Footer from "./Footer";
 
-const Layout = ({children}) => {
+const Layout = ({children, menus}) => {
     return (
         <>
             <Head>
@@ -17,7 +17,7 @@ const Layout = ({children}) => {
  
             { children }
 
-            <Footer/>
+            <Footer menus={menus}/>
         </>
     )
 

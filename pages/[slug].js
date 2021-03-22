@@ -46,10 +46,10 @@ const ImageAndText = styled.div`
 `
 
 const Page = ({page}) => (
-        <Layout>  
+        <>  
                 <HeaderLogo/>
                 <DynamicContent content={page.content}/>
-        </Layout>
+        </>
 )
 
 export default Page;

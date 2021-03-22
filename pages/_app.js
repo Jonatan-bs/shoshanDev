@@ -6,6 +6,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import {motion, AnimatePresence} from "framer-motion"
 // import "../scss/style.scss";
+import { getStrapiMedia, fetchAPI } from "../lib/api";
+import App from 'next/app'
+import Layout from './../components/Layout';
 
 
 
@@ -23,7 +26,9 @@ function MyApp({ Component, pageProps, router }) {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <AnimatePresence initial={true} exitBeforeEnter>
-          <Component {...pageProps} key={router.route} />
+          <Layout {...pageProps}>
+            <Component {...pageProps} key={router.route} />
+          </Layout>
         </AnimatePresence>
       </ThemeProvider>
     )
@@ -35,11 +40,13 @@ function MyApp({ Component, pageProps, router }) {
   // perform automatic static optimization, causing every page in your app to
   // be server-side rendered.
   //
-  // MyApp.getInitialProps = async (appContext) => {
-  //   // calls page's `getInitialProps` and fills `appProps.pageProps`
-  //   const appProps = await App.getInitialProps(appContext);
-  //
-  //   return { ...appProps }
-  // }
+  MyApp.getInitialProps = async (appContext) => {
+    // calls page's `getInitialProps` and fills `appProps.pageProps`
+    let appProps = await App.getInitialProps(appContext);
+    let menus = await fetchAPI('/menus')
+    appProps = {...appProps.pageProps, menus }
+    
+    return { pageProps: appProps }
+  }
   
   export default MyApp

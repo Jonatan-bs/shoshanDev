@@ -9,7 +9,7 @@ import { getStrapiMedia, fetchAPI } from "./../../lib/api";
 import DynamicContent from "./../../components/partials/DynamicContent"
 
 const Project = ({project}) => (
-        <Layout>  
+        <>  
             <Header src={getStrapiMedia(project.headerImage)} bgColor={project.bgColor || "#333"} title={project.title} subtitle={project.subtitle}/>
             {/* <Content project={project}/> */}
             <Container py="3"> 
@@ -22,7 +22,7 @@ const Project = ({project}) => (
                 </Grid>
             </Container>
             <DynamicContent content={project.content}/>   
-        </Layout>
+        </>
 )
 
 export default Project;
