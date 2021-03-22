@@ -17,7 +17,7 @@ const Index = ({projects, frontpage}) => (
         <Services/>
         <Projects projects={(!projects || projects.error )? [] : projects }/>
         <Method/>
-        <Contact/>
+        <Contact frontpage={frontpage}/>
     </>
 )
 
