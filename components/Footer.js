@@ -36,7 +36,7 @@ const MenuList = styled.ul`
 
 `
 
-const Footer = () => (
+const Footer = ({menus}) => (
     <>
         <Section dark>
             <ContainerMod>
@@ -54,17 +54,16 @@ const Footer = () => (
                 <Right>
                     <div>
                         <MenuList>
-                            <li><Heading as="h3" light caps size="xs">SERVICES</Heading></li>
-                            <li><Link href="#" color="light" name="Hjemmeside"/></li>
-                            <li><Link href="#" color="light" name="Webshop"/></li>
-                            <li><Link href="#" color="light" name="Webapplikation"/></li>
-                            <li><Link href="#" color="light" name="Support"/></li>
+                            <li><Heading as="h3" light caps size="xs">{menus.footerLeft.title}</Heading></li>
+                            {menus.footerLeft.menuLink.map(entry => (
+                                <li><Link href={entry.url} color="light" name={entry.title}/></li>
+                            ))}
                         </MenuList>
                         <MenuList>
-                            <li><Heading as="h3" light caps size="xs">SHOSHAN DEV.</Heading></li>
-                            <li><Link href="/om" color="light" name="Om mig"/></li>
-                            <li><Link href="#" color="light" name="Teknologier"/></li>
-                            <li><Link href="#" color="light" name="Designprocess"/></li>
+                            <li><Heading as="h3" light caps size="xs">{menus.footerRight.title}</Heading></li>
+                            {menus.footerRight.menuLink.map(entry => (
+                                <li><Link href={entry.url} color="light" name={entry.title}/></li>
+                            ))}
                         </MenuList>
                     </div>                    
                 </Right>
