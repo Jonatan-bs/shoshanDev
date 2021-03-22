@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_partials_lists",
+  "info": {
+    "name": "list",
+    "icon": "arrow-circle-right"
+  },
+  "options": {},
+  "attributes": {
+    "entry": {
+      "type": "string"
+    }
+  }
+}

@@ -14,10 +14,10 @@ const Index = ({projects, frontpage}) => (
     <>  
         
         <Header subtext={(!frontpage || frontpage.error || !frontpage.subtext  ) ? [] :frontpage.subtext}/>
-        <Services/>
+        <Services services={frontpage.services}/>
         <Projects projects={(!projects || projects.error )? [] : projects }/>
         <Method/>
-        <Contact frontpage={frontpage}/>
+        <Contact contactBox={frontpage.contactBox}/>
     </>
 )
 

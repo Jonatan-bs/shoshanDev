@@ -18,27 +18,21 @@ const ContactImage = styled(AspectRatio)`
 
 
 
-const Contact = ({frontpage}) => (
+const Contact = ({contactBox}) => (
     <section data-aos="fade-up">
         <Container pb="3">
             <ContactCard>
-                {frontpage.content.map(c => {
-                    if( c.__component === 'page-content.contact-box' ){
-                        return(
-                            <>
-                                <ContactImage maxWidth="400px" width="100%" src={getStrapiMedia(c.image)} pct="100" circle/>
-                                <div>
-                                    <Heading as="h3"  py={0.5} size="lg">
-                                        {c.title}
-                                    </Heading>
-                                    <Text color="primary">
-                                        {c.subtitle}
-                                    </Text>
-                                </div>
-                            </>
-                        )
-                    }
-                })}                
+
+                <ContactImage maxWidth="400px" width="100%" src={getStrapiMedia(contactBox.image)} pct="100" circle/>
+                <div>
+                    <Heading as="h3"  py={0.5} size="lg">
+                        {contactBox.title}
+                    </Heading>
+                    <Text color="primary">
+                        {contactBox.subtitle}
+                    </Text>
+                </div>
+
 
             </ContactCard>
         </Container>

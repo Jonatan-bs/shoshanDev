@@ -42,7 +42,7 @@ const ImgWrap = styled.div`
 //     font-weight: bold;
 // `
 
-const Services = () => (
+const Services = ({services}) => (
     <section>
         <Container pb={3}>
             <HeadingImgWrap>
@@ -54,19 +54,17 @@ const Services = () => (
                 </Heading>
             </HeadingImgWrap>
             <ServiceGrid>
+        {services.map(service => (
                 <ServiceCard data-aos="fade-up"> 
                     <AspectRatioMod src="/images/service_icons/1.svg" pct="100" width="100%" maxWidth="100px" />
-                    <Heading center as="h4" py={.2} size="sm" caps>Hjemmeside</Heading>
+                    <Heading center as="h4" py={.2} size="sm" caps>{service.title}</Heading>
                     <Text>
-                        Responsive<br/>
-                        UX<br/>
-                        Wordress<br/>
-                        React<br/>
-                        SEO<br/>
+                        {service.elements.map( ({entry})=> <>{entry} <br/> </>)}
                     </Text>
-                    <Price>Fra 10.000 kr.</Price>
+                    <Price>{service.price}</Price>
                 </ServiceCard>
-                <ServiceCard data-aos="fade-up"> 
+        ))}
+                {/* <ServiceCard data-aos="fade-up"> 
                     <AspectRatioMod src="/images/service_icons/2.svg" pct="100" width="100%" maxWidth="100px" />
                     <Heading center as="h4" py={.2} size="sm" caps>Webshop</Heading>
                     <Text>
@@ -100,7 +98,7 @@ const Services = () => (
                         SEO<br/>
                     </Text>
                     <Price>Fra 10.000 kr.</Price>
-                </ServiceCard>
+                </ServiceCard> */}
             </ServiceGrid>        
         </Container>
     </section>
