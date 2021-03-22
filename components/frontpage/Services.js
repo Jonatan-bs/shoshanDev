@@ -54,51 +54,16 @@ const Services = ({services}) => (
                 </Heading>
             </HeadingImgWrap>
             <ServiceGrid>
-        {services.map(service => (
-                <ServiceCard data-aos="fade-up"> 
-                    <AspectRatioMod src="/images/service_icons/1.svg" pct="100" width="100%" maxWidth="100px" />
-                    <Heading center as="h4" py={.2} size="sm" caps>{service.title}</Heading>
-                    <Text>
-                        {service.elements.map( ({entry})=> <>{entry} <br/> </>)}
-                    </Text>
-                    <Price>{service.price}</Price>
-                </ServiceCard>
-        ))}
-                {/* <ServiceCard data-aos="fade-up"> 
-                    <AspectRatioMod src="/images/service_icons/2.svg" pct="100" width="100%" maxWidth="100px" />
-                    <Heading center as="h4" py={.2} size="sm" caps>Webshop</Heading>
-                    <Text>
-                        Responsive<br/>
-                        UX<br/>
-                        Wordress<br/>
-                        React<br/>
-                        SEO<br/>
-                    </Text>
-                    <Price>Fra 10.000 kr.</Price>
-                </ServiceCard>
-                <ServiceCard data-aos="fade-up"> 
-                    <AspectRatioMod src="/images/service_icons/3.svg" pct="100" width="100%" maxWidth="100px" />
-                    <Heading center as="h4" py={.2} size="sm" caps>Web app</Heading>
-                    <Text>
-                        Responsive<br/>
-                        UX<br/>
-                        Wordress<br/>
-                        React<br/>
-                        SEO<br/>
-                    </Text>
-                </ServiceCard>
-                <ServiceCard data-aos="fade-up"> 
-                    <AspectRatioMod src="/images/service_icons/4.svg" pct="100" width="100%" maxWidth="100px" />
-                    <Heading center as="h4" py={.2} size="sm" caps>Support</Heading>
-                    <Text>
-                        Responsive<br/>
-                        UX<br/>
-                        Wordress<br/>
-                        React<br/>
-                        SEO<br/>
-                    </Text>
-                    <Price>Fra 10.000 kr.</Price>
-                </ServiceCard> */}
+                {services.map(service => (
+                    <ServiceCard data-aos="fade-up"> 
+                        <AspectRatioMod src="/images/service_icons/1.svg" pct="100" width="100%" maxWidth="100px" />
+                        <Heading center as="h4" py={.2} size="sm" caps>{service.title}</Heading>
+                        <Text>
+                            {service.elements.map( ({entry})=> <>{entry} <br/> </>)}
+                        </Text>
+                        <Price>{service.price}</Price>
+                    </ServiceCard>
+                ))}
             </ServiceGrid>        
         </Container>
     </section>
