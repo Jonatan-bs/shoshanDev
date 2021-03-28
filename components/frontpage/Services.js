@@ -54,7 +54,7 @@ const Services = ({services}) => (
                 </Heading>
             </HeadingImgWrap>
             <ServiceGrid>
-                {services.map(service => (
+                {services && services.map(service => (
                     <ServiceCard data-aos="fade-up"> 
                         <AspectRatioMod src="/images/service_icons/1.svg" pct="100" width="100%" maxWidth="100px" />
                         <Heading center as="h4" py={.2} size="sm" caps>{service.title}</Heading>
