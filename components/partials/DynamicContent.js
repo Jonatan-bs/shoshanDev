@@ -45,13 +45,13 @@ const ImageAndText = styled.div`
 
 const DynamicContent = ({content}) => (
       content.map( (component,i) => {
+          console.log(component.smallBox)
         switch(component.__component){
-            case("page-content.smallBox"):
-                return 
-                (
+            case("page-content.small-boxes"):
+                return (
                 <Container key={i} pb="2">
                     <SmallBoxes>
-                        {smallBox.map( (box,i) => (
+                        {component.smallBox.map( (box,i) => (
                             <SmallBox key={i} color={box.bgColor} bgImage={box.image && getStrapiMedia(box.image)}>
                                 { box.title && !box.image && <Text bold size="md">{box.title}</Text> }
                             </SmallBox>
