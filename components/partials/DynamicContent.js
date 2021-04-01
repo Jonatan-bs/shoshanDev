@@ -45,7 +45,6 @@ const ImageAndText = styled.div`
 
 const DynamicContent = ({content}) => (
       content.map( (component,i) => {
-          console.log(component.smallBox)
         switch(component.__component){
             case("page-content.small-boxes"):
                 return (
