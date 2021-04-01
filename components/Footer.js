@@ -55,14 +55,14 @@ const Footer = ({menus}) => (
                     <div>
                         <MenuList>
                             <li><Heading as="h3" light caps size="xs">{menus.footerLeft.title}</Heading></li>
-                            {menus.footerLeft.menuLink.map(entry => (
-                                <li><Link href={entry.url} color="light" name={entry.title}/></li>
+                            {menus.footerLeft.menuLink.map((entry,i) => (
+                                <li key={i} ><Link href={entry.url} color="light" name={entry.title}/></li>
                             ))}
                         </MenuList>
                         <MenuList>
                             <li><Heading as="h3" light caps size="xs">{menus.footerRight.title}</Heading></li>
-                            {menus.footerRight.menuLink.map(entry => (
-                                <li><Link href={entry.url} color="light" name={entry.title}/></li>
+                            {menus.footerRight.menuLink.map((entry,i) => (
+                                <li key={i}><Link href={entry.url} color="light" name={entry.title}/></li>
                             ))}
                         </MenuList>
                     </div>                    

@@ -68,8 +68,8 @@ const Header = ({src, alt, title, subtitle, bgColor }) => (
                         <motion.div variants={animation.fadeUp}>
                             <Subtext as="h2" size="sm" caps bold pb=".5">
                                 <ul>
-                                    {subtitle.map( ({element}) => (
-                                        <li>{element}</li>
+                                    {subtitle.map( ({element}, i) => (
+                                        <li key={i}>{element}</li>
                                     ))}
                                 </ul>
                             </Subtext>                    

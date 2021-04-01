@@ -15,7 +15,7 @@ const Method = () => (
     <section>
         <ContainerMod pb={3}>
             <MethodDiv data-aos="fade-right">
-                <Link color="dark2" href="/designprocess">
+                <Link color="dark2" href="/designproces">
                     <Heading as="h3" size="md" caps>DESIGNPROCES</Heading>
                     <Text>
                         Læs om hvordan jeg finder frem til

@@ -48,7 +48,7 @@ const ImageAndText = styled.div`
 const Page = ({page}) => (
         <>  
                 <HeaderLogo/>
-                <DynamicContent content={page.content}/>
+                <DynamicContent content={page.content || {}}/>
         </>
 )
 

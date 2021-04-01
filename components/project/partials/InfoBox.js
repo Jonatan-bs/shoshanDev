@@ -9,7 +9,7 @@ const Info = styled.div`
 const InfoBox = ({entries}) => (
     <Info data-aos="fade-left">
             <ul>
-                {entries.map( e => !e.heading? (<li><Text>{e.entry}</Text></li>) : (<><br/><li> <Text><Span bold>{e.entry}:</Span></Text></li></>))}
+                {entries.map( (e,i) => !e.heading? (<li key={i}><Text>{e.entry}</Text></li>) : (<span key={i}><br/><li> <Text><Span bold>{e.entry}:</Span></Text></li></span>))}
             </ul>
     </Info>
 ) 

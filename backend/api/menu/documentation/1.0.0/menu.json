@@ -541,6 +541,28 @@
                 },
                 "url": {
                   "type": "string"
+                },
+                "page": {
+                  "required": [
+                    "id"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "slug": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "dynamiczone"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -571,6 +593,28 @@
                 },
                 "url": {
                   "type": "string"
+                },
+                "page": {
+                  "required": [
+                    "id"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "slug": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "dynamiczone"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
