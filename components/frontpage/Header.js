@@ -25,11 +25,10 @@ const SubText = styled.h2`
 const LogoWrap = styled.h1`
     max-width: 1000px; 
     width:100%;
+    position: relative
 `
 
-const Logo = styled.img.attrs({ src:"/images/logo-light.svg", alt: "Shoshan Development" })`
-    width:100%;
-`
+
 
 const Rose = styled(AspectRatio)`
     background-blend-mode: multiply;
@@ -39,7 +38,7 @@ const Rose = styled(AspectRatio)`
 
 const Header = ({subtext}) => (
     <motion.div initial='initial' animate='animate'>
-            <Container> 
+            <Container className="grain"> 
                 <motion.div variants={animation.fade}  style={{width:"100%", maxWidth: "730px"}}>
                     <Rose src="/images/rose.jpg" pct="68" width="100%" maxWidth="730px"/>
                 </motion.div>
