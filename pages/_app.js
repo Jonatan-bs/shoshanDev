@@ -43,12 +43,9 @@ function MyApp({ Component, pageProps, router }) {
   MyApp.getInitialProps = async (appContext) => {
     // calls page's `getInitialProps` and fills `appProps.pageProps`
     let appProps = await App.getInitialProps(appContext);
-    let footerLeft = await fetchAPI('/menus?slug=footerLeft')
-    let footerRight = await fetchAPI('/menus?slug=footerRight')
-    footerLeft= footerLeft[0]
-    footerRight= footerRight[0]
+    let menus = await fetchAPI('/menus')
     
-    appProps = {...appProps.pageProps, menus: {footerLeft,footerRight } }
+    appProps = {...appProps.pageProps, menus: {footerLeft: menus.footerLeft ,footerRight: menus.footerRight } }
     
     return { pageProps: appProps }
   }

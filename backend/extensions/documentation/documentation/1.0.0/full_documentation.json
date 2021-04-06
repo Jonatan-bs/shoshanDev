@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "04/01/2021 3:56:03 PM"
+    "x-generation-date": "04/06/2021 4:43:27 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -355,16 +355,16 @@
     "/menus": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find all the menus's records",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve menus document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Menu"
+                    "$ref": "#/components/schemas/Menus"
                   }
                 }
               }
@@ -403,7 +403,7 @@
         },
         "summary": "",
         "tags": [
-          "Menu"
+          "Menus"
         ],
         "parameters": [
           {
@@ -544,198 +544,16 @@
           }
         ]
       },
-      "post": {
-        "deprecated": false,
-        "description": "Create a new record",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Menu"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Menu"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewMenu"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/menus/count": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "count": {
-                      "type": "integer"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Menu"
-        ],
-        "parameters": []
-      }
-    },
-    "/menus/{id}": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Menu"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Menu"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
-      },
       "put": {
         "deprecated": false,
-        "description": "Update a record",
+        "description": "Update a single menus record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve menus document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Menu"
+                  "$ref": "#/components/schemas/Menus"
                 }
               }
             }
@@ -773,7 +591,7 @@
         },
         "summary": "",
         "tags": [
-          "Menu"
+          "Menus"
         ],
         "requestBody": {
           "description": "",
@@ -781,30 +599,19 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewMenu"
+                "$ref": "#/components/schemas/NewMenus"
               }
             }
           }
         },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
+        "parameters": []
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a record",
+        "description": "Delete a single menus record",
         "responses": {
           "200": {
-            "description": "deletes a single record based on the ID supplied",
+            "description": "deletes a single menus based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -847,20 +654,9 @@
         },
         "summary": "",
         "tags": [
-          "Menu"
+          "Menus"
         ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
+        "parameters": []
       }
     },
     "/pages": {
@@ -4516,7 +4312,7 @@
           }
         }
       },
-      "Menu": {
+      "Menus": {
         "required": [
           "id"
         ],
@@ -4524,27 +4320,19 @@
           "id": {
             "type": "string"
           },
-          "slug": {
-            "type": "string"
-          },
-          "menuLink": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "url": {
-                  "type": "string"
-                },
-                "page": {
+          "footerLeft": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "menuItem": {
+                "type": "array",
+                "items": {
+                  "type": "object",
                   "required": [
                     "id"
                   ],
@@ -4552,51 +4340,115 @@
                     "id": {
                       "type": "string"
                     },
-                    "slug": {
+                    "title": {
                       "type": "string"
                     },
-                    "content": {
-                      "type": "dynamiczone"
-                    },
-                    "created_by": {
+                    "url": {
                       "type": "string"
                     },
-                    "updated_by": {
-                      "type": "string"
+                    "page": {
+                      "required": [
+                        "id"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "slug": {
+                          "type": "string"
+                        },
+                        "content": {
+                          "type": "dynamiczone"
+                        },
+                        "created_by": {
+                          "type": "string"
+                        },
+                        "updated_by": {
+                          "type": "string"
+                        }
+                      }
                     }
                   }
                 }
+              },
+              "title": {
+                "type": "string"
               }
             }
           },
-          "title": {
-            "type": "string"
+          "footerRight": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "menuItem": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "id"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "page": {
+                      "required": [
+                        "id"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "slug": {
+                          "type": "string"
+                        },
+                        "content": {
+                          "type": "dynamiczone"
+                        },
+                        "created_by": {
+                          "type": "string"
+                        },
+                        "updated_by": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "title": {
+                "type": "string"
+              }
+            }
           }
         }
       },
-      "NewMenu": {
+      "NewMenus": {
         "properties": {
-          "slug": {
-            "type": "string"
-          },
-          "menuLink": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "url": {
-                  "type": "string"
-                },
-                "page": {
+          "footerLeft": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "menuItem": {
+                "type": "array",
+                "items": {
+                  "type": "object",
                   "required": [
                     "id"
                   ],
@@ -4604,25 +4456,97 @@
                     "id": {
                       "type": "string"
                     },
-                    "slug": {
+                    "title": {
                       "type": "string"
                     },
-                    "content": {
-                      "type": "dynamiczone"
-                    },
-                    "created_by": {
+                    "url": {
                       "type": "string"
                     },
-                    "updated_by": {
-                      "type": "string"
+                    "page": {
+                      "required": [
+                        "id"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "slug": {
+                          "type": "string"
+                        },
+                        "content": {
+                          "type": "dynamiczone"
+                        },
+                        "created_by": {
+                          "type": "string"
+                        },
+                        "updated_by": {
+                          "type": "string"
+                        }
+                      }
                     }
                   }
                 }
+              },
+              "title": {
+                "type": "string"
               }
             }
           },
-          "title": {
-            "type": "string"
+          "footerRight": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "menuItem": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "id"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "page": {
+                      "required": [
+                        "id"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "slug": {
+                          "type": "string"
+                        },
+                        "content": {
+                          "type": "dynamiczone"
+                        },
+                        "created_by": {
+                          "type": "string"
+                        },
+                        "updated_by": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "title": {
+                "type": "string"
+              }
+            }
           },
           "created_by": {
             "type": "string"
@@ -6974,7 +6898,7 @@
       "name": "Frontpage"
     },
     {
-      "name": "Menu"
+      "name": "Menus"
     },
     {
       "name": "Page"
