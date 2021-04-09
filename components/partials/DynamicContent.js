@@ -5,6 +5,7 @@ import {Container, AspectRatio, Image, Heading, Text, Link, Center} from "./../p
 import HeaderLogo from "./../partials/HeaderLogo"
 import Banner from "./../page/Banner"
 
+
 const SmallBoxes = styled.div`
     width: 100%;
     display: flex;
@@ -74,6 +75,14 @@ const DynamicContent = ({content}) => (
                 break
             case("page-content.heading"):
                 return <Container key={i} pb="1"><Heading align={component.align} as={component.tag || "h2"} size={component.size || "md"}>{component.heading}</Heading></Container>
+                break
+            case("page-content.text"):
+                return (
+                    <Container key={i} pb="1">
+                        {console.log(component.content)}
+                       
+                    </Container>
+                )
                 break
             case("page-content.image-and-text"):
                 return (

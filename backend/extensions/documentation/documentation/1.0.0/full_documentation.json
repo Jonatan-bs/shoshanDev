@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "04/06/2021 4:43:27 AM"
+    "x-generation-date": "04/09/2021 2:31:58 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -4580,7 +4580,9 @@
                         "page-content.banner",
                         "page-content.heading",
                         "page-content.image",
-                        "page-content.image-and-text"
+                        "page-content.image-and-text",
+                        "page-content.text",
+                        "page-content.contact-box"
                       ]
                     },
                     "id": {
@@ -4687,7 +4689,9 @@
                         "page-content.banner",
                         "page-content.heading",
                         "page-content.image",
-                        "page-content.image-and-text"
+                        "page-content.image-and-text",
+                        "page-content.text",
+                        "page-content.contact-box"
                       ]
                     },
                     "id": {
@@ -4774,7 +4778,9 @@
                         "page-content.banner",
                         "page-content.heading",
                         "page-content.image",
-                        "page-content.image-and-text"
+                        "page-content.image-and-text",
+                        "page-content.text",
+                        "page-content.contact-box"
                       ]
                     },
                     "id": {
@@ -4825,7 +4831,9 @@
                         "page-content.banner",
                         "page-content.heading",
                         "page-content.image",
-                        "page-content.image-and-text"
+                        "page-content.image-and-text",
+                        "page-content.text",
+                        "page-content.contact-box"
                       ]
                     },
                     "id": {
@@ -4921,7 +4929,9 @@
                         "page-content.banner",
                         "page-content.heading",
                         "page-content.image",
-                        "page-content.image-and-text"
+                        "page-content.image-and-text",
+                        "page-content.text",
+                        "page-content.contact-box"
                       ]
                     },
                     "id": {
@@ -4999,6 +5009,126 @@
                     },
                     "imageRight": {
                       "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "page-content.small-boxes",
+                        "page-content.banner",
+                        "page-content.heading",
+                        "page-content.image",
+                        "page-content.image-and-text",
+                        "page-content.text",
+                        "page-content.contact-box"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "page-content.small-boxes",
+                        "page-content.banner",
+                        "page-content.heading",
+                        "page-content.image",
+                        "page-content.image-and-text",
+                        "page-content.text",
+                        "page-content.contact-box"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "subtitle": {
+                      "type": "string"
+                    },
+                    "image": {
+                      "required": [
+                        "id",
+                        "name",
+                        "hash",
+                        "mime",
+                        "size",
+                        "url",
+                        "provider"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "alternativeText": {
+                          "type": "string"
+                        },
+                        "caption": {
+                          "type": "string"
+                        },
+                        "width": {
+                          "type": "integer"
+                        },
+                        "height": {
+                          "type": "integer"
+                        },
+                        "formats": {
+                          "type": "object"
+                        },
+                        "hash": {
+                          "type": "string"
+                        },
+                        "ext": {
+                          "type": "string"
+                        },
+                        "mime": {
+                          "type": "string"
+                        },
+                        "size": {
+                          "type": "number"
+                        },
+                        "url": {
+                          "type": "string"
+                        },
+                        "previewUrl": {
+                          "type": "string"
+                        },
+                        "provider": {
+                          "type": "string"
+                        },
+                        "provider_metadata": {
+                          "type": "object"
+                        },
+                        "related": {
+                          "type": "string"
+                        },
+                        "created_by": {
+                          "type": "string"
+                        },
+                        "updated_by": {
+                          "type": "string"
+                        }
+                      }
                     }
                   },
                   "required": [
@@ -5028,7 +5158,9 @@
                         "page-content.banner",
                         "page-content.heading",
                         "page-content.image",
-                        "page-content.image-and-text"
+                        "page-content.image-and-text",
+                        "page-content.text",
+                        "page-content.contact-box"
                       ]
                     },
                     "id": {
@@ -5135,7 +5267,9 @@
                         "page-content.banner",
                         "page-content.heading",
                         "page-content.image",
-                        "page-content.image-and-text"
+                        "page-content.image-and-text",
+                        "page-content.text",
+                        "page-content.contact-box"
                       ]
                     },
                     "id": {
@@ -5222,7 +5356,9 @@
                         "page-content.banner",
                         "page-content.heading",
                         "page-content.image",
-                        "page-content.image-and-text"
+                        "page-content.image-and-text",
+                        "page-content.text",
+                        "page-content.contact-box"
                       ]
                     },
                     "id": {
@@ -5273,7 +5409,9 @@
                         "page-content.banner",
                         "page-content.heading",
                         "page-content.image",
-                        "page-content.image-and-text"
+                        "page-content.image-and-text",
+                        "page-content.text",
+                        "page-content.contact-box"
                       ]
                     },
                     "id": {
@@ -5369,7 +5507,9 @@
                         "page-content.banner",
                         "page-content.heading",
                         "page-content.image",
-                        "page-content.image-and-text"
+                        "page-content.image-and-text",
+                        "page-content.text",
+                        "page-content.contact-box"
                       ]
                     },
                     "id": {
@@ -5447,6 +5587,126 @@
                     },
                     "imageRight": {
                       "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "page-content.small-boxes",
+                        "page-content.banner",
+                        "page-content.heading",
+                        "page-content.image",
+                        "page-content.image-and-text",
+                        "page-content.text",
+                        "page-content.contact-box"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "page-content.small-boxes",
+                        "page-content.banner",
+                        "page-content.heading",
+                        "page-content.image",
+                        "page-content.image-and-text",
+                        "page-content.text",
+                        "page-content.contact-box"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "subtitle": {
+                      "type": "string"
+                    },
+                    "image": {
+                      "required": [
+                        "id",
+                        "name",
+                        "hash",
+                        "mime",
+                        "size",
+                        "url",
+                        "provider"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "alternativeText": {
+                          "type": "string"
+                        },
+                        "caption": {
+                          "type": "string"
+                        },
+                        "width": {
+                          "type": "integer"
+                        },
+                        "height": {
+                          "type": "integer"
+                        },
+                        "formats": {
+                          "type": "object"
+                        },
+                        "hash": {
+                          "type": "string"
+                        },
+                        "ext": {
+                          "type": "string"
+                        },
+                        "mime": {
+                          "type": "string"
+                        },
+                        "size": {
+                          "type": "number"
+                        },
+                        "url": {
+                          "type": "string"
+                        },
+                        "previewUrl": {
+                          "type": "string"
+                        },
+                        "provider": {
+                          "type": "string"
+                        },
+                        "provider_metadata": {
+                          "type": "object"
+                        },
+                        "related": {
+                          "type": "string"
+                        },
+                        "created_by": {
+                          "type": "string"
+                        },
+                        "updated_by": {
+                          "type": "string"
+                        }
+                      }
                     }
                   },
                   "required": [

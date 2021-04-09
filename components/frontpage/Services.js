@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {AspectRatio, Container, Heading, Text, Image} from "./../partials"
+import { getStrapiMedia, fetchAPI } from "../../lib/api";
 
 const ServiceCard = styled.article`
     width: 200px;
@@ -56,7 +57,7 @@ const Services = ({services}) => (
             <ServiceGrid>
                 {services && services.map((service, i) => (
                     <ServiceCard key={i} data-aos="fade-up"> 
-                        <AspectRatioMod src="/images/service_icons/1.svg" pct="100" width="100%" maxWidth="100px" />
+                        <AspectRatioMod src={getStrapiMedia(service.symbol)} pct="100" width="100%" maxWidth="100px" />
                         <Heading center as="h4" py={.2} size="sm" caps>{service.title}</Heading>
                         <Text>
                             {service.elements.map( ({entry}, i)=> <span key={i}>{entry} <br/> </span>)}

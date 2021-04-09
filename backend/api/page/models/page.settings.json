@@ -21,7 +21,9 @@
         "page-content.banner",
         "page-content.heading",
         "page-content.image",
-        "page-content.image-and-text"
+        "page-content.image-and-text",
+        "page-content.text",
+        "page-content.contact-box"
       ]
     }
   }
