@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import marked from "marked";
 import {motion, animatePresence} from "framer-motion"
 import { getStrapiMedia, fetchAPI } from "./../../lib/api";
 import {Container, AspectRatio, Image, Heading, Text, Link, Center} from "./../partials"
@@ -78,25 +79,24 @@ const DynamicContent = ({content}) => (
                 break
             case("page-content.text"):
                 return (
-                    <Container key={i} pb="1">
-                        {console.log(component.content)}
-                       
+                    <Container key={i} pb="1" maxWidth="md">
+                        <div dangerouslySetInnerHTML={ {__html: marked(component.content)}}></div>
                     </Container>
                 )
                 break
             case("page-content.image-and-text"):
                 return (
                     <Container key={i} pb="2">
-                        <ImageAndText>
+                        <ImageAndText> 
                         {component.imageRight?
                                 (<>
-                                    <Text>{component.text}</Text>
+                                    <Text dangerouslySetInnerHTML={ {__html: marked(component.text)}}></Text>
                                     <img src={getStrapiMedia(component.image)}/>
                                 </>)
                                 :
                                 (<>
                                     <img src={getStrapiMedia(component.image)}/>
-                                    <Text>{component.text}</Text>
+                                    <Text dangerouslySetInnerHTML={ {__html: marked(component.text)}}></Text>
                                 </>)
                             }
                         </ImageAndText>
@@ -105,7 +105,7 @@ const DynamicContent = ({content}) => (
                 break
 
         }  
-    })
+    }) 
 )
 
-export default DynamicContent;
+export default DynamicContent; 

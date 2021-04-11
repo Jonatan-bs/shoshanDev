@@ -84,7 +84,7 @@ export const Container = styled.div`
     padding-top: ${ ({pt, py}) => pt? pt*50 + "px" : py ? py*50 + "px" : "0"};
     padding-left: ${ ({px}) => px? px*50 + "px" : "50px"};
     padding-right: ${ ({px}) => px? px*50 + "px" : "50px"};
-    max-width:1800px;
+    max-width: ${ ({maxWidth}) => maxWidth==="md"? "1200" + "px" : "1800px"};
     width:100%;
     margin: 0 auto;
     box-sizing: border-box
