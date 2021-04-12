@@ -27,9 +27,18 @@ const Project = ({project}) => (
 
 export default Project;
 
-Project.getInitialProps = async (ctx) => {
-    const {slug} = ctx.query
+export async function getStaticProps({params}){
+    const {slug} = params
     let project = await fetchAPI('/projects?slug=' + slug)
     project = project[0]
-    return { project }
+    return {props: project}    
 }
+
+export async function getStaticPaths() {
+    let projects = await fetchAPI('/projects')
+
+    return {
+      paths: projects?.map((project) => `/${project.slug}`) || [],
+      fallback: true,
+    }
+  }

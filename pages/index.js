@@ -23,10 +23,10 @@ const Index = ({projects, frontpage}) => (
 
 export default Index;
 
-Index.getInitialProps = async (ctx) => {
-    // const appProps = await App.getInitialProps(ctx)
+
+export async function getStaticProps({params}){
     const projects = await fetchAPI('/projects');
     const frontpage = await fetchAPI('/frontpage');
-    
-    return { projects, frontpage }
+
+    return {props: {projects, frontpage}}    
 }

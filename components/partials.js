@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import NextLink from "next/link";
+import marked from "marked";
 
 
 //
@@ -123,6 +124,42 @@ export const Text = styled.p`
     line-height: ${ ({lh}) => lh };
 `
 
+//
+//  Markdown
+//
+const MarkdownStyled = styled.div`
+    >p{
+        padding-bottom: ${ ({pb, py}) => pb? pb*50 + "px" : py ? py*50 + "px" : "0"};
+        padding-top: ${ ({pt, py}) => pt? pt*50 + "px" : py ? py*50 + "px" : "0"};
+        padding-left: ${ ({px, pl}) => px? px*50 + "px" : pl? pl*50 + "px" : "0"};
+        padding-right: ${ ({px, pr}) => px ? px*50 + "px" : pr? pr*50 + "px" : "0"};
+        font-size: ${({size}) => size==="xl"? "4rem" : size==="lg"? "3rem" : size==="md"? "2rem"  : size==="sm"? "1rem" : size==="inherit"? "inherit" : "1.4rem" };
+        ${ ({bold}) => bold && "font-weight: bold;" }
+        color: ${ ({color,theme}) => theme.colors[color] || "inherit"};
+        ${ ({caps}) => caps && "text-transform: uppercase;" }
+        ${ ({width}) => width && "width:" + width + ";" }
+        ${ ({center}) => center && "text-align: center;" }
+        line-height: ${ ({lh}) => lh };
+    }
+`
+
+export const Markdown = ({children, py, px, pt, pb, pr, pl, size, bold, color, caps, width, center, lh}) => (
+    <MarkdownStyled 
+        py={py}
+        px={px}
+        pt={pt}
+        pb={pb}
+        pr={pr}
+        pl={pl}
+        size={size}
+        bold={bold}
+        color={color}
+        caps={caps}
+        width={width}
+        center={center}
+        lh={lh}
+        dangerouslySetInnerHTML={ {__html: marked(children)}}/>
+)
 
 //
 //  Grid

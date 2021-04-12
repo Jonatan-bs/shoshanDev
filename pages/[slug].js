@@ -6,6 +6,9 @@ import {Container, AspectRatio, Image, Heading, Text, Link, Center} from "./../c
 import HeaderLogo from "./../components/partials/HeaderLogo"
 import DynamicContent from "./../components/partials/DynamicContent"
 import Banner from "./../components/page/Banner"
+import {useRouter} from 'next/router'
+import DefaultErrorPage from 'next/error'
+import Head from 'next/head'
 
 const SmallBoxes = styled.div`
     width: 100%;
@@ -45,17 +48,56 @@ const ImageAndText = styled.div`
     }
 `
 
-const Page = ({page}) => (
+const Page = ({page}) => {
+
+    // console.log("-__----------_______---")
+    // console.log(page.content[1].text? "ja" : "no")
+    
+    const router = useRouter()
+
+    if(router.isFallback) {
+        return <h1>Loading...</h1>
+    }
+
+    // This includes setting the noindex header because static files always return a status 200 but the rendered not found page page should obviously not be indexed
+    if( !page || page.error) {
+        return (
+        <>
+            <Head>
+                <meta name="robots" content="noindex"/>
+            </Head>
+            <DefaultErrorPage statusCode={404} />
+        </>
+        )
+    }
+    
+    return (
         <>  
                 <HeaderLogo/>
                 <DynamicContent content={page.content || {}}/>
-        </>
-)
+        </> 
+    )
+}
 
 export default Page;
 
-Page.getInitialProps = async (ctx) => {
-    const {slug} = ctx.query
+export async function getStaticProps({params}){
+    const {slug} = params
     let page = await fetchAPI('/pages?slug=' + slug)
-    return page.error? {page: {}} : {page: page[0]}     
+    
+    page = page.error || page[0]
+    return {
+        props: {
+            page
+        }
+    }    
 }
+
+export async function getStaticPaths() {
+    let pages = await fetchAPI('/pages')
+
+    return {
+      paths: pages?.map((page) => `/${page.slug}`) || [],
+      fallback: true,
+    }
+  }

@@ -44,7 +44,6 @@ function MyApp({ Component, pageProps, router }) {
     // calls page's `getInitialProps` and fills `appProps.pageProps`
     let appProps = await App.getInitialProps(appContext);
     let menus = await fetchAPI('/menus')
-    
     appProps = {...appProps.pageProps, menus: {footerLeft: menus.footerLeft ,footerRight: menus.footerRight } }
     
     return { pageProps: appProps }

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import marked from "marked";
 import {motion, animatePresence} from "framer-motion"
 import { getStrapiMedia, fetchAPI } from "./../../lib/api";
-import {Container, AspectRatio, Image, Heading, Text, Link, Center} from "./../partials"
+import {Container, Markdown, AspectRatio, Image, Heading, Text, Link, Center} from "./../partials"
 import HeaderLogo from "./../partials/HeaderLogo"
 import Banner from "./../page/Banner"
 
@@ -43,9 +43,14 @@ const ImageAndText = styled.div`
         width: 50%;
         padding-left: 25px;
     }
+    img{
+        align-self: baseline;
+    }
 `
 
-const DynamicContent = ({content}) => (
+const DynamicContent = ({content}) => {
+    
+    return (
       content.map( (component,i) => {
         switch(component.__component){
             case("page-content.small-boxes"):
@@ -80,7 +85,7 @@ const DynamicContent = ({content}) => (
             case("page-content.text"):
                 return (
                     <Container key={i} pb="1" maxWidth="md">
-                        <div dangerouslySetInnerHTML={ {__html: marked(component.content)}}></div>
+                        <div dangerouslySetInnerHTML={ {__html: component.content}}></div>
                     </Container>
                 )
                 break
@@ -90,13 +95,13 @@ const DynamicContent = ({content}) => (
                         <ImageAndText> 
                         {component.imageRight?
                                 (<>
-                                    <Text dangerouslySetInnerHTML={ {__html: marked(component.text)}}></Text>
+                                    <Markdown>{component.text}</Markdown>
                                     <img src={getStrapiMedia(component.image)}/>
                                 </>)
                                 :
                                 (<>
                                     <img src={getStrapiMedia(component.image)}/>
-                                    <Text dangerouslySetInnerHTML={ {__html: marked(component.text)}}></Text>
+                                    <Markdown>{component.text}</Markdown>
                                 </>)
                             }
                         </ImageAndText>
@@ -106,6 +111,6 @@ const DynamicContent = ({content}) => (
 
         }  
     }) 
-)
+)}
 
 export default DynamicContent; 
