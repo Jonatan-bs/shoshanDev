@@ -3,7 +3,8 @@ import {Container, Text, Grid, Span, Center, Heading} from "./../../partials"
 
 const Info = styled.div`
     padding: 50px;
-    background: ${({theme}) => theme.colors.light2}
+    background: ${({theme}) => theme.colors.light2};
+    align-self: baseline;
 `
 
 const InfoBox = ({entries}) => (
