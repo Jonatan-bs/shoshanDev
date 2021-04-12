@@ -49,9 +49,6 @@ const ImageAndText = styled.div`
 `
 
 const Page = ({page}) => {
-
-    // console.log("-__----------_______---")
-    // console.log(page.content[1].text? "ja" : "no")
     
     const router = useRouter()
 

@@ -7,8 +7,31 @@ import InfoBox from './../../components/project/partials/InfoBox';
 import {motion, animatePresence} from "framer-motion"
 import { getStrapiMedia, fetchAPI } from "./../../lib/api";
 import DynamicContent from "./../../components/partials/DynamicContent"
+import {useRouter} from 'next/router'
+import DefaultErrorPage from 'next/error'
+import Head from 'next/head'
 
-const Project = ({project}) => (
+const Project = ({project}) => {
+    
+    const router = useRouter()
+    if(router.isFallback) {
+        return <h1>Loading...</h1>
+    }
+
+    // This includes setting the noindex header because static files always return a status 200 but the rendered not found page page should obviously not be indexed
+    if( !project || project.error) {
+        return (
+        <>
+            <Head>
+                <meta name="robots" content="noindex"/>
+            </Head>
+            <DefaultErrorPage statusCode={404} />
+        </>
+        )
+    }
+    
+
+    return (
         <>     
             <Header src={getStrapiMedia(project.headerImage)} bgColor={project.bgColor || "#333"} title={project.title} subtitle={project.subtitle}/>
             {/* <Content project={project}/> */}
@@ -23,7 +46,8 @@ const Project = ({project}) => (
             </Container>
             <DynamicContent content={project.content}/>   
         </>
-)
+    )
+}
 
 export default Project;
 
@@ -31,14 +55,13 @@ export async function getStaticProps({params}){
     const {slug} = params
     let project = await fetchAPI('/projects?slug=' + slug)
     project = project[0]
-    return {props: project}    
+    return {props: {project}}    
 }
 
 export async function getStaticPaths() {
     let projects = await fetchAPI('/projects')
-
     return {
-      paths: projects?.map((project) => `/${project.slug}`) || [],
+      paths: projects?.map((project) => `/project/${project.slug}` || []),
       fallback: true,
     }
   }
