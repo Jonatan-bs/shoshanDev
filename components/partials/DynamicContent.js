@@ -84,8 +84,8 @@ const DynamicContent = ({content}) => {
                 break
             case("page-content.text"):
                 return (
-                    <Container key={i} pb="1" maxWidth="md">
-                        <div dangerouslySetInnerHTML={ {__html: component.content}}></div>
+                    <Container key={i} pb="1">
+                        <Markdown>{component.content}</Markdown>
                     </Container>
                 )
                 break

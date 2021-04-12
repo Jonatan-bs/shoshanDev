@@ -37,7 +37,7 @@ const Project = ({project}) => {
             {/* <Content project={project}/> */}
             <Container py="3"> 
                 <Grid cols={["65%","35%"]}>
-                    <Text size="md" pr="1" lh="1.6" data-aos="fade-right">
+                    <Text pr="1" lh="1.6" data-aos="fade-right">
                         {project.text}
                     </Text>
                     
