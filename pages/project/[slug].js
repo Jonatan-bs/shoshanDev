@@ -54,7 +54,8 @@ export default Project;
 export async function getStaticProps({params}){
     const {slug} = params
     let project = await fetchAPI('/projects?slug=' + slug)
-    project = project[0]
+    
+    project = project.length? project.error || project[0] : null
     return {props: {project}}    
 }
 
@@ -62,6 +63,6 @@ export async function getStaticPaths() {
     let projects = await fetchAPI('/projects')
     return {
       paths: projects?.map((project) => `/project/${project.slug}` || []),
-      fallback: true,
+      fallback: false,
     }
   }

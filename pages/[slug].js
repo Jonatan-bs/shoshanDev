@@ -82,7 +82,8 @@ export async function getStaticProps({params}){
     const {slug} = params
     let page = await fetchAPI('/pages?slug=' + slug)
     
-    page = page.error || page[0]
+    page = page.length? page.error || page[0] : null
+
     return {
         props: {
             page
@@ -95,6 +96,6 @@ export async function getStaticPaths() {
 
     return {
       paths: pages?.map((page) => `/${page.slug}`) || [],
-      fallback: true,
+      fallback: false,
     }
-  }
+}
