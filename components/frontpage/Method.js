@@ -19,7 +19,7 @@ const Method = () => (
                     <Heading as="h3" size="md" caps>DESIGNPROCES</Heading>
                     <Text>
                         Læs om hvordan jeg finder frem til
-                        det perfekte design til dit projekt. 
+                        det rette design til dit projekt. 
                     </Text>
                  </Link>
             </MethodDiv>
@@ -28,8 +28,8 @@ const Method = () => (
                     <Heading as="h3" size="md" caps>Teknologier</Heading>
                     <Text>
                         Ethvert projekt kræver et godt
-                        fundament. <br/>
-                        Se hvilke teknologier jeg arbejder med. 
+                        fundament.
+                        Se hvilke teknologier jeg har erfaring med. 
                     </Text>
                 </Link>
             </MethodDiv>
