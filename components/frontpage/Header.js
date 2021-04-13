@@ -31,8 +31,10 @@ const LogoWrap = styled.h1`
 
 
 const Rose = styled(AspectRatio)`
+    &>div{
     background-blend-mode: multiply;
     background-color: ${ ({theme}) => theme.colors.primary };
+    }
 `
 
 

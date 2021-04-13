@@ -94,24 +94,33 @@ const ApectWrap = styled.div.attrs( ({lazy,src}) => lazy && ({ "data-src" : src}
     ${ ({circle}) => circle && "border-radius: 100%;"}
     max-width: ${ ({maxWidth}) => maxWidth || "inherit" };
     width: ${ ({width}) => width || "auto" };
-    ${ ({src, lazy}) => !lazy && "background-image: url(" + src + ")" };
-    ${ ({bgColor}) => bgColor && "background-color:" + bgColor };
-    background-size: ${ ({size}) => size || "cover" };
-    background-position: center;
-    background-repeat: no-repeat;
     position: relative;
+    overflow: hidden;
+    ${
+        ({hover}) => hover?`
+            &:hover .hoverTarget{
+                transform: scale(1.07);
+            }; 
+        ` : "" 
+    }
     
 `
 
 const Aspect = styled.div`
     width: 100%;
     padding-bottom: ${ ({pct}) => pct }%;
+    ${ ({src, lazy}) => !lazy && "background-image: url(" + src + ")" };
+    ${ ({bgColor}) => bgColor && "background-color:" + bgColor };
+    background-size: ${ ({size}) => size || "cover" };
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all .5s;
 `
 
 
-export const AspectRatio = ({size, lazy, src, pct, width, maxWidth, className, circle, bgColor, children}) => (
-    <ApectWrap width={width} size={size} maxWidth={maxWidth} circle={circle} src={src} className={className} lazy={lazy} bgColor={bgColor}>
-        <Aspect pct={pct}/>
+export const AspectRatio = ({hover, size, lazy, src, pct, width, maxWidth, className, circle, bgColor, children}) => (
+    <ApectWrap width={width} size={size} maxWidth={maxWidth} hover={hover} circle={circle} className={className} lazy={lazy} bgColor={bgColor}>
+        <Aspect className="hoverTarget" pct={pct} src={src}/>
         {children}
     </ApectWrap>
 )

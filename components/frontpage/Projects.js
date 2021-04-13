@@ -36,36 +36,35 @@ const Title = styled(Heading)`
 `
 
 const AspectRatioMod = styled(AspectRatio)`
-    &:after {
-        content: "";
-        border: 1px solid #fff;
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        right: 20px;
-        bottom: 20px;
-        transition: all .2s;
-        opacity:0;
-    }
-    &:hover:after {
-        content: "";
-        border: 1px solid #fff;
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        right: 20px;
-        bottom: 20px;
-        opacity:1;
-    }
+    // &:after {
+    //     content: "";
+    //     border: 1px solid #fff;
+    //     position: absolute;
+    //     top: 20px;
+    //     left: 20px;
+    //     right: 20px;
+    //     bottom: 20px;
+    //     transition: all .2s;
+    //     opacity:0;
+    // }
+    // &:hover:after {
+    //     content: "";
+    //     border: 1px solid #fff;
+    //     position: absolute;
+    //     top: 20px;
+    //     left: 20px;
+    //     right: 20px;
+    //     bottom: 20px;
+    //     opacity:1;
+    // }
 
-    &:hover .textWrap{
-        bottom: 20px;
-        left: 20px;
-        // transform: translateY(50%);
-    }
-    & .textWrap{
-        transition: all .2s;
-    }
+    // &:hover .textWrap{
+    //     bottom: 20px;
+    //     left: 20px;
+    // }
+    // & .textWrap{
+    //     transition: all .2s;
+    // }
 `
 
 
@@ -73,7 +72,7 @@ const Projects = ({projects}) => (
     <ContainerMod pb="3" className="gap" data-aos="fade-up">
         {projects.map((project, i) => (
             <Link key={i}  width="calc(50% - 6px)" href={"/project/" + project.slug}>
-                        <AspectRatioMod gradient size="cover" bgColor={project.bgColor || "#333"} src={getStrapiMedia(project.thumbnail)} pct="80">
+                        <AspectRatioMod hover gradient size="cover" bgColor={project.bgColor || "#333"} src={getStrapiMedia(project.thumbnail)} pct="80">
                             <TextWrap className="textWrap">
                                 <Title as="p" size="lg">{project.title}</Title>
                                 <ul>
