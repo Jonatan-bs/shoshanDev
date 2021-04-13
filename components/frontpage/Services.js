@@ -59,7 +59,7 @@ const Services = ({services}) => (
                     <ServiceCard key={i} data-aos="fade-up"> 
                         <AspectRatioMod src={getStrapiMedia(service.symbol)} pct="100" width="100%" maxWidth="100px" />
                         <Heading center as="h4" py={.2} size="sm" caps>{service.title}</Heading>
-                        <Text>
+                        <Text size="sm">
                             {service.elements.map( ({entry}, i)=> <span key={i}>{entry} <br/> </span>)}
                         </Text>
                         <Price>{service.price}</Price>

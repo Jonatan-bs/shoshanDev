@@ -115,7 +115,7 @@ export const Text = styled.p`
     padding-top: ${ ({pt, py}) => pt? pt*50 + "px" : py ? py*50 + "px" : "0"};
     padding-left: ${ ({px, pl}) => px? px*50 + "px" : pl? pl*50 + "px" : "0"};
     padding-right: ${ ({px, pr}) => px ? px*50 + "px" : pr? pr*50 + "px" : "0"};
-    font-size: ${({size}) => size==="xl"? "4rem" : size==="lg"? "3rem" : size==="md"? "2rem"  : size==="sm"? "1rem" : size==="inherit"? "inherit" : "1.8rem" };
+    font-size: ${({size}) => size==="xl"? "4rem" : size==="lg"? "3rem" : size==="md"? "2rem"  : size==="xs"? "1rem" : size==="sm"? "1.4rem" : size==="inherit"? "inherit" : "1.8rem" };
     ${ ({bold}) => bold && "font-weight: bold;" }
     color: ${ ({color,theme}) => theme.colors[color] || "inherit"};
     ${ ({caps}) => caps && "text-transform: uppercase;" }
@@ -134,13 +134,14 @@ const MarkdownStyled = styled.div`
         padding-top: ${ ({pt, py}) => pt? pt*50 + "px" : py ? py*50 + "px" : "0"};
         padding-left: ${ ({px, pl}) => px? px*50 + "px" : pl? pl*50 + "px" : "0"};
         padding-right: ${ ({px, pr}) => px ? px*50 + "px" : pr? pr*50 + "px" : "0"};
-        font-size: ${({size}) => size==="xl"? "4rem" : size==="lg"? "3rem" : size==="md"? "2rem"  : size==="sm"? "1rem" : size==="inherit"? "inherit" : "1.4rem" };
+        font-size: ${({size}) => size==="xl"? "4rem" : size==="lg"? "3rem" : size==="md"? "2rem"  : size==="sm"? "1rem" : size==="inherit"? "inherit" : "1.8rem" };
         ${ ({bold}) => bold && "font-weight: bold;" }
         color: ${ ({color,theme}) => theme.colors[color] || "inherit"};
         ${ ({caps}) => caps && "text-transform: uppercase;" }
         ${ ({width}) => width && "width:" + width + ";" }
         ${ ({center}) => center && "text-align: center;" }
         line-height: ${ ({lh}) => lh };
+        letter-spacing: 1px;
     }
 `
 

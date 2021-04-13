@@ -43,11 +43,11 @@ const Footer = ({menus}) => (
                 
                 <Left>
                     <Image src="/images/logo-light.svg" maxWidth="400px" mb="1" />
-                    <Text>
+                    <Text color="light">
                         Søndermarksvej 114 stmf.<br/>
                         7000 Fredericia <br/><br/>
 
-                        CVR.: 00000000<br/>
+                        CVR.: 41227966<br/>
                         <Link href="#" name="kontakt@shoshandevelopment.dk"/> 
                     </Text>
                 </Left>
@@ -75,7 +75,7 @@ const Footer = ({menus}) => (
         <div style={{"backgroundColor":"rgb(17 17 17)"}}>
             <ContainerMod2>
                 <br/>
-                <Text size="sm" center width="100%">
+                <Text size="xs" center width="100%">
                     Icons made by: 
                     <Link size="inherit" href="https://www.flaticon.com/authors/iconixar" title="iconixar" name="iconixar"/>  from <Link size="inherit" href="https://www.flaticon.com/" name="www.flaticon.com" title="Flaticon"/> | 
                     <Link size="inherit" href="https://www.freepik.com" name="Freepik" title="Freepik"/>  from <Link size="inherit" href="https://www.flaticon.com/" name="www.flaticon.com" title="Flaticon"/>| 
