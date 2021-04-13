@@ -7,11 +7,27 @@ import marked from "marked";
 
 const templates = {
     padding: ({pb,py,pt,pl,pr,px}) =>{ 
-        return`
-                padding-bottom: ${ pb? pb*50 + "px" : py ? py*50 + "px" : "0"};
-                padding-top: ${ pt? pt*50 + "px" : py ? py*50 + "px" : "0"};
-                padding-left: ${ px? px*50 + "px" : pl? pl*50 + "px" : "0"};
-                padding-right: ${ px? px*50 + "px" : pr? pr*50 + "px" : "0"};
+        return` 
+                ${ 
+                    pb? "padding-bottom:" + pb*50 + "px;" : 
+                    py? "padding-bottom:" + py*50 + "px;" :
+                    ""
+                }
+                ${ 
+                    pt? "padding-top:" + pt*50 + "px;" : 
+                    py? "padding-top:" + py*50 + "px;" :
+                    ""
+                }
+                ${ 
+                    pl? "padding-left:" + pl*50 + "px;" : 
+                    px? "padding-left:" + px*50 + "px;" :
+                    ""
+                }
+                ${ 
+                    pr? "padding-right:" + pr*50 + "px;" : 
+                    px? "padding-right:" + px*50 + "px;" :
+                    ""
+                }
         `
     },
     textStyle: ({size,bold,color,theme,caps,center, lh, italic, width}) =>{ 
@@ -107,9 +123,10 @@ export const Section = styled.section`
 //  Container
 //
 export const Container = styled.div`
+    padding-left: 20px;
+    padding-right: 20px;
     ${(props)=>templates.padding(props)}
     max-width: ${ ({maxWidth}) => maxWidth==="lg"? "1800" + "px" : "1500px"};
-    width:100%;
     margin: 0 auto;
     box-sizing: border-box
 `
