@@ -12,7 +12,7 @@ const Container = styled.header`
     background: ${({bgColor}) => (bgColor || "#333")};
     flex-wrap:wrap;
     min-height: 600px;
-    padding-bottom: 50px;
+    // padding-bottom: 50px;
 `;
 
 
