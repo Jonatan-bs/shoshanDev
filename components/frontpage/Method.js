@@ -15,8 +15,8 @@ const Method = () => (
     <section>
         <ContainerMod pb={3}>
             <MethodDiv data-aos="fade-right">
-                <Link color="dark2" href="/designproces">
-                    <Heading as="h3" size="md" caps>DESIGNPROCES</Heading>
+                <Link color="dark2" hover="underline" href="/designproces">
+                    <Heading className="hoverTarget" as="h3" size="md" caps>DESIGNPROCES</Heading>
                     <Text>
                         Læs om hvordan jeg finder frem til
                         det rette design til dit projekt. 
@@ -24,8 +24,8 @@ const Method = () => (
                  </Link>
             </MethodDiv>
             <MethodDiv data-aos="fade-left">
-                <Link color="dark2" href="/teknologier">
-                    <Heading as="h3" size="md" caps>Teknologier</Heading>
+                <Link color="dark2" hover="underline" href="/teknologier">
+                    <Heading  className="hoverTarget" as="h3" size="md" caps>Teknologier</Heading>
                     <Text>
                         Ethvert projekt kræver et godt
                         fundament.

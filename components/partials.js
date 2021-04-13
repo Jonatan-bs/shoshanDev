@@ -49,17 +49,41 @@ const templates = {
 //  Link
 //
 const StyledLink = styled.a`
+    cursor: pointer;
     ${ ({py}) => py ? "padding-top: " + py*50 + "px; padding-bottom:" + py*50 + "px;" : ""}
     font-size: ${({size}) => size==="xl"? "4rem" : size==="lg"? "3rem" : size==="md"? "2rem"  : size==="sm"? "1rem" : size==="inherit"? "inherit" : "1.4rem" };
     ${ ({bold}) => bold && "font-weight: bold;" }
     ${ ({caps}) => caps && "text-transform: uppercase;" }
     color: ${ ({color,theme}) => theme.colors[color] || theme.colors.primary };
     width: ${ ({width}) => width || '100%' };
+    ${ ({hover, theme}) => hover==="underline"?
+        `
+        & .hoverTarget{
+            position: relative;
+            display: inline;
+        }
+        & .hoverTarget:after {
+            content: "";
+            height: 4px;
+            width: 0%;
+            position: absolute;
+            bottom: 3px;
+            left: 0;
+            background: ${theme.colors['primary']};
+            transition: width .2s;
+        }
+        &:hover .hoverTarget:after {
+            width: 90%;
+        }
+        `
+        :
+        ""
+    };
 `
 
-export const Link = ({href, name, title, size, color, children}) => (
+export const Link = ({href, name, title, size, color, children, hover, width}) => (
     <NextLink href={href}>
-        <StyledLink title={title} size={size} color={color}> {name} {children}</StyledLink>
+        <StyledLink title={title} size={size} color={color} hover={hover} width={width}> {name} {children}</StyledLink>
     </NextLink>
 )
 
