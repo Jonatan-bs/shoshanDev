@@ -3,6 +3,32 @@ import NextLink from "next/link";
 import marked from "marked";
 
 
+//Adjustment templates
+
+const templates = {
+    padding: ({pb,py,pt,pl,pr,px}) =>{ 
+        return`
+                padding-bottom: ${ pb? pb*50 + "px" : py ? py*50 + "px" : "0"};
+                padding-top: ${ pt? pt*50 + "px" : py ? py*50 + "px" : "0"};
+                padding-left: ${ px? px*50 + "px" : pl? pl*50 + "px" : "0"};
+                padding-right: ${ px? px*50 + "px" : pr? pr*50 + "px" : "0"};
+        `
+    },
+    textStyle: ({size,bold,color,theme,caps,center, lh, italic, width}) =>{ 
+        return`
+            font-size: ${size==="xl"? "4rem" : size==="lg"? "3rem" : size==="md"? "2rem"  : size==="xs"? "1rem" : size==="sm"? "1.4rem" : size==="inherit"? "inherit" : "1.8rem" };
+            font-weight: ${ bold?  "bold" : "inherit" };
+            color: ${ theme.colors[color] || "inherit"};
+            text-transform: ${ caps? "uppercase" : "inherit"};
+            text-align: ${ center? "center" :  "inherit"};
+            line-height: ${ lh ||  "inherit" };
+            letter-spacing: 1px;
+            font-style :${italic?  "italic" : "inherit"};
+            width: ${width? width : "initial"};
+        `
+    }
+}
+
 //
 //  Link
 //
@@ -81,10 +107,7 @@ export const Section = styled.section`
 //  Container
 //
 export const Container = styled.div`
-    padding-bottom: ${ ({pb, py}) => pb? pb*50 + "px" : py ? py*50 + "px" : "0"};
-    padding-top: ${ ({pt, py}) => pt? pt*50 + "px" : py ? py*50 + "px" : "0"};
-    padding-left: ${ ({px}) => px? px*50 + "px" : "50px"};
-    padding-right: ${ ({px}) => px? px*50 + "px" : "50px"};
+    ${(props)=>templates.padding(props)}
     max-width: ${ ({maxWidth}) => maxWidth==="lg"? "1800" + "px" : "1500px"};
     width:100%;
     margin: 0 auto;
@@ -94,10 +117,7 @@ export const Container = styled.div`
 //  Heading
 //
 export const Heading = styled.h1`
-    padding-bottom: ${ ({pb, py}) => pb? pb*50 + "px" : py ? py*50 + "px" : "0"};
-    padding-top: ${ ({pt, py}) => pt? pt*50 + "px" : py ? py*50 + "px" : "0"};
-    padding-left: ${ ({px, pl}) => px? px*50 + "px" : pl? pl*50 + "px" : "0"};
-    padding-right: ${ ({px, pr}) => px ? px*50 + "px" : pr? pr*50 + "px" : "0"};
+    ${(props)=>templates.padding(props)}
     font-size: ${({size}) => size==="xl"? "8" : size==="lg"? "4" : size==="md"? "3"  : size==="sm"? "2" : size==="xs"? "1.8" : "1" }rem;
     font-weight: bold;
     ${ ({caps}) => caps && "text-transform: uppercase;" }
@@ -107,22 +127,14 @@ export const Heading = styled.h1`
 
 `
 
+
+
 //
 //  Text
 //
 export const Text = styled.p`
-    padding-bottom: ${ ({pb, py}) => pb? pb*50 + "px" : py ? py*50 + "px" : "0"};
-    padding-top: ${ ({pt, py}) => pt? pt*50 + "px" : py ? py*50 + "px" : "0"};
-    padding-left: ${ ({px, pl}) => px? px*50 + "px" : pl? pl*50 + "px" : "0"};
-    padding-right: ${ ({px, pr}) => px ? px*50 + "px" : pr? pr*50 + "px" : "0"};
-    font-size: ${({size}) => size==="xl"? "4rem" : size==="lg"? "3rem" : size==="md"? "2rem"  : size==="xs"? "1rem" : size==="sm"? "1.4rem" : size==="inherit"? "inherit" : "1.8rem" };
-    ${ ({bold}) => bold && "font-weight: bold;" }
-    color: ${ ({color,theme}) => theme.colors[color] || "inherit"};
-    ${ ({caps}) => caps && "text-transform: uppercase;" }
-    ${ ({width}) => width && "width:" + width + ";" }
-    ${ ({center}) => center && "text-align: center;" }
-    line-height: ${ ({lh}) => lh };
-    letter-spacing: 1px;
+    ${(props)=>templates.padding(props)}
+    ${(props)=>templates.textStyle(props)}
 `
 
 //
@@ -130,18 +142,8 @@ export const Text = styled.p`
 //
 const MarkdownStyled = styled.div`
     >p{
-        padding-bottom: ${ ({pb, py}) => pb? pb*50 + "px" : py ? py*50 + "px" : "0"};
-        padding-top: ${ ({pt, py}) => pt? pt*50 + "px" : py ? py*50 + "px" : "0"};
-        padding-left: ${ ({px, pl}) => px? px*50 + "px" : pl? pl*50 + "px" : "0"};
-        padding-right: ${ ({px, pr}) => px ? px*50 + "px" : pr? pr*50 + "px" : "0"};
-        font-size: ${({size}) => size==="xl"? "4rem" : size==="lg"? "3rem" : size==="md"? "2rem"  : size==="sm"? "1rem" : size==="inherit"? "inherit" : "1.8rem" };
-        ${ ({bold}) => bold && "font-weight: bold;" }
-        color: ${ ({color,theme}) => theme.colors[color] || "inherit"};
-        ${ ({caps}) => caps && "text-transform: uppercase;" }
-        ${ ({width}) => width && "width:" + width + ";" }
-        ${ ({center}) => center && "text-align: center;" }
-        line-height: ${ ({lh}) => lh };
-        letter-spacing: 1px;
+        ${(props)=>templates.padding(props)}
+        ${(props)=>templates.textStyle(props)}
     }
 `
 
