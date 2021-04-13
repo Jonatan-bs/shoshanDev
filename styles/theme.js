@@ -4,6 +4,7 @@ const theme = () => ({
     primaryDark: '#7d0319',
     dark: '#343434',
     dark2: '#1a1919',
+    dark3: '#797979',
     light: '#fff',
     light2: '#f3f3f3',
     light3: '#afadad',

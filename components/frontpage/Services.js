@@ -33,6 +33,7 @@ const Services = ({services}) => (
                         {service.symbol && <AspectRatioMod src={getStrapiMedia(service.symbol)} pct="100" width="100%" maxWidth="100px" />}
                         <Heading center as="h4" py={.2} size="sm" caps>{service.title}</Heading>
                         <Price>{service.price}</Price>
+                        {service.subtext && <Text italic color="dark3" size="xs" center>{service.subtext}</Text>}
                     </ServiceCard>
                 ))}
             </ServiceGrid>        

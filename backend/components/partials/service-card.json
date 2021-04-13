@@ -24,10 +24,8 @@
     "price": {
       "type": "string"
     },
-    "elements": {
-      "type": "component",
-      "repeatable": true,
-      "component": "partials.list"
+    "subtext": {
+      "type": "string"
     }
   }
 }

@@ -489,22 +489,8 @@
                 "price": {
                   "type": "string"
                 },
-                "elements": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "required": [
-                      "id"
-                    ],
-                    "properties": {
-                      "id": {
-                        "type": "string"
-                      },
-                      "entry": {
-                        "type": "string"
-                      }
-                    }
-                  }
+                "subtext": {
+                  "type": "string"
                 }
               }
             }
@@ -684,22 +670,8 @@
                 "price": {
                   "type": "string"
                 },
-                "elements": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "required": [
-                      "id"
-                    ],
-                    "properties": {
-                      "id": {
-                        "type": "string"
-                      },
-                      "entry": {
-                        "type": "string"
-                      }
-                    }
-                  }
+                "subtext": {
+                  "type": "string"
                 }
               }
             }
