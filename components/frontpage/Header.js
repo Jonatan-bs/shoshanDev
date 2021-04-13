@@ -38,7 +38,7 @@ const Rose = styled(AspectRatio)`
 
 const Header = ({subtext}) => (
     <motion.div initial='initial' animate='animate'>
-            <Container className="grain"> 
+            <Container> 
                 <motion.div variants={animation.fade}  style={{width:"100%", maxWidth: "730px"}}>
                     <Rose src="/images/rose.jpg" pct="68" width="100%" maxWidth="730px"/>
                 </motion.div>
