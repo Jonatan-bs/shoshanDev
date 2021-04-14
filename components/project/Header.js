@@ -51,13 +51,7 @@ const Header = ({src, alt, title, subtitle, bgColor }) => (
         <motion.div variants={animation.stagger}>
             <Container bgColor={bgColor}>
                 <motion.div variants={animation.fadeRight}>
-                    <ProjectImage  
-                        width="600px" 
-                        size="contain" 
-                        src={src} 
-                        alt={alt} 
-                        pct="100"
-                    />
+                    <Image src={src} alt={alt} width="600px" height="600px"/>
                 </motion.div>
                 <MethodDiv>
                     
