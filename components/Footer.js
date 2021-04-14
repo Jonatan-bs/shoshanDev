@@ -42,7 +42,7 @@ const Footer = ({menus}) => (
             <ContainerMod>
                 
                 <Left>
-                    <Image src="/images/logo-light.svg" maxWidth="400px" mb="1" />
+                    <Image src="images/logo-light.svg" maxWidth="400px" mb="1" />
                     <Text color="light">
                         Søndermarksvej 114 stmf.<br/>
                         7000 Fredericia <br/><br/>

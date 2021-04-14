@@ -42,12 +42,12 @@ const Header = ({subtext}) => (
     <motion.div initial='initial' animate='animate'>
             <Container> 
                 <motion.div variants={animation.fade}  style={{width:"100%", maxWidth: "730px"}}>
-                    <Rose src="/images/rose.jpg" pct="68" width="100%" maxWidth="730px"/>
+                    <Rose src="images/rose.jpg" pct="68" width="100%" maxWidth="730px"/>
                 </motion.div>
                 <motion.div variants={animation.stagger}>
                     <motion.div variants={animation.fadeUp}  style={{width:"100%"}}>
                         <LogoWrap>
-                            <Image src="/images/logo-light.svg" alt="Shoshan Development" />
+                            <Image src="images/logo-light.svg" alt="Shoshan Development" />
                         </LogoWrap>
                     </motion.div>
                     <motion.div variants={animation.fadeUp}  style={{width:"100%"}}>
