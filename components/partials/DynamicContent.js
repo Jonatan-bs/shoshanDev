@@ -21,30 +21,27 @@ const SmallBox = styled.div`
     color: #fff;
     justify-content: center;
     display: flex;
+    position: relative;
     align-items: center;
-    ${ ({bgImage}) => bgImage && "background-image: url(" + bgImage + ")"  };
+    // ${ ({bgImage}) => bgImage && "background-image: url(" + bgImage + ")"  };
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     background-origin: content-box;
     padding: 10px;
 `
-const SmallBoxImage = styled.img`
-    width: 100%;
-    padding: 10px;
-`
+
 const ImageAndText = styled.div`
     display:flex;
     &>:nth-child(1){
         width: 50%;
         padding-right: 25px;
+        position: relative;
     }
     &>:nth-child(2){
         width: 50%;
         padding-left: 25px;
-    }
-    img{
-        align-self: baseline;
+        position: relative;
     }
 `
 
@@ -59,6 +56,7 @@ const DynamicContent = ({content}) => {
                     <SmallBoxes>
                         {component.smallBox.map( (box,i) => (
                             <SmallBox key={i} color={box.bgColor} bgImage={box.image && getStrapiMedia(box.image)}>
+                                <Image src={getStrapiMedia(box.image)} layout="fill" objectFit="contain"/>
                                 { box.title && !box.image && <Text bold size="md">{box.title}</Text> }
                             </SmallBox>
                         ))}
@@ -72,10 +70,27 @@ const DynamicContent = ({content}) => {
             case("page-content.image"):
                 return (
                     component.wide ?
-                    <Center key={i}><img data-aos="fade-up" style={{paddingBottom: "250px" ,"maxWidth": component.maxWidth || "initial", width: component.width || "100%"} } src={getStrapiMedia(component.image)}/></Center>
-                    :
+                        <Center>
+                            <div style={{paddingBottom: "250px" ,"maxWidth": component.maxWidth || "initial", width: component.width || "100%"} }>
+                                <Image 
+                                    src={getStrapiMedia(component.image)} 
+                                    height={component.image.height} 
+                                    width={component.image.width}
+                                    data-aos="fade-up"
+                                    />
+                            </div>
+                        </Center>                    :
                     <Container key={i} pb="2">
-                        <Center><img data-aos="fade-up" style={{paddingBottom: "250px" ,"maxWidth": component.maxWidth || "initial", width: component.width || "100%"} } src={getStrapiMedia(component.image)}/></Center>
+                        <Center>
+                            <div style={{paddingBottom: "250px" ,"maxWidth": component.maxWidth || "initial", width: component.width || "100%"} }>
+                                <Image 
+                                    src={getStrapiMedia(component.image)} 
+                                    height={component.image.height} 
+                                    width={component.image.width}
+                                    data-aos="fade-up"
+                                    />
+                            </div>
+                        </Center>
                     </Container>
                     )
                 break
@@ -96,12 +111,15 @@ const DynamicContent = ({content}) => {
                         {component.imageRight?
                                 (<>
                                     <Markdown>{component.text}</Markdown>
-                                    <img src={getStrapiMedia(component.image)}/>
+                                    <div height={component.image.height} width={component.image.width}>
+                                        <Image layout="fill" objectFit="cover" src={getStrapiMedia(component.image)}/>
+                                    </div>
                                 </>)
                                 :
                                 (<>
-                                    <img src={getStrapiMedia(component.image)}/>
-                                    <Markdown>{component.text}</Markdown>
+                                    <div height={component.image.height} width={component.image.width}>
+                                        <Image layout="fill" objectFit="cover" src={getStrapiMedia(component.image)}/>
+                                    </div>                                    <Markdown>{component.text}</Markdown>
                                 </>)
                             }
                         </ImageAndText>

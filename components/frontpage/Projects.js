@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Container, AspectRatio, Heading, Link }  from "./../partials";
+import { Container, AspectRatio, Heading, Link, Image }  from "./../partials";
 import { getStrapiMedia, fetchAPI } from "../../lib/api";
 
 const ContainerMod = styled(Container)`
@@ -72,7 +72,9 @@ const Projects = ({projects}) => (
     <ContainerMod pb="3" className="gap" data-aos="fade-up">
         {projects.map((project, i) => (
             <Link key={i}  width="calc(50% - 6px)" href={"/project/" + project.slug}>
-                        <AspectRatioMod hover gradient size="cover" bgColor={project.bgColor || "#333"} src={getStrapiMedia(project.thumbnail)} pct="80">
+                        <AspectRatioMod hover gradient size="cover" bgColor={project.bgColor || "#333"} pct="80">
+                            <Image layout="fill" objectFit="cover" src={getStrapiMedia(project.thumbnail)}/>
+                            
                             <TextWrap className="textWrap">
                                 <Title as="p" size="lg">{project.title}</Title>
                                 <ul>

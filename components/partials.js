@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import NextLink from "next/link";
 import marked from "marked";
+import NextImage from 'next/image'
 
 
 //Adjustment templates
@@ -126,23 +127,18 @@ export const AspectRatio = ({hover, size, lazy, src, pct, width, maxWidth, class
 )
 
 //
-//  Images
+//  Image
 //
-const StandardImage = styled.img.attrs(({src, alt}) => ({ "src": src , "alt": alt }))`
+const MyImage = styled(NextImage)`
+    ${ (props)=>templates.padding(props) }
     ${ ({width}) => width ? "width:" + width : "width: 100%"};
     ${ ({maxWidth}) => maxWidth && "max-width:" + maxWidth};
     ${ ({mb}) => mb && "margin-bottom:" + mb*50 + "px"};
 
 `
-const LazyImage = styled.img.attrs(({dataSrc, alt}) => ({ "data-src": dataSrc , "alt": alt }))`
-    width:100%;
-`
-export const Image = ({src, alt, lazy, width, maxWidth, mb}) => (
-    lazy? (
-        <LazyImage width={width} dataSrc={src} alt={alt} className="lazy"/>
-    ) : (
-        <StandardImage width={width} src={src} alt={alt}  maxWidth={maxWidth} mb={mb}/>
-    )
+
+export const Image = ({src, alt, width, maxWidth, mb, height, priority, layout, objectFit}) => (
+        <MyImage width={width} height={height} src={src} alt={alt} priority={priority} layout={layout} objectFit={objectFit}/>
 )
 
 //

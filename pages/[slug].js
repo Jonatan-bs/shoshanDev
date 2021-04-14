@@ -32,10 +32,6 @@ const SmallBox = styled.div`
     background-origin: content-box;
     padding: 10px;
 `
-const SmallBoxImage = styled.img`
-    width: 100%;
-    padding: 10px;
-`
 const ImageAndText = styled.div`
     display:flex;
     &>:nth-child(1){

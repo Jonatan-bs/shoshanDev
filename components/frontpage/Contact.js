@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {AspectRatio, Container, Heading, Text} from "../partials"
+import {AspectRatio, Container, Heading, Text, Image} from "../partials"
 import { getStrapiMedia, fetchAPI } from "./../../lib/api";
 
 const ContactCard = styled(Container)`
@@ -22,8 +22,9 @@ const Contact = ({contactBox}) => (
     <section data-aos="fade-up">
         <Container pb="3">
             <ContactCard>
-
-                <ContactImage maxWidth="400px" width="100%" src={getStrapiMedia(contactBox.image)} pct="100" circle/>
+                <ContactImage maxWidth="400px" width="100%" pct="100" circle> 
+                    <Image layout="fill" objectFit="cover" src={getStrapiMedia(contactBox.image)}/>
+                </ContactImage>
                 <div>
                     <Heading as="h3"  py={0.5} size="lg">
                         {contactBox.title}
