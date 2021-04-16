@@ -1,5 +1,6 @@
 import {createGlobalStyle} from 'styled-components';
 import theme from "./theme"
+import mq from "../styles/breakpoints";
 
 
 
@@ -7,8 +8,12 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     box-sizing: border-box;
-    font-size: 16px;
     font-family: 'PT Sans', sans-serif;
+
+    font-size: 60%;
+    ${ mq('md', `
+      font-size: 100%;  
+    `)}
   }
   *,
   *:before,

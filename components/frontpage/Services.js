@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {AspectRatio, Container, Heading, Text, Image, Link} from "./../partials"
 import { getStrapiMedia, fetchAPI } from "../../lib/api";
+import mq from "../../styles/breakpoints";
 
 const ServiceCard = styled.article`
     display:flex;
@@ -14,14 +15,23 @@ const ServiceCard = styled.article`
     }
 
 `
-const Price = styled.p`
-    font-weight:bold;
+const ServiceCardWrap = styled.div`
+    width: 100%;
+    ${mq('sm', `
+        width: 50%;
+    `)}
+    ${mq('md', `
+        width: 30%;
+    `)}
+`
+
+const Price = styled(Text)`
     margin-top:10px;
-    text-align: center;
 `
 
 const ServiceGrid = styled.div`
     display:flex;
+    flex-wrap: wrap;
     width:100%;
     justify-content: space-evenly;
 `
@@ -37,14 +47,17 @@ const Services = ({services}) => (
         <Container py={2}  data-aos="fade-up">
                 <ServiceGrid>
                     {services && services.map((service, i) => (
-                        <Link href="#" width="33%" color="dark">
-                                <ServiceCard key={i}> 
-                                        {service.symbol && <Image src={getStrapiMedia(service.symbol)} width="100px" height="100px" />}
-                                        <Heading center as="h4" py={.2} size="sm" caps>{service.title}</Heading>
-                                        <Price>{service.price}</Price>
-                                        {service.subtext && <Text italic color="dark3" size="xs" center>{service.subtext}</Text>}
-                                </ServiceCard>
-                        </Link>
+                        <ServiceCardWrap>
+                            <Link href="#" color="dark">
+                                    <ServiceCard key={i}> 
+                                            {service.symbol && <Image src={getStrapiMedia(service.symbol)} width="100px" height="100px" />}
+                                            <Heading center as="h4" py={.2} size="sm" caps>{service.title}</Heading>
+                                            <Price bold center size="sm">{service.price}</Price>
+                                            {service.subtext && <Text italic color="dark3" size="xs" center>{service.subtext}</Text>}
+                                    </ServiceCard>
+                            </Link>
+                        </ServiceCardWrap>
+
                     ))}
                 </ServiceGrid>        
         </Container>

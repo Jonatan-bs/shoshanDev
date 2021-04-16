@@ -1,14 +1,22 @@
 import styled from "styled-components";
 import { Link, Section, Container, Heading, Text } from "./../partials";
+import mq from "../../styles/breakpoints";
 
 const ContainerMod = styled(Container)`
-    display: flex; 
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
 `
 
 const MethodDiv = styled.div`
-    width: 50%;
-    padding: 0 80px 0 80px;
+
+    width: 100%;
+    margin-bottom: 50px;
+
+    ${mq('md', `
+        width: 40%;
+        margin-bottom: 0px;
+    `)}
 `
 
 const Method = () => (

@@ -1,23 +1,44 @@
 import styled from "styled-components";
 import { Link, Section, Container, Text, Heading, Image } from "./partials";
+import mq from "../styles/breakpoints";
 
 const ContainerMod = styled(Container)`
     display: flex; 
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    ${ ({theme}) =>( 
+        mq('md', `
+            flex-direction: unset;
+        `, )
+    )}
 `
 const ContainerMod2 = styled(Container)`
     display: flex; 
     color:#fff;
-    padding: 20px 0 20px 0;
 `
 
 const Left = styled.div`
-    border-right: 5px solid ${ ({theme}) => theme.colors.primary };
-    padding-right: 40px;
+    border-top: 5px solid ${ ({theme}) => theme.colors.primary };
+    padding-top: 40px;
     box-sizing: border-box;
-    width: 400px
+    width: 100%;
+    padding-top: 50px;
+    text-align: center;
+
+    ${ ({theme}) =>( 
+        mq('md', `
+            text-align: left;
+            padding-top: 0px;
+            border-top: 5px solid ${theme.colors.primary };
+            border-top: none;
+            width: 400px
+        `, )
+    )}
+
 ` 
 
 const Right = styled.div`
+    padding-bottom: 50px;
     width: 100%;
     display: flex;
     align-items: center; 
@@ -26,6 +47,11 @@ const Right = styled.div`
         width: 100%;
         justify-content: space-evenly;
     }
+
+    ${mq('md', `
+        padding-bottom: 0px;
+        width: calc(100% - 400px);
+    `)}
 ` 
 
 const MenuList = styled.ul`
@@ -35,6 +61,17 @@ const MenuList = styled.ul`
     }
 
 `
+const LogoWrap = styled.div`
+    width:100%;
+    max-width: 300px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+
+    ${mq('md', `
+        margin: unset;
+    `)}
+
+`
 
 const Footer = ({menus}) => (
     <>
@@ -42,14 +79,16 @@ const Footer = ({menus}) => (
             <ContainerMod>
                 
                 <Left>
-                    <Image src="/images/logo-light.svg" width="1000" height="221" maxWidth="400px" mb="1" />
-                    <Text color="light">
+                    <LogoWrap>
+                        <Image src="/images/logo-light.svg" width="1000" height="221" mb="9" />
+                    </LogoWrap>
+                    <Text color="light" size="sm">
                         Søndermarksvej 114 stmf.<br/>
                         7000 Fredericia <br/><br/>
 
                         CVR.: 41227966<br/>
-                        <Link href="#" name="kontakt@shoshandevelopment.dk"/> 
                     </Text>
+                    <Text size="sm" color="primary">kontakt@shoshandev.dk</Text> 
                 </Left>
                 <Right>
                     <div>
@@ -73,7 +112,7 @@ const Footer = ({menus}) => (
             </ContainerMod>
         </Section>
         <div style={{"backgroundColor":"rgb(17 17 17)"}}>
-            <ContainerMod2>
+            <ContainerMod2 py=".5">
                 <br/>
                 <Text size="xs" center width="100%">
                     Icons made by: 

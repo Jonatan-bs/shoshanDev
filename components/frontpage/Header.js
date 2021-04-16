@@ -1,28 +1,34 @@
 import styled from "styled-components";
-import {AspectRatio, Image} from "./../partials"
+import mq from "../../styles/breakpoints";
+import {AspectRatio, Container, Text} from "./../partials"
 import {motion, animatePresence} from "framer-motion"
 import animation from "./../../scripts/animations"
+import Image from "next/image"
 
-const Container = styled.header`
+const HeaderWrap = styled.header`
+    background: ${ ({theme}) => theme.colors.primary };
+    padding: 50px 0;
+    
+    ${mq('sm', `
+        padding: 0;
+    `)}
+`;
+const ContainerMod = styled(Container)`
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 50px 0px;
-    font-size: 50px;
     background: ${ ({theme}) => theme.colors.primary };
 `;
 
-const SubText = styled.h2`
-    color: ${ ({theme}) => theme.colors.primaryDark }; 
-    font-size: 40px;
-    font-weight: normal;
-    max-width: 1000px;
-    padding: 20px 80px;
-    text-align: center;
+const SubText = styled(Text)`
+    font-size: 2rem;
+    
+    
+
 `
 
-const LogoWrap = styled.h1`
+const LogoWrap = styled(Text)`
     max-width: 1000px; 
     width:100%;
     position: relative
@@ -30,31 +36,29 @@ const LogoWrap = styled.h1`
 
 
 
-const Rose = styled(AspectRatio)`
-    &>div{
-    background-blend-mode: multiply;
-    background-color: ${ ({theme}) => theme.colors.primary };
-    }
+const Rose = styled(Image)`
 `
 
 
 const Header = ({subtext}) => (
     <motion.div initial='initial' animate='animate'>
-            <Container> 
-                <motion.div variants={animation.fade}  style={{width:"100%", maxWidth: "730px"}}>
-                    <Image width="2500" height="1693" src="/images/rose.jpg" priority/>
-                </motion.div>
-                <motion.div variants={animation.stagger}>
-                    <motion.div variants={animation.fadeUp}  style={{width:"100%"}}>
-                        <LogoWrap>
-                            <Image width="1000" height="221" src="/images/logo-light.svg" alt="Shoshan Development" priority/>
-                        </LogoWrap>
+            <HeaderWrap> 
+                <ContainerMod py="1"> 
+                    <motion.div variants={animation.fade}  >
+                        <Rose width="730" height="494" src="/images/rose.jpg" priority/>
                     </motion.div>
-                    <motion.div variants={animation.fadeUp}  style={{width:"100%"}}>
-                        <SubText>{subtext} </SubText>
+                    <motion.div variants={animation.stagger}>
+                        <motion.div variants={animation.fadeUp}  style={{width:"100%"}}>
+                            <LogoWrap>
+                                <Image width="1000" height="221" src="/images/logo-light.svg" alt="Shoshan Development" priority/>
+                            </LogoWrap>
+                        </motion.div>
+                        <motion.div variants={animation.fadeUp}  style={{width:"100%", maxWidth:"1000px"}}>
+                            <SubText as="h2" py=".5" color="primaryDark" center>{subtext} </SubText>
+                        </motion.div>
                     </motion.div>
-                </motion.div>
-            </Container>
+                </ContainerMod>
+            </HeaderWrap>
     </motion.div>
 )
 export default Header 

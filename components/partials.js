@@ -2,6 +2,7 @@ import styled from "styled-components";
 import NextLink from "next/link";
 import marked from "marked";
 import NextImage from 'next/image'
+import mq from "../styles/breakpoints";
 
 
 //Adjustment templates
@@ -31,9 +32,8 @@ const templates = {
                 }
         `
     },
-    textStyle: ({size,bold,color,theme,caps,center, lh, italic, width}) =>{ 
+    textStyle: ({size,bold,color,theme,caps,center, lh, italic, width, maxWidth}) =>{ 
         return`
-            font-size: ${size==="xl"? "4rem" : size==="lg"? "3rem" : size==="md"? "2rem"  : size==="xs"? "1rem" : size==="sm"? "1.4rem" : size==="inherit"? "inherit" : "1.8rem" };
             font-weight: ${ bold?  "bold" : "inherit" };
             color: ${ theme.colors[color] || "inherit"};
             text-transform: ${ caps? "uppercase" : "inherit"};
@@ -42,6 +42,13 @@ const templates = {
             letter-spacing: 1px;
             font-style :${italic?  "italic" : "inherit"};
             width: ${width? width : "initial"};
+            max-width: ${maxWidth? maxWidth : "initial"};
+            font-size: ${size==="xl"? "4rem" : size==="lg"? "3rem" : size==="md"? "2rem"  : size==="xs"? "1rem" : size==="sm"? "1.4rem" : size==="inherit"? "inherit" : "1.8rem" };
+            
+            ${ mq('md', `
+            `)}
+           
+            
         `
     }
 }
@@ -137,8 +144,8 @@ const MyImage = styled(NextImage)`
 
 `
 
-export const Image = ({src, alt, width, maxWidth, mb, height, priority, layout, objectFit}) => (
-        <MyImage width={width} height={height} src={src} alt={alt} priority={priority} layout={layout} objectFit={objectFit}/>
+export const Image = (props) => (
+        <MyImage props={props} width={props.width} maxWidth={props.maxWidth} height={props.height} src={props.src} alt={props.alt} priority={props.priority} layout={props.layout} objectFit={props.objectFit}/>
 )
 
 //
@@ -164,13 +171,16 @@ export const Container = styled.div`
 //
 export const Heading = styled.h1`
     ${(props)=>templates.padding(props)}
-    font-size: ${({size}) => size==="xl"? "8" : size==="lg"? "4" : size==="md"? "3"  : size==="sm"? "2" : size==="xs"? "1.8" : "1" }rem;
     font-weight: bold;
     ${ ({caps}) => caps && "text-transform: uppercase;" }
     color: ${ ({color,theme}) => theme.colors[color] || "inherit"};
     ${ ({center}) => center && "text-align: center;" }
     ${ ({align}) => align && "text-align:" + align }
-
+    
+    font-size: ${({size}) => size==="xl"? "8" : size==="lg"? "4" : size==="md"? "3"  : size==="sm"? "2" : size==="xs"? "1.8" : "1" }rem;
+    
+    ${({size}) => mq('md', `
+    `)}
 `
 
 

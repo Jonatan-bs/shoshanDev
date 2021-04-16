@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import { Container, AspectRatio, Heading, Link, Image }  from "./../partials";
 import { getStrapiMedia, fetchAPI } from "../../lib/api";
+import mq from "../../styles/breakpoints";
 
 const ContainerMod = styled(Container)`
     display: flex; 
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-wrap: wrap;
 `
 
@@ -17,6 +18,7 @@ const Gradient = styled.div`
     background: linear-gradient(0deg , #000000e6, transparent);
 `
 const TextWrap = styled.div`
+import mq from "../../styles/breakpoints";
     position: absolute;
     left: 0;
     color: #fff;
@@ -34,60 +36,41 @@ const TextWrap = styled.div`
 const Title = styled(Heading)`
     color: #fff;
 `
-
+const ProjectWrap = styled('div')`
+    width: 100%;
+    margin-bottom: 10px;
+    ${mq('md', `
+        width: 49.5%;
+        margin-bottom: 0px;
+    `)}
+`
 const AspectRatioMod = styled(AspectRatio)`
-    // &:after {
-    //     content: "";
-    //     border: 1px solid #fff;
-    //     position: absolute;
-    //     top: 20px;
-    //     left: 20px;
-    //     right: 20px;
-    //     bottom: 20px;
-    //     transition: all .2s;
-    //     opacity:0;
-    // }
-    // &:hover:after {
-    //     content: "";
-    //     border: 1px solid #fff;
-    //     position: absolute;
-    //     top: 20px;
-    //     left: 20px;
-    //     right: 20px;
-    //     bottom: 20px;
-    //     opacity:1;
-    // }
-
-    // &:hover .textWrap{
-    //     bottom: 20px;
-    //     left: 20px;
-    // }
-    // & .textWrap{
-    //     transition: all .2s;
-    // }
 `
 
 
 const Projects = ({projects}) => (
-    <ContainerMod pb="3" className="gap" data-aos="fade-up">
+    <ContainerMod pb="3" data-aos="fade-up">
         {projects.map((project, i) => (
-            <Link key={i}  width="calc(50% - 6px)" href={"/project/" + project.slug}>
-                        <AspectRatioMod hover gradient size="cover" bgColor={project.bgColor || "#333"} pct="80">
-                            <Image layout="fill" objectFit="cover" src={getStrapiMedia(project.thumbnail)}/>
-                            
-                            <TextWrap className="textWrap">
-                                <Title as="p" size="lg">{project.title}</Title>
-                                <ul>
-                                    { project.subtitle.map( ({element}, i) => (
-                                        <li key={i}>
-                                            {element}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </TextWrap>
-                            <Gradient className="gradient"/>
-                        </AspectRatioMod>
-            </Link>
+            <ProjectWrap key={i}>
+                <Link href={"/project/" + project.slug}>
+                            <AspectRatioMod hover gradient size="cover" bgColor={project.bgColor || "#333"} pct="80">
+                                <Image layout="fill" objectFit="cover" src={getStrapiMedia(project.thumbnail)}/>
+                                
+                                <TextWrap className="textWrap">
+                                    <Title as="p" size="lg">{project.title}</Title>
+                                    <ul>
+                                        { project.subtitle.map( ({element}, i) => (
+                                            <li key={i}>
+                                                {element}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </TextWrap>
+                                <Gradient className="gradient"/>
+                            </AspectRatioMod>
+                </Link>
+            </ProjectWrap>
+
         ))}        
     </ContainerMod>
 )
