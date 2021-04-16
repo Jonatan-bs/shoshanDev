@@ -63,19 +63,18 @@ const Project = ({project}) => {
     return (
         <>     
             <Header src={getStrapiMedia(project.headerImage)} bgColor={project.bgColor || "#333"} title={project.title} subtitle={project.subtitle}/>
-            {/* <Content project={project}/> */}
             <ContainerMod py="3"> 
-                    <InfoBoxWrapMobile  data-aos="fade-left">
-                        <InfoBox entries={project.info}/>
-                    </InfoBoxWrapMobile>
-                    <TextWrap data-aos="fade-right">
-                        <Text pr="1" lh="1.6">
-                            {project.text}
-                        </Text>
-                    </TextWrap>
-                    <InfoBoxWrap  data-aos="fade-left">
-                        <InfoBox entries={project.info}/>
-                    </InfoBoxWrap>
+                <InfoBoxWrapMobile  data-aos="fade-left">
+                    <InfoBox entries={project.info}/>
+                </InfoBoxWrapMobile>
+                <TextWrap data-aos="fade-right">
+                    <Text pr="1" lh="1.6">
+                        {project.text}
+                    </Text>
+                </TextWrap>
+                <InfoBoxWrap  data-aos="fade-left">
+                    <InfoBox entries={project.info}/>
+                </InfoBoxWrap>
             </ContainerMod>
             <DynamicContent content={project.content}/>   
         </>

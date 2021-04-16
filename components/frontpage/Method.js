@@ -15,6 +15,7 @@ const MethodDiv = styled.div`
     max-width: 300px;
 
     ${mq('md', `
+        max-width: 100%;
         width: 40%;
         margin-bottom: 0px;
     `)}

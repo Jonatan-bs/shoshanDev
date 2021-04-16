@@ -52,7 +52,7 @@ const DynamicContent = ({content}) => {
         switch(component.__component){
             case("page-content.small-boxes"):
                 return (
-                <Container key={i} pb="2">
+                <Container key={i} pb="2" data-aos="fade-up">
                     <SmallBoxes>
                         {component.smallBox.map( (box,i) => (
                             <SmallBox key={i} color={box.bgColor} bgImage={box.image && getStrapiMedia(box.image)}>
@@ -65,37 +65,25 @@ const DynamicContent = ({content}) => {
                 )
                 break
             case("page-content.banner"):
-                return <Container key={i} pb="2"><Banner src={getStrapiMedia(component.image)}/></Container>
+                return <Container data-aos="fade-up" key={i} pb="2"><Banner src={getStrapiMedia(component.image)}/></Container>
                 break
             case("page-content.image"):
+            {console.log(component.wide)}
                 return (
-                    component.wide ?
+                    
                         <Center>
-                            <div style={{paddingBottom: "250px" ,"maxWidth": component.maxWidth || "initial", width: component.width || "100%"} }>
+                            <Container data-aos="fade-up" wide={component.wide} px={ component.wide && "0"} pb="2" style={{"maxWidth": component.maxWidth || "initial", width: component.width || "100%"} }>
                                 <Image 
                                     src={getStrapiMedia(component.image)} 
                                     height={component.image.height} 
                                     width={component.image.width}
                                     data-aos="fade-up"
                                     />
-                            </div>
-                        </Center>                    :
-                    <Container key={i} pb="2">
-                        <Center>
-                            <div style={{paddingBottom: "250px" ,"maxWidth": component.maxWidth || "initial", width: component.width || "100%"} }>
-                                <Image 
-                                    src={getStrapiMedia(component.image)} 
-                                    height={component.image.height} 
-                                    width={component.image.width}
-                                    data-aos="fade-up"
-                                    />
-                            </div>
-                        </Center>
-                    </Container>
+                            </Container>
+                        </Center>        
                     )
                 break
             case("page-content.heading"):
-                    console.log(component)
                 return <Container key={i} pb="1"><Heading center={component.align} as={component.tag || "h2"} size={component.size || "md"}>{component.heading}</Heading></Container>
                 break
             case("page-content.text"):

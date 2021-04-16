@@ -1,25 +1,49 @@
 import styled from "styled-components";
-import {AspectRatio, Image, Heading, Text, Link} from "./../partials"
+import {AspectRatio,Container, Image, Heading, Text, Link} from "./../partials"
 import {motion, animatePresence} from "framer-motion"
 import animation from "./../../scripts/animations"
 import HeaderLogo from "./../partials/HeaderLogo"
+import mq from "../../styles/breakpoints";
 
-const Container = styled.header`
+const ContainerMod = styled(Container)`
     display: flex;
     align-items: center;
     justify-content: center;
-    // padding: 50px 0px;
     background: ${({bgColor}) => (bgColor || "#333")};
     flex-wrap:wrap;
-    min-height: 600px;
-    // padding-bottom: 50px;
+`;
+
+const ImageWrap = styled(motion.div)`
+    max-width: 300px;
+    ${
+        mq('md', `
+            max-width: 300px;
+        `)
+    }
+    ${ 
+        mq('lg', `
+            max-width: 550px;
+        `)
+    }
 `;
 
 
 const MethodDiv = styled.div`
-    // width: 60%;
-    width: 620px;
-    padding: 0 80px 0 80px;
+    padding: 0 0px 30px 0px;
+    text-align: center;
+    
+    ${
+        mq('sm', `
+            text-align: left;
+            padding: 0 0px 0 40px;
+        `)
+    }
+
+    ${ 
+        mq('md', `
+            padding: 0 0px 0 80px;
+        `)
+    }
 `
 const ProjectImage = styled(AspectRatio)`
     // margin-left: -30%;
@@ -47,12 +71,12 @@ const StyledText = styled(Text)`
 
 const Header = ({src, alt, title, subtitle, bgColor }) => (
     <motion.div initial='initial' animate='animate'>
-        <HeaderLogo/>  
         <motion.div variants={animation.stagger}>
-            <Container bgColor={bgColor}>
-                <motion.div variants={animation.fadeRight}>
+            <HeaderLogo/>  
+            <ContainerMod wide as="header" bgColor={bgColor}>
+                <ImageWrap variants={animation.fadeRight}>
                     <Image src={src} alt={alt} width="600px" height="600px"/>
-                </motion.div>
+                </ImageWrap>
                 <MethodDiv>
                     
                         <motion.div variants={animation.fadeUp}>
@@ -71,7 +95,7 @@ const Header = ({src, alt, title, subtitle, bgColor }) => (
                         
                         
                 </MethodDiv>
-            </Container>
+            </ContainerMod>
         </motion.div>
 
     </motion.div>

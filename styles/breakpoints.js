@@ -3,7 +3,7 @@ const size = {
 	sm: '400px',
 	md: '769px',
 	lg: '1024px',
-	xl: '1200px',
+	xl: '1300px',
 }
 
 const mq = (braeakSize, string, theme) => {
