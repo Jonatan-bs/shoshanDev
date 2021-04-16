@@ -57,7 +57,7 @@ const templates = {
             font-style :${italic?  "italic" : "inherit"};
             width: ${width? width : "initial"};
             max-width: ${maxWidth? maxWidth : "initial"};
-            font-size: ${size==="xl"? "4rem" : size==="lg"? "3rem" : size==="md"? "2rem"  : size==="xs"? "1rem" : size==="sm"? "1.4rem" : size==="inherit"? "inherit" : "1.8rem" };
+            font-size: ${size==="xl"? "4rem" : size==="lg"? "3rem" : size==="md"? "2rem"  : size==="sm"? "1.8rem": size==="xs"? "1.4rem"  : size==="inherit"? "inherit" : "2rem" };
             
             ${ mq('md', `
             `)}
@@ -173,6 +173,7 @@ export const Section = styled.section`
 //  Container
 //
 export const Container = styled.div`
+overflow: hidden;
     padding-left: 20px;
     padding-right: 20px;
     ${(props)=>templates.padding(props)}
@@ -191,7 +192,7 @@ export const Heading = styled.h1`
     ${ ({center}) => center && "text-align: center;" }
     ${ ({align}) => align && "text-align:" + align }
     
-    font-size: ${({size}) => size==="xl"? "8" : size==="lg"? "4" : size==="md"? "3"  : size==="sm"? "2" : size==="xs"? "1.8" : "1" }rem;
+    font-size: ${({size}) => size==="xl"? "8" : size==="lg"? "4" : size==="md"? "3"  : size==="sm"? "2" : size==="xs"? "1.5" : "3" }rem;
     
     ${({size}) => mq('md', `
     `)}

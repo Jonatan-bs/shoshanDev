@@ -10,7 +10,12 @@ const ContactCard = styled(Container)`
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    background: ${ ({theme}) => theme.colors.light2}
+    background: ${ ({theme}) => theme.colors.light2};
+    text-align: center;
+    
+    ${mq('md', `
+        text-align: center;
+    `)}
 `
 
 const ContactImage = styled(AspectRatio)`

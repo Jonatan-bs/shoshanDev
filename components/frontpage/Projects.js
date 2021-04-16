@@ -49,9 +49,9 @@ const AspectRatioMod = styled(AspectRatio)`
 
 
 const Projects = ({projects}) => (
-    <ContainerMod pb="2" data-aos="fade-up">
+    <ContainerMod pb="2">
         {projects.map((project, i) => (
-            <ProjectWrap key={i}>
+            <ProjectWrap key={i}  data-aos="fade-up">
                 <Link href={"/project/" + project.slug}>
                             <AspectRatioMod hover gradient size="cover" bgColor={project.bgColor || "#333"} pct="80">
                                 <Image layout="fill" objectFit="cover" src={getStrapiMedia(project.thumbnail)}/>

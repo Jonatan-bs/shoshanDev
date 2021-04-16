@@ -29,7 +29,7 @@ const Price = styled(Text)`
     margin-top:10px;
 `
 
-const ServiceGrid = styled.div`
+const ServiceGrid = styled(Container)`
     display:flex;
     flex-wrap: wrap;
     width:100%;
@@ -44,23 +44,21 @@ const AspectRatioMod = styled(AspectRatio)`
 
 const Services = ({services}) => (
     <section>
-        <Container py={2}  data-aos="fade-up">
-                <ServiceGrid>
-                    {services && services.map((service, i) => (
-                        <ServiceCardWrap>
-                            <Link href="#" color="dark">
-                                    <ServiceCard key={i}> 
-                                            {service.symbol && <Image src={getStrapiMedia(service.symbol)} width="100px" height="100px" />}
-                                            <Heading center as="h4" py={.2} size="sm" caps>{service.title}</Heading>
-                                            <Price bold center size="sm">{service.price}</Price>
-                                            {service.subtext && <Text italic color="dark3" size="xs" center>{service.subtext}</Text>}
-                                    </ServiceCard>
-                            </Link>
-                        </ServiceCardWrap>
+        <ServiceGrid py={2}>
+            {services && services.map((service, i) => (
+                <ServiceCardWrap  data-aos="fade-up">
+                    <Link href="#" color="dark">
+                            <ServiceCard key={i}> 
+                                    {service.symbol && <Image src={getStrapiMedia(service.symbol)} width="100px" height="100px" />}
+                                    <Heading center as="h4" py={.2} size="md" caps>{service.title}</Heading>
+                                    <Price bold center size="sm">{service.price}</Price>
+                                    {service.subtext && <Text italic color="dark3" size="xs" center>{service.subtext}</Text>}
+                            </ServiceCard>
+                    </Link>
+                </ServiceCardWrap>
 
-                    ))}
-                </ServiceGrid>        
-        </Container>
+            ))}
+        </ServiceGrid>        
     </section>
 )
 export default Services 

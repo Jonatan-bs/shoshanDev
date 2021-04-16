@@ -43,24 +43,34 @@ const Right = styled.div`
     width: 100%;
     display: flex;
     align-items: center; 
-    &>div{
-        display:flex;
-        width: 100%;
-        justify-content: space-evenly;
-    }
-
+    text-align: center;
+    
     ${mq('md', `
+        text-align: left;
         padding-bottom: 0px;
         width: calc(100% - 400px);
     `)}
 ` 
+const MenusWrap = styled.div`
+        display:flex;
+        width: 100%;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        ${mq('sm', `
+            flex-wrap: nowrap;
+        `)}
+
+
+` 
 
 const MenuList = styled.ul`
-    &>li:first-of-type {
-        font-weight: bold;
-        text-transform: uppercase;
+    width: 100%;
+    &:nth-of-type(1){
+        padding-bottom: 20px;
     }
-    
+    ${mq('md', `
+        width: fit-content;
+    `)}
 
 `
 const LogoWrap = styled.div`
@@ -93,20 +103,20 @@ const Footer = ({menus}) => (
                     <Text size="sm" color="primary">kontakt@shoshandev.dk</Text> 
                 </Left>
                 <Right>
-                    <div>
+                    <MenusWrap>
                         <MenuList>
-                            <li><Heading as="h3" light caps size="xs">{menus.footerLeft.title}</Heading></li>
+                            <li><Heading as="h3" light caps size="md">{menus.footerLeft.title}</Heading></li>
                             {menus.footerLeft.menuItem.map((menuItem,i) => (
-                                <li key={i} ><Link href={menuItem.page? "/" + menuItem.page.slug : menuItem.url || "#"} color="light" name={menuItem.title}/></li>
+                                <li key={i} ><Link href={menuItem.page? "/" + menuItem.page.slug : menuItem.url || "#"} color="light"><Text size="md">{menuItem.title}</Text></Link></li>
                             ))}
                         </MenuList>
                         <MenuList>
-                            <li><Heading as="h3" light caps size="xs">{menus.footerRight.title}</Heading></li>
+                            <li><Heading as="h3" light caps size="md">{menus.footerRight.title}</Heading></li>
                             {menus.footerRight.menuItem.map((menuItem,i) => (
-                                <li key={i}><Link href={menuItem.page? "/" + menuItem.page.slug : menuItem.url || "#"} color="light" name={menuItem.title}/></li>
+                                <li key={i}><Link href={menuItem.page? "/" + menuItem.page.slug : menuItem.url || "#"} color="light"><Text size="md">{menuItem.title}</Text></Link></li>
                             ))}
                         </MenuList>
-                    </div>                    
+                    </MenusWrap>                    
                 </Right>
             
 

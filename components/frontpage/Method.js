@@ -10,8 +10,9 @@ const ContainerMod = styled(Container)`
 
 const MethodDiv = styled.div`
 
-    width: 100%;
+    width: 80%;
     margin-bottom: 50px;
+    max-width: 300px;
 
     ${mq('md', `
         width: 40%;
