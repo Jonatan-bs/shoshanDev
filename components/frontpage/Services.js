@@ -3,7 +3,9 @@ import {AspectRatio, Container, Heading, Text, Image, Link} from "./../partials"
 import { getStrapiMedia, fetchAPI } from "../../lib/api";
 
 const ServiceCard = styled.article`
+    display:flex;
     width: 100%;
+    flex-direction: column;
     padding: 30px;
     &:hover{
         background: #f5f5f5;
@@ -37,7 +39,7 @@ const Services = ({services}) => (
                     {services && services.map((service, i) => (
                         <Link href="#" width="33%" color="dark">
                                 <ServiceCard key={i}> 
-                                        {service.symbol && <AspectRatioMod src={getStrapiMedia(service.symbol)} pct="100" width="100%" maxWidth="100px" />}
+                                        {service.symbol && <Image src={getStrapiMedia(service.symbol)} width="100px" height="100px" />}
                                         <Heading center as="h4" py={.2} size="sm" caps>{service.title}</Heading>
                                         <Price>{service.price}</Price>
                                         {service.subtext && <Text italic color="dark3" size="xs" center>{service.subtext}</Text>}
