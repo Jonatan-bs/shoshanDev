@@ -10,6 +10,35 @@ import DynamicContent from "./../../components/partials/DynamicContent"
 import {useRouter} from 'next/router'
 import DefaultErrorPage from 'next/error'
 import Head from 'next/head'
+import mq from "../../styles/breakpoints";
+
+const ContainerMod = styled(Container)`
+    display: flex;
+    flex-wrap: wrap;
+    
+`
+
+const TextWrap = styled.div`
+    width: 100%;
+    ${mq('lg', `
+        width: 65%;
+    `)}
+`
+const InfoBoxWrap = styled.div`
+    width: 100%;
+    padding-bottom: 50px;
+    display: none;
+    ${mq('lg', `
+        width: 35%;
+        display: block;
+    `)}
+`
+const InfoBoxWrapMobile = styled(InfoBoxWrap)`
+    display: block;
+    ${mq('lg', `
+        display: none;
+    `)}
+`
 
 const Project = ({project}) => {
     
@@ -35,15 +64,19 @@ const Project = ({project}) => {
         <>     
             <Header src={getStrapiMedia(project.headerImage)} bgColor={project.bgColor || "#333"} title={project.title} subtitle={project.subtitle}/>
             {/* <Content project={project}/> */}
-            <Container py="3"> 
-                <Grid cols={["65%","35%"]}>
-                    <Text pr="1" lh="1.6" data-aos="fade-right">
-                        {project.text}
-                    </Text>
-                    
-                    <InfoBox entries={project.info}/>
-                </Grid>
-            </Container>
+            <ContainerMod py="3"> 
+                    <InfoBoxWrapMobile  data-aos="fade-left">
+                        <InfoBox entries={project.info}/>
+                    </InfoBoxWrapMobile>
+                    <TextWrap data-aos="fade-right">
+                        <Text pr="1" lh="1.6">
+                            {project.text}
+                        </Text>
+                    </TextWrap>
+                    <InfoBoxWrap  data-aos="fade-left">
+                        <InfoBox entries={project.info}/>
+                    </InfoBoxWrap>
+            </ContainerMod>
             <DynamicContent content={project.content}/>   
         </>
     )

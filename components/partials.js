@@ -8,28 +8,42 @@ import mq from "../styles/breakpoints";
 //Adjustment templates
 
 const templates = {
-    padding: ({pb,py,pt,pl,pr,px}) =>{ 
+    paddingTemplate({interval,pb,py,pt,pl,pr,px}){
+        return`${ 
+            pb? "padding-bottom:" + pb*interval + "px;" : 
+            py? "padding-bottom:" + py*interval + "px;" :
+            ""
+        }
+        ${ 
+            pt? "padding-top:" + pt*interval + "px;" : 
+            py? "padding-top:" + py*interval + "px;" :
+            ""
+        }
+        ${ 
+            pl? "padding-left:" + pl*interval + "px;" : 
+            px? "padding-left:" + px*interval + "px;" :
+            ""
+        }
+        ${ 
+            pr? "padding-right:" + pr*interval + "px;" : 
+            px? "padding-right:" + px*interval + "px;" :
+            ""
+        }`
+    },
+    padding(props){
+
+        
+
+        
+        
         return` 
-                ${ 
-                    pb? "padding-bottom:" + pb*50 + "px;" : 
-                    py? "padding-bottom:" + py*50 + "px;" :
-                    ""
+                ${
+                    this.paddingTemplate({interval:30, ...props })
                 }
                 ${ 
-                    pt? "padding-top:" + pt*50 + "px;" : 
-                    py? "padding-top:" + py*50 + "px;" :
-                    ""
+                    mq('md', this.paddingTemplate({interval: 50, ...props }))
                 }
-                ${ 
-                    pl? "padding-left:" + pl*50 + "px;" : 
-                    px? "padding-left:" + px*50 + "px;" :
-                    ""
-                }
-                ${ 
-                    pr? "padding-right:" + pr*50 + "px;" : 
-                    px? "padding-right:" + px*50 + "px;" :
-                    ""
-                }
+                
         `
     },
     textStyle: ({size,bold,color,theme,caps,center, lh, italic, width, maxWidth}) =>{ 

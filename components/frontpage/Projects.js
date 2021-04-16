@@ -49,7 +49,7 @@ const AspectRatioMod = styled(AspectRatio)`
 
 
 const Projects = ({projects}) => (
-    <ContainerMod pb="3" data-aos="fade-up">
+    <ContainerMod pb="2" data-aos="fade-up">
         {projects.map((project, i) => (
             <ProjectWrap key={i}>
                 <Link href={"/project/" + project.slug}>

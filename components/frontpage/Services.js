@@ -7,7 +7,7 @@ const ServiceCard = styled.article`
     display:flex;
     width: 100%;
     flex-direction: column;
-    padding: 30px;
+    padding:30px;
     &:hover{
         background: #f5f5f5;
         transform: translateY(-10px);

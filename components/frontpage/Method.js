@@ -21,7 +21,7 @@ const MethodDiv = styled.div`
 
 const Method = () => (
     <section>
-        <ContainerMod pb={3}>
+        <ContainerMod pb={2}>
             <MethodDiv data-aos="fade-right">
                 <Link color="dark2" hover="underline" href="/designproces">
                     <Heading className="hoverTarget" as="h3" size="md" caps>DESIGNPROCES</Heading>

@@ -19,6 +19,7 @@ const ContainerMod2 = styled(Container)`
 
 const Left = styled.div`
     border-top: 5px solid ${ ({theme}) => theme.colors.primary };
+    border-right: none;
     padding-top: 40px;
     box-sizing: border-box;
     width: 100%;
@@ -29,7 +30,7 @@ const Left = styled.div`
         mq('md', `
             text-align: left;
             padding-top: 0px;
-            border-top: 5px solid ${theme.colors.primary };
+            border-right: 5px solid ${theme.colors.primary };
             border-top: none;
             width: 400px
         `, )
@@ -59,6 +60,7 @@ const MenuList = styled.ul`
         font-weight: bold;
         text-transform: uppercase;
     }
+    
 
 `
 const LogoWrap = styled.div`

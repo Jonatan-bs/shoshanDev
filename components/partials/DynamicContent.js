@@ -95,7 +95,8 @@ const DynamicContent = ({content}) => {
                     )
                 break
             case("page-content.heading"):
-                return <Container key={i} pb="1"><Heading align={component.align} as={component.tag || "h2"} size={component.size || "md"}>{component.heading}</Heading></Container>
+                    console.log(component)
+                return <Container key={i} pb="1"><Heading center={component.align} as={component.tag || "h2"} size={component.size || "md"}>{component.heading}</Heading></Container>
                 break
             case("page-content.text"):
                 return (
