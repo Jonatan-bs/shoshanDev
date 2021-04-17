@@ -1138,6 +1138,25 @@
                     },
                     "imageRight": {
                       "type": "boolean"
+                    },
+                    "imageSizeCover": {
+                      "type": "object",
+                      "required": [
+                        "id"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "cover": {
+                          "type": "boolean",
+                          "default": false
+                        },
+                        "aspectRatio": {
+                          "type": "number",
+                          "default": 0
+                        }
+                      }
                     }
                   },
                   "required": [
@@ -1637,6 +1656,25 @@
                     },
                     "imageRight": {
                       "type": "boolean"
+                    },
+                    "imageSizeCover": {
+                      "type": "object",
+                      "required": [
+                        "id"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "cover": {
+                          "type": "boolean",
+                          "default": false
+                        },
+                        "aspectRatio": {
+                          "type": "number",
+                          "default": 0
+                        }
+                      }
                     }
                   },
                   "required": [

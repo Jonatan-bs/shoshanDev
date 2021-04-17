@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "04/13/2021 7:31:03 PM"
+    "x-generation-date": "04/17/2021 12:01:17 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -4981,6 +4981,25 @@
                     },
                     "imageRight": {
                       "type": "boolean"
+                    },
+                    "imageSizeCover": {
+                      "type": "object",
+                      "required": [
+                        "id"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "cover": {
+                          "type": "boolean",
+                          "default": false
+                        },
+                        "aspectRatio": {
+                          "type": "number",
+                          "default": 0
+                        }
+                      }
                     }
                   },
                   "required": [
@@ -5559,6 +5578,25 @@
                     },
                     "imageRight": {
                       "type": "boolean"
+                    },
+                    "imageSizeCover": {
+                      "type": "object",
+                      "required": [
+                        "id"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "cover": {
+                          "type": "boolean",
+                          "default": false
+                        },
+                        "aspectRatio": {
+                          "type": "number",
+                          "default": 0
+                        }
+                      }
                     }
                   },
                   "required": [
@@ -6320,6 +6358,25 @@
                     },
                     "imageRight": {
                       "type": "boolean"
+                    },
+                    "imageSizeCover": {
+                      "type": "object",
+                      "required": [
+                        "id"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "cover": {
+                          "type": "boolean",
+                          "default": false
+                        },
+                        "aspectRatio": {
+                          "type": "number",
+                          "default": 0
+                        }
+                      }
                     }
                   },
                   "required": [
@@ -6819,6 +6876,25 @@
                     },
                     "imageRight": {
                       "type": "boolean"
+                    },
+                    "imageSizeCover": {
+                      "type": "object",
+                      "required": [
+                        "id"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "cover": {
+                          "type": "boolean",
+                          "default": false
+                        },
+                        "aspectRatio": {
+                          "type": "number",
+                          "default": 0
+                        }
+                      }
                     }
                   },
                   "required": [

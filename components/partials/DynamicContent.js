@@ -5,6 +5,7 @@ import { getStrapiMedia, fetchAPI } from "./../../lib/api";
 import {Container, Markdown, AspectRatio, Image, Heading, Text, Link, Center} from "./../partials"
 import HeaderLogo from "./../partials/HeaderLogo"
 import Banner from "./../page/Banner"
+import mq from "../../styles/breakpoints";
 
 
 const SmallBoxes = styled.div`
@@ -15,7 +16,12 @@ const SmallBoxes = styled.div`
 
 `
 const SmallBox = styled.div`
-    width: 33.3%;
+    ${
+        mq('md', `
+            width: 33.3%;
+        `)
+    }
+    width: 50%;
     height: 200px;
     ${({color})=> color && "background-color:" + color};
     color: #fff;
@@ -33,18 +39,38 @@ const SmallBox = styled.div`
 
 const ImageAndText = styled.div`
     display:flex;
+    flex-wrap:wrap;
     &>:nth-child(1){
-        width: 50%;
+        width: 100%;
         padding-right: 25px;
         position: relative;
     }
     &>:nth-child(2){
-        width: 50%;
+        width: 100%;
         padding-left: 25px;
         position: relative;
     }
+
+    ${
+        mq('md', `
+            &>:nth-child(1){
+                width: 50%;
+                padding-right: 25px;
+                position: relative;
+            }
+            &>:nth-child(2){
+                width: 50%;
+                padding-left: 25px;
+                position: relative;
+            }
+        `)
+    }
 `
 
+const AspectRatioMod = styled(AspectRatio)`
+
+
+`
 const DynamicContent = ({content}) => {
     
     return (
@@ -52,10 +78,10 @@ const DynamicContent = ({content}) => {
         switch(component.__component){
             case("page-content.small-boxes"):
                 return (
-                <Container key={i} pb="2" data-aos="fade-up">
+                <Container key={i} pb="2">
                     <SmallBoxes>
                         {component.smallBox.map( (box,i) => (
-                            <SmallBox key={i} color={box.bgColor} bgImage={box.image && getStrapiMedia(box.image)}>
+                            <SmallBox key={i} data-aos="fade-up" color={box.bgColor} bgImage={box.image && getStrapiMedia(box.image)}>
                                 <Image src={getStrapiMedia(box.image)} layout="fill" objectFit="contain"/>
                                 { box.title && !box.image && <Text bold size="md">{box.title}</Text> }
                             </SmallBox>
@@ -68,7 +94,6 @@ const DynamicContent = ({content}) => {
                 return <Container data-aos="fade-up" key={i} pb="2"><Banner src={getStrapiMedia(component.image)}/></Container>
                 break
             case("page-content.image"):
-            {console.log(component.wide)}
                 return (
                     
                         <Center>
@@ -94,21 +119,23 @@ const DynamicContent = ({content}) => {
                 )
                 break
             case("page-content.image-and-text"):
+            {console.log(component)}
                 return (
                     <Container key={i} pb="2">
                         <ImageAndText> 
                         {component.imageRight?
                                 (<>
                                     <Markdown>{component.text}</Markdown>
-                                    <div height={component.image.height} width={component.image.width}>
-                                        <Image layout="fill" objectFit="cover" src={getStrapiMedia(component.image)}/>
-                                    </div>
+                                    <AspectRatioMod pct={component.image.height/component.image.width*100} desktop={component.imageSizeCover}>
+                                        <Image layout="fill" objectFit={component.imageSizeCover? "cover" : "contain"} src={getStrapiMedia(component.image)}/>
+                                    </AspectRatioMod>
                                 </>)
                                 :
                                 (<>
-                                    <div height={component.image.height} width={component.image.width}>
-                                        <Image layout="fill" objectFit="cover" src={getStrapiMedia(component.image)}/>
-                                    </div>                                    <Markdown>{component.text}</Markdown>
+                                    <AspectRatioMod pct={component.image.height/component.image.width*100} desktop={component.imageSizeCover}>
+                                        <Image layout="fill" objectFit={component.imageSizeCover? "cover" : "contain"} src={getStrapiMedia(component.image)}/>
+                                    </AspectRatioMod>                                    
+                                    <Markdown>{component.text}</Markdown>
                                 </>)
                             }
                         </ImageAndText>

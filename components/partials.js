@@ -59,8 +59,7 @@ const templates = {
             max-width: ${maxWidth? maxWidth : "initial"};
             font-size: ${size==="xl"? "4rem" : size==="lg"? "3rem" : size==="md"? "2rem"  : size==="sm"? "1.8rem": size==="xs"? "1.4rem"  : size==="inherit"? "inherit" : "2rem" };
             
-            ${ mq('md', `
-            `)}
+            
            
             
         `
@@ -130,19 +129,24 @@ const ApectWrap = styled.div.attrs( ({lazy,src}) => lazy && ({ "data-src" : src}
 
 const Aspect = styled.div`
     width: 100%;
-    padding-bottom: ${ ({pct}) => pct }%;
+    padding-bottom: ${ ({desktop, pct}) => desktop? pct : pct}%;
+
     ${ ({src, lazy}) => !lazy && "background-image: url(" + src + ")" };
     ${ ({bgColor}) => bgColor && "background-color:" + bgColor };
     background-size: ${ ({size}) => size || "cover" };
     background-position: center;
     background-repeat: no-repeat;
     transition: all .5s;
+
+    ${ ({desktop, pct}) => mq('md', `
+        padding-bottom: ${desktop? "0" : pct }%;
+    `)}
 `
 
 
-export const AspectRatio = ({hover, size, lazy, src, pct, width, maxWidth, className, circle, bgColor, children}) => (
+export const AspectRatio = ({desktop, hover, size, lazy, src, pct, width, maxWidth, className, circle, bgColor, children}) => (
     <ApectWrap width={width} size={size} maxWidth={maxWidth} hover={hover} circle={circle} className={className} lazy={lazy} bgColor={bgColor}>
-        <Aspect className="hoverTarget" pct={pct} src={src}/>
+        <Aspect className="hoverTarget" desktop={desktop} pct={pct} src={src}/>
         {children}
     </ApectWrap>
 )

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_partials_image_size_covers",
+  "info": {
+    "name": "imageSizeCover",
+    "icon": "arrow-alt-circle-left",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "cover": {
+      "type": "boolean",
+      "default": false
+    },
+    "aspectRatio": {
+      "type": "float",
+      "default": 0,
+      "min": 0,
+      "max": 300
+    }
+  }
+}
