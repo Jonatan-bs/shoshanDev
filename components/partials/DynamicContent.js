@@ -42,12 +42,13 @@ const ImageAndText = styled.div`
     flex-wrap:wrap;
     &>:nth-child(1){
         width: 100%;
-        padding-right: 25px;
+        padding-right: 0px;
         position: relative;
+        margin-bottom: 50px;
     }
     &>:nth-child(2){
         width: 100%;
-        padding-left: 25px;
+        padding-left: 0px;
         position: relative;
     }
 
@@ -56,12 +57,11 @@ const ImageAndText = styled.div`
             &>:nth-child(1){
                 width: 50%;
                 padding-right: 25px;
-                position: relative;
+                margin-bottom: 0px;
             }
             &>:nth-child(2){
                 width: 50%;
                 padding-left: 25px;
-                position: relative;
             }
         `)
     }
@@ -119,20 +119,21 @@ const DynamicContent = ({content}) => {
                 )
                 break
             case("page-content.image-and-text"):
+                    {console.log(component.aspectRatio || "false")}
                 return (
                     <Container key={i} pb="2">
                         <ImageAndText> 
                         {component.imageRight?
                                 (<>
                                     <Markdown>{component.text}</Markdown>
-                                    <AspectRatioMod pct={component.image.height/component.image.width*100} desktop={component.imageSizeCover}>
-                                        <Image layout="fill" objectFit={component.imageSizeCover? "cover" : "contain"} src={getStrapiMedia(component.image)}/>
+                                    <AspectRatioMod pct={component.aspectRatio || (component.image.height/component.image.width*100)} desktop={component.cover}>
+                                        <Image layout="fill" objectFit={component.cover? "cover" : "contain"} src={getStrapiMedia(component.image)}/>
                                     </AspectRatioMod>
                                 </>)
                                 :
                                 (<>
-                                    <AspectRatioMod pct={component.image.height/component.image.width*100} desktop={component.imageSizeCover}>
-                                        <Image layout="fill" objectFit={component.imageSizeCover? "cover" : "contain"} src={getStrapiMedia(component.image)}/>
+                                    <AspectRatioMod pct={component.aspectRatio || (component.image.height/component.image.width*100)} desktop={component.cover}>
+                                        <Image layout="fill" objectFit={component.cover? "cover" : "contain"} src={getStrapiMedia(component.image)}/>
                                     </AspectRatioMod>                                    
                                     <Markdown>{component.text}</Markdown>
                                 </>)

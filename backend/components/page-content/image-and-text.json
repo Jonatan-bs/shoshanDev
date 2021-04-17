@@ -24,10 +24,14 @@
     "imageRight": {
       "type": "boolean"
     },
-    "imageSizeCover": {
-      "type": "component",
-      "repeatable": false,
-      "component": "partials.image-size-cover"
+    "aspectRatio": {
+      "type": "float",
+      "min": 0
+    },
+    "cover": {
+      "type": "boolean",
+      "default": false,
+      "required": false
     }
   }
 }

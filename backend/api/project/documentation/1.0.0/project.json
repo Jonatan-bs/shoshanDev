@@ -1139,24 +1139,12 @@
                     "imageRight": {
                       "type": "boolean"
                     },
-                    "imageSizeCover": {
-                      "type": "object",
-                      "required": [
-                        "id"
-                      ],
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "cover": {
-                          "type": "boolean",
-                          "default": false
-                        },
-                        "aspectRatio": {
-                          "type": "number",
-                          "default": 0
-                        }
-                      }
+                    "aspectRatio": {
+                      "type": "number"
+                    },
+                    "cover": {
+                      "type": "boolean",
+                      "default": false
                     }
                   },
                   "required": [
@@ -1657,24 +1645,12 @@
                     "imageRight": {
                       "type": "boolean"
                     },
-                    "imageSizeCover": {
-                      "type": "object",
-                      "required": [
-                        "id"
-                      ],
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "cover": {
-                          "type": "boolean",
-                          "default": false
-                        },
-                        "aspectRatio": {
-                          "type": "number",
-                          "default": 0
-                        }
-                      }
+                    "aspectRatio": {
+                      "type": "number"
+                    },
+                    "cover": {
+                      "type": "boolean",
+                      "default": false
                     }
                   },
                   "required": [
