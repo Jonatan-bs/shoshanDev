@@ -119,7 +119,6 @@ const DynamicContent = ({content}) => {
                 )
                 break
             case("page-content.image-and-text"):
-                    {console.log(component.aspectRatio || "false")}
                 return (
                     <Container key={i} pb="2">
                         <ImageAndText> 
