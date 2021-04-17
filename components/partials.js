@@ -194,12 +194,12 @@ export const Heading = styled.h1`
     ${ ({caps}) => caps && "text-transform: uppercase;" }
     color: ${ ({color,theme}) => theme.colors[color] || "inherit"};
     ${ ({center}) => center && "text-align: center;" }
-    ${ ({align}) => align && "text-align:" + align }
+    text-align: ${ ({align, center}) => align? align : center? "center" : "left"};
     
     font-size: ${({size}) => size==="xl"? "4" : size==="lg"? "3.5" : size==="md"? "3"  : size==="sm"? "2" : size==="xs"? "1.5" : "3" }rem;
     
     ${({size}) => mq('md', `
-        font-size: ${({size}) => size==="xl"? "8" : size==="lg"? "4" : size==="md"? "3"  : size==="sm"? "2" : size==="xs"? "1.5" : "3" }rem;
+        font-size: ${ size==="xl"? "6" : size==="lg"? "4" : size==="md"? "3"  : size==="sm"? "2" : size==="xs"? "1.5" : "3" }rem;
     `)}
 `
 

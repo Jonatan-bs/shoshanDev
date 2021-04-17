@@ -11,6 +11,9 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'PT Sans', sans-serif;
 
     font-size: 60%;
+    ${ mq('sm', `
+      font-size: 80%;  
+    `)}
     ${ mq('md', `
       font-size: 100%;  
     `)}
