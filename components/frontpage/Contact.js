@@ -14,7 +14,7 @@ const ContactCard = styled(Container)`
     text-align: center;
     
     ${mq('md', `
-        text-align: center;
+        text-align: left;
     `)}
 `
 
