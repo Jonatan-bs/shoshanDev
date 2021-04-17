@@ -6,8 +6,43 @@ import mq from "../styles/breakpoints";
 
 
 //Adjustment templates
-
 const templates = {
+    hide({hide}){
+        
+        let style = "";
+
+        hide && hide.map( display => {
+            switch(display){
+                case("smUp"):
+                    style += mq('sm','display:none')
+                    break;
+                case("mdUp"):
+                    style += mq('md','display:none')
+                    break;
+                case("lgUp"):
+                    style += mq('lg','display:none')
+                    break;
+                case("xlUp"):
+                    style += mq('xl','display:none')
+                    break;
+                case("smDown"):
+                    style += mq('sm','display:none', true)
+                    break;
+                case("mdDown"):
+                    style += mq('md','display:none', true)
+                    break;
+                case("lgDown"):
+                    style += mq('lg','display:none', true)
+                    break;
+                case("xlDown"):
+                    style += mq('xl','display:none', true)
+                    break;
+            }   
+        })
+
+        return style
+        
+    },
     paddingTemplate({interval,pb,py,pt,pl,pr,px}){
         return`${ 
             pb? "padding-bottom:" + pb*interval + "px;" : 
@@ -31,37 +66,37 @@ const templates = {
         }`
     },
     padding(props){
-
         
-
+        
+        
         
         
         return` 
-                ${
-                    this.paddingTemplate({interval:30, ...props })
-                }
-                ${ 
-                    mq('md', this.paddingTemplate({interval: 50, ...props }))
-                }
-                
+        ${
+            this.paddingTemplate({interval:30, ...props })
+        }
+        ${ 
+            mq('md', this.paddingTemplate({interval: 50, ...props }))
+        }
+        
         `
     },
     textStyle: ({size,bold,color,theme,caps,center, lh, italic, width, maxWidth}) =>{ 
         return`
-            font-weight: ${ bold?  "bold" : "inherit" };
-            color: ${ theme.colors[color] || "inherit"};
-            text-transform: ${ caps? "uppercase" : "inherit"};
-            text-align: ${ center? "center" :  "inherit"};
-            line-height: ${ lh ||  "inherit" };
-            letter-spacing: 1px;
-            font-style :${italic?  "italic" : "inherit"};
-            width: ${width? width : "initial"};
-            max-width: ${maxWidth? maxWidth : "initial"};
-            font-size: ${size==="xl"? "4rem" : size==="lg"? "3rem" : size==="md"? "2rem"  : size==="sm"? "1.8rem": size==="xs"? "1.4rem"  : size==="inherit"? "inherit" : "2rem" };
-            
-            
-           
-            
+        font-weight: ${ bold?  "bold" : "inherit" };
+        color: ${ theme.colors[color] || "inherit"};
+        text-transform: ${ caps? "uppercase" : "inherit"};
+        text-align: ${ center? "center" :  "inherit"};
+        line-height: ${ lh ||  "inherit" };
+        letter-spacing: 1px;
+        font-style :${italic?  "italic" : "inherit"};
+        width: ${width? width : "initial"};
+        max-width: ${maxWidth? maxWidth : "initial"};
+        font-size: ${size==="xl"? "4rem" : size==="lg"? "3rem" : size==="md"? "2rem"  : size==="sm"? "1.8rem": size==="xs"? "1.4rem"  : size==="inherit"? "inherit" : "2rem" };
+        
+        
+        
+        
         `
     }
 }
@@ -70,9 +105,9 @@ const templates = {
 //  Link
 //
 const StyledLink = styled.a`
-    cursor: pointer;
-    ${ ({py}) => py ? "padding-top: " + py*50 + "px; padding-bottom:" + py*50 + "px;" : ""}
-    font-size: ${({size}) => size==="xl"? "4rem" : size==="lg"? "3rem" : size==="md"? "2rem"  : size==="sm"? "1rem" : size==="inherit"? "inherit" : "1.4rem" };
+cursor: pointer;
+${ ({py}) => py ? "padding-top: " + py*50 + "px; padding-bottom:" + py*50 + "px;" : ""}
+font-size: ${({size}) => size==="xl"? "4rem" : size==="lg"? "3rem" : size==="md"? "2rem"  : size==="sm"? "1rem" : size==="inherit"? "inherit" : "1.4rem" };
     ${ ({bold}) => bold && "font-weight: bold;" }
     ${ ({caps}) => caps && "text-transform: uppercase;" }
     color: ${ ({color,theme}) => theme.colors[color] || theme.colors.primary };
@@ -116,6 +151,7 @@ const ApectWrap = styled.div.attrs( ({lazy,src}) => lazy && ({ "data-src" : src}
     max-width: ${ ({maxWidth}) => maxWidth || "inherit" };
     width: ${ ({width}) => width || "auto" };
     position: relative;
+    ${ ({bgColor}) => bgColor && "background-color:" + bgColor };
     overflow: hidden;
     ${
         ({hover}) => hover?`
@@ -132,7 +168,6 @@ const Aspect = styled.div`
     padding-bottom: ${ ({desktop, pct}) => desktop? pct : pct}%;
 
     ${ ({src, lazy}) => !lazy && "background-image: url(" + src + ")" };
-    ${ ({bgColor}) => bgColor && "background-color:" + bgColor };
     background-size: ${ ({size}) => size || "cover" };
     background-position: center;
     background-repeat: no-repeat;
@@ -217,13 +252,14 @@ export const Text = styled.p`
 //  Markdown
 //
 const MarkdownStyled = styled.div`
+    ${(props)=>templates.hide(props)}
     >p{
         ${(props)=>templates.padding(props)}
         ${(props)=>templates.textStyle(props)}
     }
 `
 
-export const Markdown = ({children, py, px, pt, pb, pr, pl, size, bold, color, caps, width, center, lh}) => (
+export const Markdown = ({children, hide, py, px, pt, pb, pr, pl, size, bold, color, caps, width, center, lh}) => (
     <MarkdownStyled 
         py={py}
         px={px}
@@ -238,6 +274,7 @@ export const Markdown = ({children, py, px, pt, pb, pr, pl, size, bold, color, c
         width={width}
         center={center}
         lh={lh}
+        hide={hide}
         dangerouslySetInnerHTML={ {__html: marked(children)}}/>
 )
 

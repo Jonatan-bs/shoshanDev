@@ -6,7 +6,10 @@ const size = {
 	xl: '1300px',
 }
 
-const mq = (braeakSize, string, theme) => {
-	return `@media (min-width: ${size[braeakSize]}) { ${string} }`
+const mq = (braeakSize, string, reverse) => {
+	return reverse?
+	`@media (max-width: ${size[braeakSize]}) { ${string} }`
+	:
+	`@media (min-width: ${size[braeakSize]}) { ${string} }`
 }
 export default mq

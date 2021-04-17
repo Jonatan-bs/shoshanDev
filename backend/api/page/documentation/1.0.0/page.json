@@ -974,6 +974,9 @@
                     "cover": {
                       "type": "boolean",
                       "default": false
+                    },
+                    "imageBG": {
+                      "type": "string"
                     }
                   },
                   "required": [
@@ -1559,6 +1562,9 @@
                     "cover": {
                       "type": "boolean",
                       "default": false
+                    },
+                    "imageBG": {
+                      "type": "string"
                     }
                   },
                   "required": [
