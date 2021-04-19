@@ -1,11 +1,7 @@
 import styled from "styled-components";
-import Layout from './../components/Layout';
-import {motion, animatePresence} from "framer-motion"
-import { getStrapiMedia, fetchAPI } from "./../lib/api";
-import {Container, AspectRatio, Image, Heading, Text, Link, Center} from "./../components/partials"
-import HeaderLogo from "./../components/partials/HeaderLogo"
-import DynamicContent from "./../components/partials/DynamicContent"
-import Banner from "./../components/page/Banner"
+import {fetchAPI } from "./../../lib/api";
+import HeaderLogo from "./../../components/partials/HeaderLogo"
+import DynamicContent from "./../../components/partials/DynamicContent"
 import {useRouter} from 'next/router'
 import DefaultErrorPage from 'next/error'
 import Head from 'next/head'
@@ -75,8 +71,8 @@ const Page = ({page}) => {
 export default Page;
 
 export async function getStaticProps({params}){
-    const {slug} = params
-    let page = await fetchAPI('/pages?slug=' + slug)
+    const {slug1} = params
+    let page = await fetchAPI('/pages?no_front=false&&slug=' + slug1)
     
     page = page.length? page.error || page[0] : null
 
@@ -88,8 +84,8 @@ export async function getStaticProps({params}){
 }
 
 export async function getStaticPaths() {
-    let pages = await fetchAPI('/pages')
-
+    let pages = await fetchAPI('/pages?no_front=false')
+    
     return {
       paths: pages?.map((page) => `/${page.slug}`) || [],
       fallback: false,

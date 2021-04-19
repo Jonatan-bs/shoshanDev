@@ -25,6 +25,26 @@
         "page-content.text",
         "page-content.contact-box"
       ]
+    },
+    "parent_page": {
+      "model": "page"
+    },
+    "full_slug": {
+      "type": "string"
+    },
+    "hide_title": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "no_front": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }

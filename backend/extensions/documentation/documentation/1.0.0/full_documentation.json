@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "04/18/2021 12:05:00 AM"
+    "x-generation-date": "04/19/2021 10:00:07 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -4091,6 +4091,46 @@
                 },
                 "subtext": {
                   "type": "string"
+                },
+                "link": {
+                  "required": [
+                    "id",
+                    "hide_title",
+                    "title",
+                    "no_front"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "slug": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "dynamiczone"
+                    },
+                    "parent_page": {
+                      "type": "string"
+                    },
+                    "full_slug": {
+                      "type": "string"
+                    },
+                    "hide_title": {
+                      "type": "boolean"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "no_front": {
+                      "type": "boolean"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -4272,6 +4312,46 @@
                 },
                 "subtext": {
                   "type": "string"
+                },
+                "link": {
+                  "required": [
+                    "id",
+                    "hide_title",
+                    "title",
+                    "no_front"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "slug": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "dynamiczone"
+                    },
+                    "parent_page": {
+                      "type": "string"
+                    },
+                    "full_slug": {
+                      "type": "string"
+                    },
+                    "hide_title": {
+                      "type": "boolean"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "no_front": {
+                      "type": "boolean"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -4320,7 +4400,10 @@
                     },
                     "page": {
                       "required": [
-                        "id"
+                        "id",
+                        "hide_title",
+                        "title",
+                        "no_front"
                       ],
                       "properties": {
                         "id": {
@@ -4331,6 +4414,21 @@
                         },
                         "content": {
                           "type": "dynamiczone"
+                        },
+                        "parent_page": {
+                          "type": "string"
+                        },
+                        "full_slug": {
+                          "type": "string"
+                        },
+                        "hide_title": {
+                          "type": "boolean"
+                        },
+                        "title": {
+                          "type": "string"
+                        },
+                        "no_front": {
+                          "type": "boolean"
                         },
                         "created_by": {
                           "type": "string"
@@ -4376,7 +4474,10 @@
                     },
                     "page": {
                       "required": [
-                        "id"
+                        "id",
+                        "hide_title",
+                        "title",
+                        "no_front"
                       ],
                       "properties": {
                         "id": {
@@ -4387,6 +4488,21 @@
                         },
                         "content": {
                           "type": "dynamiczone"
+                        },
+                        "parent_page": {
+                          "type": "string"
+                        },
+                        "full_slug": {
+                          "type": "string"
+                        },
+                        "hide_title": {
+                          "type": "boolean"
+                        },
+                        "title": {
+                          "type": "string"
+                        },
+                        "no_front": {
+                          "type": "boolean"
                         },
                         "created_by": {
                           "type": "string"
@@ -4436,7 +4552,10 @@
                     },
                     "page": {
                       "required": [
-                        "id"
+                        "id",
+                        "hide_title",
+                        "title",
+                        "no_front"
                       ],
                       "properties": {
                         "id": {
@@ -4447,6 +4566,21 @@
                         },
                         "content": {
                           "type": "dynamiczone"
+                        },
+                        "parent_page": {
+                          "type": "string"
+                        },
+                        "full_slug": {
+                          "type": "string"
+                        },
+                        "hide_title": {
+                          "type": "boolean"
+                        },
+                        "title": {
+                          "type": "string"
+                        },
+                        "no_front": {
+                          "type": "boolean"
                         },
                         "created_by": {
                           "type": "string"
@@ -4492,7 +4626,10 @@
                     },
                     "page": {
                       "required": [
-                        "id"
+                        "id",
+                        "hide_title",
+                        "title",
+                        "no_front"
                       ],
                       "properties": {
                         "id": {
@@ -4503,6 +4640,21 @@
                         },
                         "content": {
                           "type": "dynamiczone"
+                        },
+                        "parent_page": {
+                          "type": "string"
+                        },
+                        "full_slug": {
+                          "type": "string"
+                        },
+                        "hide_title": {
+                          "type": "boolean"
+                        },
+                        "title": {
+                          "type": "string"
+                        },
+                        "no_front": {
+                          "type": "boolean"
                         },
                         "created_by": {
                           "type": "string"
@@ -4530,7 +4682,10 @@
       },
       "Page": {
         "required": [
-          "id"
+          "id",
+          "hide_title",
+          "title",
+          "no_front"
         ],
         "properties": {
           "id": {
@@ -5119,10 +5274,69 @@
                 }
               ]
             }
+          },
+          "parent_page": {
+            "required": [
+              "id",
+              "hide_title",
+              "title",
+              "no_front"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "slug": {
+                "type": "string"
+              },
+              "content": {
+                "type": "dynamiczone"
+              },
+              "parent_page": {
+                "type": "string"
+              },
+              "full_slug": {
+                "type": "string"
+              },
+              "hide_title": {
+                "type": "boolean"
+              },
+              "title": {
+                "type": "string"
+              },
+              "no_front": {
+                "type": "boolean"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "full_slug": {
+            "type": "string"
+          },
+          "hide_title": {
+            "type": "boolean",
+            "default": false
+          },
+          "title": {
+            "type": "string"
+          },
+          "no_front": {
+            "type": "boolean",
+            "default": false
           }
         }
       },
       "NewPage": {
+        "required": [
+          "hide_title",
+          "title",
+          "no_front"
+        ],
         "properties": {
           "slug": {
             "type": "string"
@@ -5707,6 +5921,23 @@
                 }
               ]
             }
+          },
+          "parent_page": {
+            "type": "string"
+          },
+          "full_slug": {
+            "type": "string"
+          },
+          "hide_title": {
+            "type": "boolean",
+            "default": false
+          },
+          "title": {
+            "type": "string"
+          },
+          "no_front": {
+            "type": "boolean",
+            "default": false
           },
           "created_by": {
             "type": "string"

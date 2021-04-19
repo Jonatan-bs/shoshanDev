@@ -491,6 +491,46 @@
                 },
                 "subtext": {
                   "type": "string"
+                },
+                "link": {
+                  "required": [
+                    "id",
+                    "hide_title",
+                    "title",
+                    "no_front"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "slug": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "dynamiczone"
+                    },
+                    "parent_page": {
+                      "type": "string"
+                    },
+                    "full_slug": {
+                      "type": "string"
+                    },
+                    "hide_title": {
+                      "type": "boolean"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "no_front": {
+                      "type": "boolean"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -672,6 +712,46 @@
                 },
                 "subtext": {
                   "type": "string"
+                },
+                "link": {
+                  "required": [
+                    "id",
+                    "hide_title",
+                    "title",
+                    "no_front"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "slug": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "dynamiczone"
+                    },
+                    "parent_page": {
+                      "type": "string"
+                    },
+                    "full_slug": {
+                      "type": "string"
+                    },
+                    "hide_title": {
+                      "type": "boolean"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "no_front": {
+                      "type": "boolean"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
