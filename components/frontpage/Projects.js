@@ -45,6 +45,14 @@ const ProjectWrap = styled('div')`
     `)}
 `
 const AspectRatioMod = styled(AspectRatio)`
+    .hoverTarget>div{
+        transition: all .5s;
+    }
+    &:hover{
+        .hoverTarget>div{
+            transform: scale(1.07);
+        }
+    }
 `
 
 
@@ -53,8 +61,10 @@ const Projects = ({projects}) => (
         {projects.map((project, i) => (
             <ProjectWrap key={i}  data-aos="fade-up">
                 <Link href={"/project/" + project.slug}>
-                            <AspectRatioMod hover gradient size="cover" bgColor={project.bgColor || "#333"} pct="80">
-                                <Image layout="fill" objectFit="cover" src={getStrapiMedia(project.thumbnail)}/>
+                            <AspectRatioMod gradient size="cover" bgColor={project.bgColor || "#333"} pct="80">
+                                <div className="hoverTarget">
+                                    <Image layout="fill" objectFit="cover" src={getStrapiMedia(project.thumbnail)}/>
+                                </div>
                                 
                                 <TextWrap className="textWrap">
                                     <Title as="p" size="lg">{project.title}</Title>

@@ -153,14 +153,6 @@ const ApectWrap = styled.div.attrs( ({lazy,src}) => lazy && ({ "data-src" : src}
     position: relative;
     ${ ({bgColor}) => bgColor && "background-color:" + bgColor };
     overflow: hidden;
-    ${
-        ({hover}) => hover?`
-            &:hover .hoverTarget{
-                transform: scale(1.07);
-            }; 
-        ` : "" 
-    }
-    
 `
 
 const Aspect = styled.div`
@@ -171,7 +163,6 @@ const Aspect = styled.div`
     background-size: ${ ({size}) => size || "cover" };
     background-position: center;
     background-repeat: no-repeat;
-    transition: all .5s;
 
     ${ ({desktop, pct}) => mq('md', `
         padding-bottom: ${desktop? "0" : pct }%;
@@ -181,7 +172,7 @@ const Aspect = styled.div`
 
 export const AspectRatio = ({desktop, hover, size, lazy, src, pct, width, maxWidth, className, circle, bgColor, children}) => (
     <ApectWrap width={width} size={size} maxWidth={maxWidth} hover={hover} circle={circle} className={className} lazy={lazy} bgColor={bgColor}>
-        <Aspect className="hoverTarget" desktop={desktop} pct={pct} src={src}/>
+        <Aspect desktop={desktop} pct={pct} src={src}/>
         {children}
     </ApectWrap>
 )
