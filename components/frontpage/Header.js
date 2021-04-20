@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { keyframes } from 'styled-components'
 import mq from "../../styles/breakpoints";
-import {AspectRatio, Container, Text} from "./../partials"
+import {AspectRatio, Container, Text, Vignette} from "./../partials"
 import {motion, animatePresence} from "framer-motion"
 import animation from "./../../scripts/animations"
 import Image from "next/image"
@@ -38,29 +38,31 @@ const RoseWrap = styled(motion.div)`
 const Rose = styled(Image)`
 `
 const ZIndex = styled.div`
-    z-index: 1;
+    z-index: 3;
 `
-const spotLightAnimation = keyframes`
-    0% { top: -300px; left: 0 }
-    50% { left:calc(100% - 600px); top:calc(100% - 600px); }
-    100% { top: -300px; left: 0 }
+const lightLineAnimation = keyframes`
+    0% { top: -80%; left: -50%;  }
+    30% { top: -80%; left: 120%; }
+    100% { top: -80%; left: 120%; }
 `
 
-const SpotLight = styled.div`
-    top: -300px; left: 0;    
-    height: 800px;
-    width: 800px;
+const LightLine = styled.div`
+    top: -80%; left: -40%;    
+    height: 200%;
+    width: 100px;
     background: #fff;
-    border-radius: 100%;
     z-index: 2;
     position: absolute;
-    filter: blur(900px);
-    opacity: .15;
-    animation-name: ${spotLightAnimation};
-    animation-duration: 20s;
+    transform: rotate(-25deg);
+    filter: blur(100px);
+    opacity: .1;
+    animation-name: ${lightLineAnimation};
+    animation-duration: 8s;
     animation-iteration-count: infinite;
-    animation-timing-function: linear
+    animation-timing-function: linear;
+    animation-delay: 1s;
 `
+
 
 
 
@@ -68,7 +70,8 @@ const Header = ({subtext}) => (
     <motion.div initial='initial' animate='animate'>
             <HeaderWrap as="header" wide py=".5" px=".5"> 
                 <ContainerMod py="5" px="1" wide> 
-                    <SpotLight/>
+                    <LightLine/>
+                    <Vignette pct="80" z="2"/>
                     <RoseWrap>
                         <Rose width="730" height="494" src="/images/rose-black-bg.jpg" priority/>
                     </RoseWrap>

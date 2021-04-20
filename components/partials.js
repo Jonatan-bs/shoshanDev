@@ -304,3 +304,13 @@ export const Center = styled.div`
     display: flex;
     justify-content: center;
 `
+//
+//  Vignette
+//
+export const Vignette = styled.div`
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    ${({z}) => z && `z-index: ${z}` };
+    background: ${({pct}) => `radial-gradient(transparent 51%,#000000${pct==100? "" : pct || "90"})` }
+`
