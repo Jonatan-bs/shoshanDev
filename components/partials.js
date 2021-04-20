@@ -209,7 +209,9 @@ export const Container = styled.div`
     ${(props)=>templates.padding(props)}
     max-width: ${ ({maxWidth, wide}) => maxWidth==="lg"? "1800px" : wide? "100%":  "1400px"};
     margin: 0 auto;
-    box-sizing: border-box
+    box-sizing: border-box;
+    position: relative;
+
 `
 //
 //  Heading
