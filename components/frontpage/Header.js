@@ -38,10 +38,10 @@ const RoseWrap = styled(motion.div)`
 const Rose = styled(Image)`
 `
 const ZIndex = styled.div`
-    z-index: 3;
+    z-index: 4;
 `
 const lightLineAnimation = keyframes`
-    0% { top: -80%; left: -50%;  }
+    0% { top: -80%; left: -100%;  }
     30% { top: -80%; left: 120%; }
     100% { top: -80%; left: 120%; }
 `
@@ -54,13 +54,17 @@ const LightLine = styled.div`
     z-index: 2;
     position: absolute;
     transform: rotate(-25deg);
-    filter: blur(100px);
+    filter: blur(20px);
     opacity: .1;
     animation-name: ${lightLineAnimation};
     animation-duration: 8s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-    animation-delay: 1s;
+    animation-delay: .5s;
+    ${mq('md', `
+        width: 200px;
+        filter: blur(50px);
+    `)}
 `
 
 
@@ -71,7 +75,7 @@ const Header = ({subtext}) => (
             <HeaderWrap as="header" wide py=".5" px=".5"> 
                 <ContainerMod py="5" px="1" wide> 
                     <LightLine/>
-                    <Vignette pct="80" z="2"/>
+                    <Vignette pct="80" z="3"/>
                     <RoseWrap>
                         <Rose width="730" height="494" src="/images/rose-black-bg.jpg" priority/>
                     </RoseWrap>
