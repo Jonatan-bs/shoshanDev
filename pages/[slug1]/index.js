@@ -5,6 +5,7 @@ import DynamicContent from "./../../components/partials/DynamicContent"
 import {useRouter} from 'next/router'
 import DefaultErrorPage from 'next/error'
 import Head from 'next/head'
+import Header from "./../../components/page/Header"
 
 const SmallBoxes = styled.div`
     width: 100%;
@@ -63,6 +64,7 @@ const Page = ({page}) => {
     return (
         <>  
                 <HeaderLogo/>
+                {page.hide_title || <Header title={page.title}/>}
                 <DynamicContent content={page.content || {}}/>
         </> 
     )

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import {fetchAPI } from "./../../lib/api";
 import HeaderLogo from "./../../components/partials/HeaderLogo"
 import DynamicContent from "./../../components/partials/DynamicContent"
+import Header from "./../../components/page/Header"
 import {useRouter} from 'next/router'
 import DefaultErrorPage from 'next/error'
 import Head from 'next/head'
@@ -63,6 +64,8 @@ const Page = ({page}) => {
     return (
         <>  
                 <HeaderLogo/>
+                {page.hide_title || <Header title={page.title}/>}
+                
                 <DynamicContent content={page.content || {}}/>
         </> 
     )
