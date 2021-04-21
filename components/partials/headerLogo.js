@@ -18,15 +18,15 @@ const Wrap = styled.div`
 
 `
 
-const Logo = styled(Image).attrs({ src:"/images/logo.svg", alt: "Shoshan Development", width: "330", height: "73" })`
+const Logo = styled(Image).attrs(({light})=>({ src:`/images/${light? "logo-light.svg":"logo.svg" }`, alt: "Shoshan Development", width: "330", height: "73" }))`
 `
 
 
-const HeaderLogo = () => (
+const HeaderLogo = ({light}) => (
     <Wrap>
         <Link href="/" width="100%">
             <LogoWrap>
-                <Logo/>
+                <Logo light={light}/>
             </LogoWrap>
         </Link>
     </Wrap>

@@ -313,3 +313,11 @@ export const Vignette = styled.div`
     ${({z}) => z && `z-index: ${z}` };
     background: ${({pct}) => `radial-gradient(transparent 51%,#000000${pct==100? "" : pct || "90"})` }
 `
+
+//
+// Logo
+//
+
+
+export const Logo = styled(Image).attrs(({light})=>({ src:`/images/${light? "logo-light.svg":"logo.svg" }`, alt: "Shoshan Development", width: "330", height: "73" }))`
+`
