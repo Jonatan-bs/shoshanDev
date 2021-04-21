@@ -1,12 +1,11 @@
 import styled from "styled-components";
-import marked from "marked";
 import {motion, animatePresence} from "framer-motion"
 import { getStrapiMedia, fetchAPI } from "./../../lib/api";
 import {Container, Markdown, AspectRatio, Image, Heading, Text, Link, Center} from "./../partials"
 import HeaderLogo from "./../partials/HeaderLogo"
 import Banner from "./../page/Banner"
 import mq from "../../styles/breakpoints";
-
+import DOMPurify from 'isomorphic-dompurify';
 
 const SmallBoxes = styled.div`
     width: 100%;

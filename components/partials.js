@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import NextLink from "next/link";
 import marked from "marked";
+import DOMPurify from 'isomorphic-dompurify';
 import NextImage from 'next/image'
 import mq from "../styles/breakpoints";
-
 
 //Adjustment templates
 const templates = {
@@ -268,7 +268,7 @@ export const Markdown = ({children, hide, py, px, pt, pb, pr, pl, size, bold, co
         center={center}
         lh={lh}
         hide={hide}
-        dangerouslySetInnerHTML={ {__html: marked(children)}}/>
+        dangerouslySetInnerHTML={ {__html: DOMPurify.sanitize(marked(children))}}/>
 )
 
 //
