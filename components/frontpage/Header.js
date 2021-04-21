@@ -9,7 +9,7 @@ import Image from "next/image"
 const HeaderWrap = styled(Container)`
 `;
 const ContainerMod = styled(Container)`
-    background: #111;
+    background: #1a1919;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -75,7 +75,7 @@ const Header = ({subtext}) => (
             <HeaderWrap as="header" wide py=".5" px=".5"> 
                 <ContainerMod py="5" px="1" wide> 
                     <LightLine/>
-                    <Vignette pct="80" z="3"/>
+                    <Vignette pct="60" z="3"/>
                     <RoseWrap>
                         <Rose width="730" height="494" src="/images/rose-black-bg.jpg" priority/>
                     </RoseWrap>
