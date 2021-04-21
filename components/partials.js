@@ -92,7 +92,7 @@ const templates = {
         font-style :${italic?  "italic" : "inherit"};
         width: ${width? width : "initial"};
         max-width: ${maxWidth? maxWidth : "initial"};
-        font-size: ${size==="xl"? "4rem" : size==="lg"? "3rem" : size==="md"? "2rem"  : size==="sm"? "1.8rem": size==="xs"? "1.4rem"  : size==="inherit"? "inherit" : "2rem" };
+        font-size: ${size==="xl"? "2.5rem" : size==="lg"? "1.8rem" : size==="md"? "1.4rem"  : size==="sm"? "1.4rem": size==="xs"? "1rem"  : size==="inherit"? "inherit" : "1.4rem" };
         
         
         

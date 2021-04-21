@@ -87,7 +87,7 @@ const Header = ({subtext}) => (
                                 </LogoWrap>
                             </motion.div>
                             <motion.div variants={animation.fadeUp}  style={{width:"100%", maxWidth:"1000px"}}>
-                                <SubText as="h2" py=".5" size="xs" color="dark3" italic center>{subtext} </SubText>
+                                <SubText as="h2" py=".5" size="md" color="dark3" italic center>{subtext} </SubText>
                             </motion.div>
                         </motion.div>
                     </ZIndex>                    

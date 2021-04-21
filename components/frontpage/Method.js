@@ -27,7 +27,7 @@ const Method = () => (
             <MethodDiv data-aos="fade-right">
                 <Link color="dark2" hover="underline" href="/designproces">
                     <Heading className="hoverTarget" as="h3" size="md" caps>DESIGNPROCES</Heading>
-                    <Text>
+                    <Text size="lg">
                         Læs om hvordan jeg finder frem til
                         det rette design til dit projekt. 
                     </Text>
@@ -36,7 +36,7 @@ const Method = () => (
             <MethodDiv data-aos="fade-left">
                 <Link color="dark2" hover="underline" href="/teknologier">
                     <Heading  className="hoverTarget" as="h3" size="md" caps>Teknologier</Heading>
-                    <Text>
+                    <Text size="lg">
                         Ethvert projekt kræver et godt
                         fundament.
                         Se hvilke teknologier jeg har erfaring med. 

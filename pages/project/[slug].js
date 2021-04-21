@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Layout from './../../components/Layout';
 import Header from './../../components/project/Header';
 import {Container, Text, Grid} from './../../components/partials';
 import InfoBox from './../../components/project/partials/InfoBox';

@@ -48,7 +48,7 @@ const Contact = ({contactBox}) => (
                     <Heading as="h3"  py={0.5} size="lg">
                         {contactBox.title}
                     </Heading>
-                    <Text color="primary">
+                    <Text  size="lg" color="primary">
                         {contactBox.subtitle}
                     </Text>
                 </TextWrap>
