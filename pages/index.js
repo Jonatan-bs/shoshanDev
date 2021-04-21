@@ -5,20 +5,20 @@ import Services from '../components/frontpage/Services';
 import Projects from '../components/frontpage/Projects';
 import Method from '../components/frontpage/Method';
 import Contact from '../components/frontpage/Contact';
-import Layout from '../components/Layout';
 import { getStrapiMedia, fetchAPI } from "../lib/api";
 import App from 'next/app'
+import Layout from './../components/Layout';
 
 
-const Index = ({projects, frontpage}) => (
-    <>  
+const Index = ({projects, frontpage, menus}) => (
+    <Layout menus={menus}>
         
         <Header subtext={(!frontpage || frontpage.error || !frontpage.subtext  ) ? [] :frontpage.subtext}/>
         <Services services={frontpage.services}/>
         <Projects projects={(!projects || projects.error )? [] : projects }/>
         <Method/>
         <Contact contactBox={frontpage.contactBox}/>
-    </>
+    </Layout>
 )
 
 export default Index;

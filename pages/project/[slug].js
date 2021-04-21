@@ -11,6 +11,8 @@ import {useRouter} from 'next/router'
 import DefaultErrorPage from 'next/error'
 import Head from 'next/head'
 import mq from "../../styles/breakpoints";
+import Layout from './../../components/Layout';
+import LoadingPage from './../../components/loadingPage';
 
 const ContainerMod = styled(Container)`
     display: flex;
@@ -40,11 +42,11 @@ const InfoBoxWrapMobile = styled(InfoBoxWrap)`
     `)}
 `
 
-const Project = ({project}) => {
+const Project = ({project, menus}) => {
     
     const router = useRouter()
     if(router.isFallback) {
-        return <h1>Loading...</h1>
+        return <LoadingPage/>
     }
 
     // This includes setting the noindex header because static files always return a status 200 but the rendered not found page page should obviously not be indexed
@@ -61,7 +63,7 @@ const Project = ({project}) => {
     
 
     return (
-        <>     
+        <Layout menus={menus}>     
             <Header src={getStrapiMedia(project.headerImage)} bgColor={project.bgColor || "#333"} title={project.title} subtitle={project.subtitle}/>
             <ContainerMod py="3"> 
                 <InfoBoxWrapMobile  data-aos="fade-left">
@@ -77,7 +79,7 @@ const Project = ({project}) => {
                 </InfoBoxWrap>
             </ContainerMod>
             <DynamicContent content={project.content}/>   
-        </>
+        </Layout>
     )
 }
 
@@ -95,6 +97,6 @@ export async function getStaticPaths() {
     let projects = await fetchAPI('/projects')
     return {
       paths: projects?.map((project) => `/project/${project.slug}` || []),
-      fallback: false,
+      fallback: true,
     }
   }

@@ -6,6 +6,8 @@ import Header from "./../../components/page/Header"
 import {useRouter} from 'next/router'
 import DefaultErrorPage from 'next/error'
 import Head from 'next/head'
+import Layout from './../../components/Layout';
+import LoadingPage from './../../components/loadingPage';
 
 const SmallBoxes = styled.div`
     width: 100%;
@@ -41,12 +43,12 @@ const ImageAndText = styled.div`
     }
 `
 
-const Page = ({page}) => {
+const Page = ({page, menus}) => {
     
     const router = useRouter()
 
     if(router.isFallback) {
-        return <h1>Loading...</h1>
+        return <LoadingPage/>
     }
 
     // This includes setting the noindex header because static files always return a status 200 but the rendered not found page page should obviously not be indexed
@@ -62,12 +64,12 @@ const Page = ({page}) => {
     }
     
     return (
-        <>  
+        <Layout menus={menus}>  
                 <HeaderLogo/>
                 {page.hide_title || <Header title={page.title}/>}
                 
                 <DynamicContent content={page.content || {}}/>
-        </> 
+        </Layout> 
     )
 }
 
@@ -95,6 +97,6 @@ export async function getStaticPaths() {
     
     return {
       paths: filteredPages?.map((page) => `/${page.full_slug}`) || [],
-      fallback: false,
+      fallback: true,
     }
 }

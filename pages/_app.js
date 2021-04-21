@@ -8,7 +8,6 @@ import {motion, AnimatePresence} from "framer-motion"
 // import "../scss/style.scss";
 import { getStrapiMedia, fetchAPI } from "../lib/api";
 import App from 'next/app'
-import Layout from './../components/Layout';
 
 
 
@@ -26,9 +25,7 @@ function MyApp({ Component, pageProps, router }) {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <AnimatePresence initial={true} exitBeforeEnter>
-          <Layout {...pageProps}>
             <Component {...pageProps} key={router.route} />
-          </Layout>
         </AnimatePresence>
       </ThemeProvider>
     )
