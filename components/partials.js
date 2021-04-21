@@ -183,13 +183,12 @@ export const AspectRatio = ({desktop, hover, size, lazy, src, pct, width, maxWid
 const MyImage = styled(NextImage)`
     ${ (props)=>templates.padding(props) }
     ${ ({width}) => width ? "width:" + width : "width: 100%"};
-    ${ ({maxWidth}) => maxWidth && "max-width:" + maxWidth};
     ${ ({mb}) => mb && "margin-bottom:" + mb*50 + "px"};
 
 `
 
 export const Image = (props) => (
-        <MyImage props={props} width={props.width} maxWidth={props.maxWidth} height={props.height} src={props.src} alt={props.alt} priority={props.priority} layout={props.layout} objectFit={props.objectFit}/>
+        <MyImage props={props} width={props.width} height={props.height} src={props.src} alt={props.alt} priority={props.priority} layout={props.layout} objectFit={props.objectFit}/>
 )
 
 //
