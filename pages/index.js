@@ -8,17 +8,29 @@ import Contact from '../components/frontpage/Contact';
 import { getStrapiMedia, fetchAPI } from "../lib/api";
 import App from 'next/app'
 import Layout from './../components/Layout';
+import animations from "./../scripts/animations"
+import {motion, AnimatePresence} from "framer-motion"
 
 
 const Index = ({projects, frontpage, menus}) => (
-    <Layout menus={menus}>
-        
-        <Header subtext={(!frontpage || frontpage.error || !frontpage.subtext  ) ? [] :frontpage.subtext}/>
-        <Services services={frontpage.services}/>
-        <Projects projects={(!projects || projects.error )? [] : projects }/>
-        <Method/>
-        <Contact contactBox={frontpage.contactBox}/>
-    </Layout>
+    <motion.div 
+        initial="initial"      
+        animate="animate"      
+        exit="exit"      
+        variants={animations.pageTransition}
+        onAnimationComplete={animations.scrollTop}
+    >
+
+        <Layout menus={menus}>
+            
+            <Header subtext={(!frontpage || frontpage.error || !frontpage.subtext  ) ? [] :frontpage.subtext}/>
+            <Services services={frontpage.services}/>
+            <Projects projects={(!projects || projects.error )? [] : projects }/>
+            <Method/>
+            <Contact contactBox={frontpage.contactBox}/>
+        </Layout>
+    
+    </motion.div>
 )
 
 export default Index;

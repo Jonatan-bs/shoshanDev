@@ -138,7 +138,7 @@ font-size: ${({size}) => size==="xl"? "4rem" : size==="lg"? "3rem" : size==="md"
 `
 
 export const Link = ({href, name, title, size, color, children, hover, width}) => (
-    <NextLink href={href}>
+    <NextLink href={href}  scroll={false}>
         <StyledLink title={title} size={size} color={color} hover={hover} width={width}> {name} {children}</StyledLink>
     </NextLink>
 )
@@ -251,7 +251,18 @@ const MarkdownStyled = styled.div`
     }
 `
 
-export const Markdown = ({children, hide, py, px, pt, pb, pr, pl, size, bold, color, caps, width, center, lh}) => (
+export const Markdown = ({children, hide, py, px, pt, pb, pr, pl, size, bold, color, caps, width, center, lh}) => {
+    {console.log("______________________")}
+    {console.log(children.replace(/\n(?=\n)/g, "\n<br>"))}
+    {console.log("______________________")}
+    {console.log(DOMPurify.sanitize(children))}
+    {console.log("______________________")}
+    {console.log(marked(children))}
+    {console.log("______________________")}
+    {console.log(children)}
+    {console.log("______________________")}
+    {console.log(marked(DOMPurify.sanitize(children)))}
+    return(
     <MarkdownStyled 
         py={py}
         px={px}
@@ -267,8 +278,10 @@ export const Markdown = ({children, hide, py, px, pt, pb, pr, pl, size, bold, co
         center={center}
         lh={lh}
         hide={hide}
-        dangerouslySetInnerHTML={ {__html: DOMPurify.sanitize(marked(children))}}/>
-)
+        dangerouslySetInnerHTML={ {__html: DOMPurify.sanitize(marked(children.replace(/\n(?=\n)/g, "\n<br>")))}}>
+            
+        </MarkdownStyled>
+)}
 
 //
 //  Grid

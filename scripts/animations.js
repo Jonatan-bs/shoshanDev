@@ -1,8 +1,29 @@
 export default {
- stagger: {
+  scrollTop(){
+    window.scroll(0,0)
+  },
+
+ pageTransition: {
+    initial: {
+      opacity: 0,
+      transform: "translateY(20px)"
+    },
     animate: {
+      opacity: 1,
+      transform: "translateY(0px)",
       transition: {
-        staggerChildren: 0.1
+        transition:{ transform:{ 
+          ease: 'easeIn', duration: 100
+        }}
+      }
+    },
+    exit: {
+      opacity: 0,
+      transform: "translateY(-20px)",
+      transition: {
+        transition:{ transform:{ 
+          ease: 'easeOut', duration: 100
+        }}
       }
     }
   },

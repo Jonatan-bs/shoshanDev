@@ -7,6 +7,7 @@ import animation from "./../../scripts/animations"
 import { keyframes } from 'styled-components'
 import mq from "../../styles/breakpoints";
 import React, { useEffect } from 'react';
+import animations from "./../../scripts/animations"
 
 const Wrapper = styled(Container)`
     height: 100vh;
@@ -107,14 +108,13 @@ const LoadingPage = () => {
     
     return (
     
-    // <AnimatePresence initial={true} exitBeforeEnter>
         <motion.div 
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            variants={variants}
-            key="loadingPage"
-            >
+        initial="initial"      
+        animate="animate"      
+        exit="exit"      
+        variants={animations.pageTransition}
+        onAnimationComplete={animations.scrollTop}
+        >
             <Wrapper wide>
                 {/* <Vignette pct="15" z="3"/> */}
                 {/* <RoseWrap>
@@ -127,7 +127,6 @@ const LoadingPage = () => {
                 {/* <WaitText color="dark" pt=".5" as="h1" size="xs" center>Vent venligst</WaitText> */}
             </Wrapper>
         </motion.div>
-    // </AnimatePresence>
 )}
 
 

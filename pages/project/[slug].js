@@ -12,6 +12,7 @@ import Head from 'next/head'
 import mq from "../../styles/breakpoints";
 import Layout from './../../components/Layout';
 import LoadingPage from './../../components/loadingPage';
+import animations from "./../../scripts/animations"
 
 const ContainerMod = styled(Container)`
     display: flex;
@@ -62,23 +63,31 @@ const Project = ({project, menus}) => {
     
 
     return (
-        <Layout menus={menus}>     
-            <Header src={getStrapiMedia(project.headerImage)} bgColor={project.bgColor || "#333"} title={project.title} subtitle={project.subtitle}/>
-            <ContainerMod py="3"> 
-                <InfoBoxWrapMobile  data-aos="fade-left">
-                    <InfoBox entries={project.info}/>
-                </InfoBoxWrapMobile>
-                <TextWrap data-aos="fade-right">
-                    <Text pr="1" lh="1.6">
-                        {project.text}
-                    </Text>
-                </TextWrap>
-                <InfoBoxWrap  data-aos="fade-left">
-                    <InfoBox entries={project.info}/>
-                </InfoBoxWrap>
-            </ContainerMod>
-            <DynamicContent content={project.content}/>   
-        </Layout>
+        <motion.div 
+        initial="initial"      
+        animate="animate"      
+        exit="exit"      
+        variants={animations.pageTransition}
+        onAnimationComplete={animations.scrollTop}
+        >
+            <Layout menus={menus}>     
+                <Header src={getStrapiMedia(project.headerImage)} bgColor={project.bgColor || "#333"} title={project.title} subtitle={project.subtitle}/>
+                <ContainerMod py="3"> 
+                    <InfoBoxWrapMobile  data-aos="fade-left">
+                        <InfoBox entries={project.info}/>
+                    </InfoBoxWrapMobile>
+                    <TextWrap data-aos="fade-right">
+                        <Text pr="1" lh="1.6">
+                            {project.text}
+                        </Text>
+                    </TextWrap>
+                    <InfoBoxWrap  data-aos="fade-left">
+                        <InfoBox entries={project.info}/>
+                    </InfoBoxWrap>
+                </ContainerMod>
+                <DynamicContent content={project.content}/>   
+            </Layout>
+        </motion.div>
     )
 }
 

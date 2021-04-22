@@ -8,6 +8,8 @@ import Head from 'next/head'
 import Header from "./../../components/page/Header"
 import Layout from './../../components/Layout';
 import LoadingPage from './../../components/loadingPage';
+import {motion, AnimatePresence} from "framer-motion"
+import animations from "./../../scripts/animations"
 
 const SmallBoxes = styled.div`
     width: 100%;
@@ -64,11 +66,20 @@ const Page = ({page, menus}) => {
     }
     
     return (
-        <Layout menus={menus}>  
-                <HeaderLogo/>
-                {page.hide_title || <Header title={page.title}/>}
-                <DynamicContent content={page.content || {}}/>
-        </Layout> 
+        <motion.div 
+        initial="initial"      
+        animate="animate"      
+        exit="exit"      
+        variants={animations.pageTransition}
+        onAnimationComplete={animations.scrollTop}
+        >
+
+            <Layout menus={menus}>  
+                    <HeaderLogo/>
+                    {page.hide_title || <Header title={page.title}/>}
+                    <DynamicContent content={page.content || {}}/>
+            </Layout> 
+        </motion.div>
     )
 }
 
