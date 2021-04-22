@@ -236,6 +236,7 @@ export const Heading = styled.h1`
 //  Text
 //
 export const Text = styled.p`
+    margin-bottom: 1rem;
     ${(props)=>templates.padding(props)}
     ${(props)=>templates.textStyle(props)}
 `
@@ -244,24 +245,14 @@ export const Text = styled.p`
 //  Markdown
 //
 const MarkdownStyled = styled.div`
-    ${(props)=>templates.hide(props)}
     >p{
+         margin-bottom: 1rem ;
         ${(props)=>templates.padding(props)}
         ${(props)=>templates.textStyle(props)}
     }
 `
 
 export const Markdown = ({children, hide, py, px, pt, pb, pr, pl, size, bold, color, caps, width, center, lh}) => {
-    {console.log("______________________")}
-    {console.log(children.replace(/\n(?=\n)/g, "\n<br>"))}
-    {console.log("______________________")}
-    {console.log(DOMPurify.sanitize(children))}
-    {console.log("______________________")}
-    {console.log(marked(children))}
-    {console.log("______________________")}
-    {console.log(children)}
-    {console.log("______________________")}
-    {console.log(marked(DOMPurify.sanitize(children)))}
     return(
     <MarkdownStyled 
         py={py}
@@ -278,7 +269,7 @@ export const Markdown = ({children, hide, py, px, pt, pb, pr, pl, size, bold, co
         center={center}
         lh={lh}
         hide={hide}
-        dangerouslySetInnerHTML={ {__html: DOMPurify.sanitize(marked(children.replace(/\n(?=\n)/g, "\n<br>")))}}>
+        dangerouslySetInnerHTML={ {__html: DOMPurify.sanitize(marked(children.replace("\n", "<br>")))}}>
             
         </MarkdownStyled>
 )}
