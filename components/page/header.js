@@ -3,7 +3,7 @@ import {Heading, Container} from "./../partials"
 
 const Header = ({title}) => (
       <Container>
-            <Heading size="xl" caps> {title} </Heading>
+            <Heading pb=".5" size="xl" caps> {title} </Heading>
       </Container>
 )
 
