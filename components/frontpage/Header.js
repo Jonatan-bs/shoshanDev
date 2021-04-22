@@ -60,7 +60,7 @@ const LightLine = styled.div`
     animation-duration: 8s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-    animation-delay: .5s;
+    animation-delay: 0s;
     ${mq('md', `
         width: 200px;
         filter: blur(50px);
