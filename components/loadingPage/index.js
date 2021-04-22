@@ -1,11 +1,12 @@
 import HeaderLogo from "./../partials/HeaderLogo"
 import {AspectRatio,Logo,Vignette, Text, Grid, Container} from './../../components/partials';
 import styled from "styled-components";
-import {motion, animatePresence} from "framer-motion"
+import {motion, AnimatePresence} from "framer-motion"
 import Image from "next/image"
 import animation from "./../../scripts/animations"
 import { keyframes } from 'styled-components'
 import mq from "../../styles/breakpoints";
+import React, { useEffect } from 'react';
 
 const Wrapper = styled(Container)`
     height: 100vh;
@@ -80,22 +81,54 @@ position: relative;
 }
       
 `
+const LogoWrap = styled('div')`
+margin-top: 30px;       
+`
+const variants = {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+    },
+    exit: {
+        opacity: 0
+    }
+}
 
+const LoadingPage = () => {
+    useEffect(() => {
+    console.log('hello')        
+    return () => {
+    console.log('Goodbye')        
+    // Anything in here is fired on component unmount.
+        }
+    }, [])
+    
+    return (
+    
+    // <AnimatePresence initial={true} exitBeforeEnter>
+        <motion.div 
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            variants={variants}
+            key="loadingPage"
+            >
+            <Wrapper wide>
+                {/* <Vignette pct="15" z="3"/> */}
+                {/* <RoseWrap>
+                    <Rose width="730" height="494" src="/images/rose.jpg" priority/>
+                </RoseWrap> */}
+                <Image width="100" height="100" src="/images/loader.gif" priority/>
+                <LogoWrap>
+                    <Logo/> 
+                </LogoWrap>
+                {/* <WaitText color="dark" pt=".5" as="h1" size="xs" center>Vent venligst</WaitText> */}
+            </Wrapper>
+        </motion.div>
+    // </AnimatePresence>
+)}
 
-const LoadingPage = () => (
-    <>
-        <Wrapper wide>
-            <Spotlight pct="100"/>
-            {/* <Vignette pct="15" z="3"/> */}
-            <RoseWrap>
-                <Rose width="730" height="494" src="/images/rose.jpg" priority/>
-            </RoseWrap>
-                <Logo/> 
-                <WaitText color="dark" pt=".5" as="h1" size="xs" center>Vent venligst</WaitText>
-            <ZIndex>
-            </ZIndex>
-        </Wrapper>
-    </>
-)
 
 export default LoadingPage;

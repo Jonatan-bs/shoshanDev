@@ -69,8 +69,7 @@ const LightLine = styled.div`
 
 
 
-
-const Header = ({subtext}) => (
+const Header = ({subtext}) => {(
     <motion.div initial='initial' animate='animate'>
             <HeaderWrap as="header" wide py=".5" px=".5"> 
                 <ContainerMod py="5" px="1" wide> 
@@ -94,5 +93,5 @@ const Header = ({subtext}) => (
                 </ContainerMod>
             </HeaderWrap>
     </motion.div>
-)
+)}
 export default Header 
