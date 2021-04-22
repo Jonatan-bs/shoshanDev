@@ -11,7 +11,6 @@ const SmallBoxes = styled.div`
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    padding: 50px 0;
 
 `
 const SmallBox = styled.div`
@@ -46,7 +45,7 @@ const ImageAndText = styled.div`
     &>:nth-child(1){
         width: 100%;
         position: relative;
-        margin-bottom: 50px;
+        margin-bottom: 25px;
     }
     &>:nth-child(2){
         width: 100%;
@@ -108,11 +107,11 @@ const DynamicContent = ({content}) => {
                     )
                 break
             case("page-content.heading"):
-                return <Container key={i} pb="1"><Heading align={component.align} as={component.tag || "h2"} size={component.size || "md"}>{component.heading}</Heading></Container>
+                return <Container key={i} pb=".5"><Heading align={component.align} as={component.tag || "h2"} size={component.size || "md"}>{component.heading}</Heading></Container>
                 break
             case("page-content.text"):
                 return (
-                    <Container key={i} pb="1">
+                    <Container key={i} pb=".5">
                         <Markdown>{component.content}</Markdown>
                     </Container>
                 )
