@@ -12,6 +12,29 @@ const theme = () => ({
   },
   mediaQueries: {
     md: 'only screen and (min-width: 769px)'
+  },
+  fontSizes: {
+    pct: {
+      base: "80",
+      sm: "80",
+      md: "100",
+    },
+    h: {
+      sm: "2rem",
+      md: "2.2rem",
+      lg: "2.4rem",
+      xl: "4rem",   
+    },
+    hmd: { 
+      xl: "6rem"
+    },
+    p: {
+      xs: "1rem",
+      sm: "1.2rem",
+      md: "1.4em",
+      lg: "1.6rem",
+      xl: "1.8rem",   
+    }
   }
 })
 

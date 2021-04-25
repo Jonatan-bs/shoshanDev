@@ -9,14 +9,22 @@ const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
     font-family: 'PT Sans', sans-serif;
+    ${theme().fontSizes.pct['base'] && (
+      `font-size: ${theme().fontSizes.pct['base']}%;`
+    )}
+    ${theme().fontSizes.pct['sm'] && (
+      mq('sm', `
+      font-size: ${theme().fontSizes.pct['sm']}%;`
+      )
+    )}
 
-    font-size: 60%;
-    ${ mq('sm', `
-      font-size: 80%;  
-    `)}
-    ${ mq('md', `
-      font-size: 100%;  
-    `)}
+    ${theme().fontSizes.pct['md'] && (
+      mq('md', `
+        font-size: ${theme().fontSizes.pct['md']}%; 
+      `)
+    )}
+    
+
   }
   *,
   *:before,
@@ -51,7 +59,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   p{
-    
+
   }
   ol,
   ul {

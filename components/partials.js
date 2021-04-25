@@ -92,22 +92,38 @@ const templates = {
         font-style :${italic?  "italic" : "inherit"};
         width: ${width? width : "initial"};
         max-width: ${maxWidth? maxWidth : "initial"};
-        font-size: ${size==="xl"? "2.5rem" : size==="lg"? "1.8rem" : size==="md"? "1.4rem"  : size==="sm"? "1.4rem": size==="xs"? "1rem"  : size==="inherit"? "inherit" : "1.4rem" };
-        
-        
-        
-        
+        ${ `font-size: ${ theme.fontSizes.p[size] || theme.fontSizes.p["md"] || "inherit"};` }
         `
     }
 }
+//
+//  Heading
+//
+export const Heading = styled.h1`
+    ${(props)=>templates.padding(props)}
+    font-weight: bold;
+    ${ ({caps}) => caps && "text-transform: uppercase;" }
+    color: ${ ({color,theme}) => theme.colors[color] || "inherit"};
+    ${ ({center}) => center && "text-align: center;" }
+    text-align: ${ ({align, center}) => align? align : center? "center" : "inherit"};
+    
+    ${ ({theme, size}) => `font-size: ${ theme.fontSizes.h[size] || theme.fontSizes.h["md"] || "inherit"};` }
+    ${ ({theme, size}) => (
+        theme.fontSizes.hmd[size] && (
+            mq('md', `
+                font-size: ${ theme.fontSizes.hmd[size]};
+            `)   
+        )
+    )}
+`
 
 //
 //  Link
 //
 const StyledLink = styled.a`
-cursor: pointer;
-${ ({py}) => py ? "padding-top: " + py*50 + "px; padding-bottom:" + py*50 + "px;" : ""}
-font-size: ${({size}) => size==="xl"? "4rem" : size==="lg"? "3rem" : size==="md"? "2rem"  : size==="sm"? "1rem" : size==="inherit"? "inherit" : "1.4rem" };
+    cursor: pointer;
+    ${ ({py}) => py ? "padding-top: " + py*50 + "px; padding-bottom:" + py*50 + "px;" : ""}
+    font-size: ${({size}) => size==="xl"? "4rem" : size==="lg"? "3rem" : size==="md"? "2rem"  : size==="sm"? "1rem" : size==="inherit"? "inherit" : "1.4rem" };
     ${ ({bold}) => bold && "font-weight: bold;" }
     ${ ({caps}) => caps && "text-transform: uppercase;" }
     color: ${ ({color,theme}) => theme.colors[color] || theme.colors.primary };
@@ -212,23 +228,7 @@ export const Container = styled.div`
     position: relative;
 
 `
-//
-//  Heading
-//
-export const Heading = styled.h1`
-    ${(props)=>templates.padding(props)}
-    font-weight: bold;
-    ${ ({caps}) => caps && "text-transform: uppercase;" }
-    color: ${ ({color,theme}) => theme.colors[color] || "inherit"};
-    ${ ({center}) => center && "text-align: center;" }
-    text-align: ${ ({align, center}) => align? align : center? "center" : "inherit"};
-    
-    font-size: ${({size}) => size==="xl"? "4" : size==="lg"? "3.5" : size==="md"? "3"  : size==="sm"? "2" : size==="xs"? "1.5" : "3" }rem;
-    
-    ${({size}) => mq('md', `
-        font-size: ${ size==="xl"? "6" : size==="lg"? "4" : size==="md"? "3"  : size==="sm"? "2" : size==="xs"? "1.5" : "3" }rem;
-    `)}
-`
+
 
 
 

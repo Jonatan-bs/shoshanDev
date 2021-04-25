@@ -120,10 +120,10 @@ const DynamicContent = ({content}) => {
                 return (
                     <Container key={i} pb="2">
                         <ImageAndText className={component.imageRight && "imageRight" }> 
-                            <AspectRatioMod bgColor={component.imageBG} pct={component.aspectRatio || (component.image.height/component.image.width*100)} desktop={component.cover}>
+                            {component.image && (<AspectRatioMod bgColor={component.imageBG} pct={component.aspectRatio || (component.image.height/component.image.width*100)} desktop={component.cover}>
                                 <Image layout="fill" objectFit={component.cover? "cover" : "contain"} src={getStrapiMedia(component.image)}/>
-                            </AspectRatioMod>         
-                            <Markdown>{component.text}</Markdown>
+                            </AspectRatioMod>) }        
+                            {component.text && <Markdown>{component.text}</Markdown> }
 
                         </ImageAndText>
                     </Container>

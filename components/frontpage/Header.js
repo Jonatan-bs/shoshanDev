@@ -9,7 +9,7 @@ import Image from "next/image"
 const HeaderWrap = styled(Container)`
 `;
 const ContainerMod = styled(Container)`
-    background: #1a1919;
+    background: #1e1e1e;
     display: flex;
     flex-direction: column;
     align-items: center;

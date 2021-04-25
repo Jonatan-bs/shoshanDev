@@ -135,7 +135,8 @@ const Footer = ({menus}) => (
                     <Link size="inherit" href="https://www.flaticon.com/authors/iconixar" title="iconixar" name="iconixar"/>  from <Link size="inherit" href="https://www.flaticon.com/" name="www.flaticon.com" title="Flaticon"/> | 
                     <Link size="inherit" href="https://www.freepik.com" name="Freepik" title="Freepik"/>  from <Link size="inherit" href="https://www.flaticon.com/" name="www.flaticon.com" title="Flaticon"/>| 
                     <Link size="inherit" href="https://www.flaticon.com/authors/srip" name="srip" title="srip"/>  from <Link size="inherit" href="https://www.flaticon.com/" name="www.flaticon.com" title="Flaticon"/>| 
-                    <Link size="inherit" href="https://www.flaticon.com/authors/nhor-phai" name="Nhor Phai" title="Nhor Phai"/> from <Link size="inherit" href="https://www.flaticon.com/" name="www.flaticon.com" title="Flaticon"/>
+                    <Link size="inherit" href="https://www.flaticon.com/authors/nhor-phai" name="Nhor Phai" title="Nhor Phai"/> from <Link size="inherit" href="https://www.flaticon.com/" name="www.flaticon.com" title="Flaticon"/>| 
+                    Background vector created by <Link size="inherit" href="https://www.freepik.com/vectors/background">rawpixel.com - www.freepik.com</Link>
                     <br/>
                     <br/>
                     ©2021 Jonatan Shoshan
