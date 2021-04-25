@@ -47,7 +47,7 @@ const Services = ({services}) => (
         <ServiceGrid py={2}>
             {services && services.map((service, i) => (
                 <ServiceCardWrap  data-aos="fade-up">
-                    <Link href={service.link.full_slug ? "/" + service.link.full_slug : "#"} color="dark">
+                    <Link href={service?.link?.full_slug ? "/" + service.link.full_slug : "#"} color="dark">
                             <ServiceCard key={i}> 
                                     {service.symbol && <Image src={getStrapiMedia(service.symbol)} width="100px" height="100px" />}
                                     <Heading center as="h4" py={.2} size="md" caps>{service.title}</Heading>

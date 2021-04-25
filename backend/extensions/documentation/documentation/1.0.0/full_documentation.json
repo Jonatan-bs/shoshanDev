@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "04/19/2021 10:00:07 PM"
+    "x-generation-date": "04/25/2021 12:02:20 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -5135,7 +5135,8 @@
                       }
                     },
                     "imageRight": {
-                      "type": "boolean"
+                      "type": "boolean",
+                      "default": false
                     },
                     "aspectRatio": {
                       "type": "number"
@@ -5149,7 +5150,8 @@
                     }
                   },
                   "required": [
-                    "id"
+                    "id",
+                    "imageRight"
                   ]
                 },
                 {
@@ -5782,7 +5784,8 @@
                       }
                     },
                     "imageRight": {
-                      "type": "boolean"
+                      "type": "boolean",
+                      "default": false
                     },
                     "aspectRatio": {
                       "type": "number"
@@ -5796,7 +5799,8 @@
                     }
                   },
                   "required": [
-                    "id"
+                    "id",
+                    "imageRight"
                   ]
                 },
                 {
@@ -6570,7 +6574,8 @@
                       }
                     },
                     "imageRight": {
-                      "type": "boolean"
+                      "type": "boolean",
+                      "default": false
                     },
                     "aspectRatio": {
                       "type": "number"
@@ -6584,7 +6589,8 @@
                     }
                   },
                   "required": [
-                    "id"
+                    "id",
+                    "imageRight"
                   ]
                 }
               ]
@@ -7079,7 +7085,8 @@
                       }
                     },
                     "imageRight": {
-                      "type": "boolean"
+                      "type": "boolean",
+                      "default": false
                     },
                     "aspectRatio": {
                       "type": "number"
@@ -7093,7 +7100,8 @@
                     }
                   },
                   "required": [
-                    "id"
+                    "id",
+                    "imageRight"
                   ]
                 }
               ]

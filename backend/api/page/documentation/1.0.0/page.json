@@ -969,7 +969,8 @@
                       }
                     },
                     "imageRight": {
-                      "type": "boolean"
+                      "type": "boolean",
+                      "default": false
                     },
                     "aspectRatio": {
                       "type": "number"
@@ -983,7 +984,8 @@
                     }
                   },
                   "required": [
-                    "id"
+                    "id",
+                    "imageRight"
                   ]
                 },
                 {
@@ -1616,7 +1618,8 @@
                       }
                     },
                     "imageRight": {
-                      "type": "boolean"
+                      "type": "boolean",
+                      "default": false
                     },
                     "aspectRatio": {
                       "type": "number"
@@ -1630,7 +1633,8 @@
                     }
                   },
                   "required": [
-                    "id"
+                    "id",
+                    "imageRight"
                   ]
                 },
                 {

@@ -22,7 +22,9 @@
       "required": false
     },
     "imageRight": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false,
+      "required": true
     },
     "aspectRatio": {
       "type": "float",

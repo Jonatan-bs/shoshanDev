@@ -21,7 +21,7 @@ const theme = () => ({
     },
     h: {
       xs: "1.6rem",
-      sm: "2rem",
+      sm: "1.8rem",
       md: "2.2rem",
       lg: "3rem",
       xl: "4rem",   

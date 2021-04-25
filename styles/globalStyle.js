@@ -73,7 +73,6 @@ const GlobalStyle = createGlobalStyle`
 
 h1,h2,h3,h4{
   font-weight: bold;
-  text-transform: uppercase;
 }
 
   ol,
