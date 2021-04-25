@@ -20,9 +20,10 @@ const theme = () => ({
       md: "100",
     },
     h: {
+      xs: "1.6rem",
       sm: "2rem",
       md: "2.2rem",
-      lg: "2.4rem",
+      lg: "3rem",
       xl: "4rem",   
     },
     hmd: { 

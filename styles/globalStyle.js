@@ -55,12 +55,27 @@ const GlobalStyle = createGlobalStyle`
   h6,
   p {
     color: ${()=>theme().colors.dark}; 
+  }
+  
+  p{
     font-size: 1.4rem;
   }
-
-  p{
-
+  h1{ font-size: ${theme().fontSizes.h['lg'] || "2.2rem"};}
+  h2{ font-size: ${theme().fontSizes.h['md'] || "2.2rem"};}
+  h3{ 
+    font-size: ${theme().fontSizes.h['sm'] || "2.2rem"}; 
+    color: #515151;
   }
+  h4{ 
+    font-size: ${theme().fontSizes.h['xs'] || "2.2rem"}; 
+    color: #8b8b8b;
+  }
+
+h1,h2,h3,h4{
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
   ol,
   ul {
     list-style: none;
