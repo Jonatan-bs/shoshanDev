@@ -51,6 +51,7 @@ const Services = ({services}) => (
                             <ServiceCard key={i}> 
                                     {service.symbol && <Image src={getStrapiMedia(service.symbol)} width="100px" height="100px" />}
                                     <Heading center as="h4" py={.2} size="md" caps>{service.title}</Heading>
+                                    {service.elements?.map( ({entry, bullet}) => <Text bullet={bullet} color="dark3" size="xs" mb="0" >{entry}</Text>)}
                                     <Price bold center size="sm">{service.price}</Price>
                                     {service.subtext && <Text italic color="dark3" size="xs" center>{service.subtext}</Text>}
                             </ServiceCard>

@@ -66,17 +66,45 @@ const templates = {
         }`
     },
     padding(props){
-        
-        
-        
-        
-        
         return` 
         ${
             this.paddingTemplate({interval:30, ...props })
         }
         ${ 
             mq('md', this.paddingTemplate({interval: 50, ...props }))
+        }
+        
+        `
+    },
+    marginTemplate({interval,mb,my,mt,ml,mr,mx}){
+        return`${ 
+            mb? "margin-bottom:" + mb*interval + "px;" : 
+            my? "margin-bottom:" + my*interval + "px;" :
+            ""
+        }
+        ${ 
+            mt? "margin-top:" + mt*interval + "px;" : 
+            my? "margin-top:" + my*interval + "px;" :
+            ""
+        }
+        ${ 
+            ml? "margin-left:" + ml*interval + "px;" : 
+            mx? "margin-left:" + mx*interval + "px;" :
+            ""
+        }
+        ${ 
+            mr? "margin-right:" + mr*interval + "px;" : 
+            mx? "margin-right:" + mx*interval + "px;" :
+            ""
+        }`
+    },
+    margin(props){
+        return` 
+        ${
+            this.marginTemplate({interval:30, ...props })
+        }
+        ${ 
+            mq('md', this.marginTemplate({interval: 50, ...props }))
         }
         
         `
@@ -101,6 +129,7 @@ const templates = {
 //
 export const Heading = styled.h1`
     ${(props)=>templates.padding(props)}
+    ${(props)=>templates.margin(props)}
     font-weight: bold;
     ${ ({caps}) => caps && "text-transform: uppercase;" }
     color: ${ ({color,theme}) => theme.colors[color] || "inherit"};
@@ -239,6 +268,27 @@ export const Text = styled.p`
     margin-bottom: 1rem;
     ${(props)=>templates.padding(props)}
     ${(props)=>templates.textStyle(props)}
+    ${(props)=>templates.margin(props)}
+    ${({bullet, theme})=>(
+        bullet && `
+            position: relative;
+            padding-left:15px;
+            &:before{
+            border-radius: 100%;    
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            display: inline-block;
+            height: 5px;
+            margin-right: 5px;
+            background-color: ${theme.colors.primary}
+
+        }`
+    )}
+
 `
 
 //

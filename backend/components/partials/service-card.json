@@ -29,6 +29,11 @@
     },
     "link": {
       "model": "page"
+    },
+    "elements": {
+      "type": "component",
+      "repeatable": true,
+      "component": "partials.list"
     }
   }
 }
