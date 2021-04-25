@@ -8,6 +8,7 @@ import {motion, AnimatePresence} from "framer-motion"
 // import "../scss/style.scss";
 import { getStrapiMedia, fetchAPI } from "../lib/api";
 import App from 'next/app'
+import Head from "next/head"
 
 
 
@@ -22,12 +23,22 @@ function MyApp({ Component, pageProps, router }) {
   }, []);
 
     return (
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-          <AnimatePresence initial={true} exitBeforeEnter>
-              <Component {...pageProps} key={router.route} />
-          </AnimatePresence>
-      </ThemeProvider>
+      <>
+        <Head>
+          <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+          <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+          <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+          <link rel="manifest" href="/site.webmanifest" />
+          <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+          <meta name="theme-color" content="#ffffff" />
+        </Head>
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+            <AnimatePresence initial={true} exitBeforeEnter>
+                <Component {...pageProps} key={router.route} />
+            </AnimatePresence>
+        </ThemeProvider>
+      </>
     )
   
 }
