@@ -50,6 +50,9 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.4rem;
   }
 
+  p{
+    
+  }
   ol,
   ul {
     list-style: none;
