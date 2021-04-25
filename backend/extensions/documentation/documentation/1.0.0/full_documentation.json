@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "04/25/2021 12:02:20 PM"
+    "x-generation-date": "04/25/2021 6:08:50 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -4918,6 +4918,7 @@
                     },
                     "tag": {
                       "type": "string",
+                      "default": "h2",
                       "enum": [
                         "h1",
                         "h2",
@@ -4929,6 +4930,7 @@
                     },
                     "size": {
                       "type": "string",
+                      "default": "md",
                       "enum": [
                         "sm",
                         "md",
@@ -4938,6 +4940,7 @@
                     },
                     "align": {
                       "type": "string",
+                      "default": "left",
                       "enum": [
                         "left",
                         "center",
@@ -4946,7 +4949,10 @@
                     }
                   },
                   "required": [
-                    "id"
+                    "id",
+                    "tag",
+                    "size",
+                    "align"
                   ]
                 },
                 {
@@ -5567,6 +5573,7 @@
                     },
                     "tag": {
                       "type": "string",
+                      "default": "h2",
                       "enum": [
                         "h1",
                         "h2",
@@ -5578,6 +5585,7 @@
                     },
                     "size": {
                       "type": "string",
+                      "default": "md",
                       "enum": [
                         "sm",
                         "md",
@@ -5587,6 +5595,7 @@
                     },
                     "align": {
                       "type": "string",
+                      "default": "left",
                       "enum": [
                         "left",
                         "center",
@@ -5595,7 +5604,10 @@
                     }
                   },
                   "required": [
-                    "id"
+                    "id",
+                    "tag",
+                    "size",
+                    "align"
                   ]
                 },
                 {
@@ -6254,6 +6266,7 @@
                     },
                     "tag": {
                       "type": "string",
+                      "default": "h2",
                       "enum": [
                         "h1",
                         "h2",
@@ -6265,6 +6278,7 @@
                     },
                     "size": {
                       "type": "string",
+                      "default": "md",
                       "enum": [
                         "sm",
                         "md",
@@ -6274,6 +6288,7 @@
                     },
                     "align": {
                       "type": "string",
+                      "default": "left",
                       "enum": [
                         "left",
                         "center",
@@ -6282,7 +6297,10 @@
                     }
                   },
                   "required": [
-                    "id"
+                    "id",
+                    "tag",
+                    "size",
+                    "align"
                   ]
                 },
                 {
@@ -6765,6 +6783,7 @@
                     },
                     "tag": {
                       "type": "string",
+                      "default": "h2",
                       "enum": [
                         "h1",
                         "h2",
@@ -6776,6 +6795,7 @@
                     },
                     "size": {
                       "type": "string",
+                      "default": "md",
                       "enum": [
                         "sm",
                         "md",
@@ -6785,6 +6805,7 @@
                     },
                     "align": {
                       "type": "string",
+                      "default": "left",
                       "enum": [
                         "left",
                         "center",
@@ -6793,7 +6814,10 @@
                     }
                   },
                   "required": [
-                    "id"
+                    "id",
+                    "tag",
+                    "size",
+                    "align"
                   ]
                 },
                 {

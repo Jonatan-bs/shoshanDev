@@ -19,7 +19,9 @@
         "h4",
         "h5",
         "h6"
-      ]
+      ],
+      "default": "h2",
+      "required": true
     },
     "size": {
       "type": "enumeration",
@@ -28,7 +30,9 @@
         "md",
         "lg",
         "xl"
-      ]
+      ],
+      "default": "md",
+      "required": true
     },
     "align": {
       "type": "enumeration",
@@ -36,7 +40,9 @@
         "left",
         "center",
         "right"
-      ]
+      ],
+      "default": "left",
+      "required": true
     }
   }
 }

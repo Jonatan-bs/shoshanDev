@@ -752,6 +752,7 @@
                     },
                     "tag": {
                       "type": "string",
+                      "default": "h2",
                       "enum": [
                         "h1",
                         "h2",
@@ -763,6 +764,7 @@
                     },
                     "size": {
                       "type": "string",
+                      "default": "md",
                       "enum": [
                         "sm",
                         "md",
@@ -772,6 +774,7 @@
                     },
                     "align": {
                       "type": "string",
+                      "default": "left",
                       "enum": [
                         "left",
                         "center",
@@ -780,7 +783,10 @@
                     }
                   },
                   "required": [
-                    "id"
+                    "id",
+                    "tag",
+                    "size",
+                    "align"
                   ]
                 },
                 {
@@ -1401,6 +1407,7 @@
                     },
                     "tag": {
                       "type": "string",
+                      "default": "h2",
                       "enum": [
                         "h1",
                         "h2",
@@ -1412,6 +1419,7 @@
                     },
                     "size": {
                       "type": "string",
+                      "default": "md",
                       "enum": [
                         "sm",
                         "md",
@@ -1421,6 +1429,7 @@
                     },
                     "align": {
                       "type": "string",
+                      "default": "left",
                       "enum": [
                         "left",
                         "center",
@@ -1429,7 +1438,10 @@
                     }
                   },
                   "required": [
-                    "id"
+                    "id",
+                    "tag",
+                    "size",
+                    "align"
                   ]
                 },
                 {
