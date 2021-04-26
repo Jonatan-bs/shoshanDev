@@ -35,7 +35,7 @@ function MyApp({ Component, pageProps, router }) {
         <ThemeProvider theme={theme}>
           <GlobalStyle />
             <AnimatePresence initial={true} exitBeforeEnter>
-                <Component {...pageProps} key={router.route} />
+                <Component {...pageProps} key={router.asPath} />
             </AnimatePresence>
         </ThemeProvider>
       </>
