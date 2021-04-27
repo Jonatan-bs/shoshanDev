@@ -251,10 +251,11 @@ export const Container = styled.div`
     padding-left: 20px;
     padding-right: 20px;
     ${(props)=>templates.padding(props)}
-    max-width: ${ ({maxWidth, wide}) => maxWidth==="lg"? "1800px" : wide? "100%":  "1400px"};
+    max-width: ${ ({maxWidth}) => maxWidth==="lg"? "1800px": maxWidth? maxWidth :  "1400px"};
     margin: 0 auto;
     box-sizing: border-box;
     position: relative;
+    width: 100%;
 
 `
 

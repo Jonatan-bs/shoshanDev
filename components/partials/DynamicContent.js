@@ -95,13 +95,20 @@ const DynamicContent = ({content}) => {
                 return (
                     
                         <Center>
-                            <Container data-aos="fade-up" wide={component.wide} px={ component.wide && "0"} pb="2" style={{"maxWidth": component.maxWidth || "initial", width: component.width || "100%"} }>
-                                <Image 
-                                    src={getStrapiMedia(component.image)} 
-                                    height={component.image.height} 
-                                    width={component.image.width}
-                                    data-aos="fade-up"
+                            <Container data-aos="fade-up" px={ component.wide && "0"} pb="2" style={{"maxWidth": component.maxWidth || "initial", width: component.width || "100%"} }>
+                                {component.image.provider_metadata.resource_type==="video"?
+                                    <video autoPlay loop muted style={{ "width": '100%', "maxWidth": component.maxWidth || "initial" }}>
+                                        <source src={getStrapiMedia(component.image)} />
+                                    </video>
+                                :
+                                    <Image 
+                                        src={getStrapiMedia(component.image)} 
+                                        height={component.image.height} 
+                                        width={component.image.width}
+                                        data-aos="fade-up"
                                     />
+                                    
+                                }
                             </Container>
                         </Center>        
                     )

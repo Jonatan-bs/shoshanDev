@@ -941,9 +941,6 @@
                     },
                     "maxWidth": {
                       "type": "string"
-                    },
-                    "wide": {
-                      "type": "boolean"
                     }
                   },
                   "required": [
@@ -1458,9 +1455,6 @@
                     },
                     "maxWidth": {
                       "type": "string"
-                    },
-                    "wide": {
-                      "type": "boolean"
                     }
                   },
                   "required": [

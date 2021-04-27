@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Header from './../../components/project/Header';
-import {Container, Text, Grid} from './../../components/partials';
+import {Container, Text, Grid, Image} from './../../components/partials';
 import InfoBox from './../../components/project/partials/InfoBox';
 // import Content from './../../components/project/Content';
 import {motion, animatePresence} from "framer-motion"

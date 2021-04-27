@@ -23,9 +23,6 @@
     },
     "maxWidth": {
       "type": "string"
-    },
-    "wide": {
-      "type": "boolean"
     }
   }
 }
