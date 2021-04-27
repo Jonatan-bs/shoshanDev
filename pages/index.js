@@ -40,5 +40,5 @@ export async function getStaticProps({params}){
     const projects = await fetchAPI('/projects');
     const frontpage = await fetchAPI('/frontpage');
 
-    return {props: {projects, frontpage}}    
+    return {props: {projects, frontpage}, revalidate: 5}    
 }

@@ -98,7 +98,7 @@ export async function getStaticProps({params}){
     let project = await fetchAPI('/projects?slug=' + slug)
     
     project = project.length? project.error || project[0] : null
-    return {props: {project}}    
+    return {props: {project}, revalidate: 5}    
 }
 
 export async function getStaticPaths() {
