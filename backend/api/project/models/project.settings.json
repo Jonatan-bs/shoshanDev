@@ -60,9 +60,10 @@
       "components": [
         "page-content.banner",
         "page-content.heading",
-        "page-content.image",
         "page-content.small-boxes",
-        "page-content.image-and-text"
+        "page-content.image-and-text",
+        "page-content.text",
+        "page-content.media"
       ]
     }
   }

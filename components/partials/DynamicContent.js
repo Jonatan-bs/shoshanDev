@@ -91,20 +91,20 @@ const DynamicContent = ({content}) => {
             case("page-content.banner"):
                 return <Container data-aos="fade-up" key={i} pb="2"><Banner src={getStrapiMedia(component.image)}/></Container>
                 break
-            case("page-content.image"):
+            case("page-content.media"):
                 return (
                     
                         <Center>
-                            <Container data-aos="fade-up" px={ component.wide && "0"} pb="2" style={{"maxWidth": component.maxWidth || "initial", width: component.width || "100%"} }>
-                                {component.image.provider_metadata.resource_type==="video"?
+                            <Container data-aos="fade-up" px={component.paddingX} pb="2" style={{"maxWidth": component.maxWidth || "initial", width: component.width || "100%"} }>
+                                {component.media.provider_metadata.resource_type==="video"?
                                     <video autoPlay loop muted style={{ "width": '100%', "maxWidth": component.maxWidth || "initial" }}>
-                                        <source src={getStrapiMedia(component.image)} />
+                                        <source src={getStrapiMedia(component.media)} />
                                     </video>
                                 :
                                     <Image 
-                                        src={getStrapiMedia(component.image)} 
-                                        height={component.image.height} 
-                                        width={component.image.width}
+                                        src={getStrapiMedia(component.media)} 
+                                        height={component.media.height} 
+                                        width={component.media.width}
                                         data-aos="fade-up"
                                     />
                                     

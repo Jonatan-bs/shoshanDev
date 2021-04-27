@@ -71,8 +71,8 @@ const LightLine = styled.div`
 
 const Header = ({subtext}) => (
     <motion.div initial='initial' animate='animate'>
-            <HeaderWrap as="header" wide py=".5" px=".5"> 
-                <ContainerMod py="5" px="1" wide> 
+            <HeaderWrap as="header" maxWidth="100%" py=".5" px=".5"> 
+                <ContainerMod py="5" px="1"  maxWidth="100%"> 
                     <LightLine/>
                     <Vignette pct="60" z="3"/>
                     <RoseWrap>

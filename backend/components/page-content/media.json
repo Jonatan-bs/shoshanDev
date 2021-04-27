@@ -1,13 +1,13 @@
 {
-  "collectionName": "components_projects_images",
+  "collectionName": "components_page_content_media",
   "info": {
-    "name": "image",
-    "icon": "adjust",
+    "name": "media",
+    "icon": "ad",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "image": {
+    "media": {
       "model": "file",
       "via": "related",
       "allowedTypes": [
@@ -23,6 +23,10 @@
     },
     "maxWidth": {
       "type": "string"
+    },
+    "paddingX": {
+      "type": "float",
+      "min": 0
     }
   }
 }

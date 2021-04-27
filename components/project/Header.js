@@ -73,7 +73,7 @@ const Header = ({src, alt, title, subtitle, bgColor }) => (
     <motion.div initial='initial' animate='animate'>
         <motion.div variants={animation.stagger}>
             <HeaderLogo/>  
-            <ContainerMod wide as="header" bgColor={bgColor}>
+            <ContainerMod  maxWidth="100%" as="header" bgColor={bgColor}>
                 <ImageWrap variants={animation.fadeRight}>
                     <Image src={src} alt={alt} width="600px" height="600px"/>
                 </ImageWrap>

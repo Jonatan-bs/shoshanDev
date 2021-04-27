@@ -42,14 +42,14 @@ const Contact = ({contactBox}) => (
         <Container pb="3">
             <ContactCard>
                 <ContactImage maxWidth="400px" pct="100" circle> 
-                    <Image layout="fill" objectFit="cover" src={getStrapiMedia(contactBox.image)}/>
+                   {contactBox?.image && <Image layout="fill" objectFit="cover" src={getStrapiMedia(contactBox.image)}/> }
                 </ContactImage>
                 <TextWrap>
                     <Heading as="h3"  py={0.5} size="lg">
-                        {contactBox.title}
+                        {contactBox?.title}
                     </Heading>
                     <Text  size="lg" color="primary">
-                        {contactBox.subtitle}
+                        {contactBox?.subtitle}
                     </Text>
                 </TextWrap>
 

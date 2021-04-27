@@ -45,23 +45,23 @@ const templates = {
     },
     paddingTemplate({interval,pb,py,pt,pl,pr,px}){
         return`${ 
-            pb? "padding-bottom:" + pb*interval + "px;" : 
-            py? "padding-bottom:" + py*interval + "px;" :
+            pb || pb===0 ? "padding-bottom:" + pb*interval + "px;" : 
+            py || py===0 ? "padding-bottom:" + py*interval + "px;" :
             ""
         }
         ${ 
-            pt? "padding-top:" + pt*interval + "px;" : 
-            py? "padding-top:" + py*interval + "px;" :
+            pt || pt===0 ? "padding-top:" + pt*interval + "px;" : 
+            py || py===0 ? "padding-top:" + py*interval + "px;" :
             ""
         }
         ${ 
-            pl? "padding-left:" + pl*interval + "px;" : 
-            px? "padding-left:" + px*interval + "px;" :
+            pl || pl===0 ? "padding-left:" + pl*interval + "px;" : 
+            px || px===0 ? "padding-left:" + px*interval + "px;" :
             ""
         }
         ${ 
-            pr? "padding-right:" + pr*interval + "px;" : 
-            px? "padding-right:" + px*interval + "px;" :
+            pr || pr===0 ? "padding-right:" + pr*interval + "px;" : 
+            px || px===0 ? "padding-right:" + px*interval + "px;" :
             ""
         }`
     },

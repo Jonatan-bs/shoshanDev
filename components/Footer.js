@@ -108,14 +108,14 @@ const Footer = ({menus}) => (
                 <Right>
                     <MenusWrap>
                             <MenuList>
-                                <li><Heading as="h3"  color="light" caps size="sm">{menus.footerLeft.title}</Heading></li>
-                                {menus.footerLeft.menuItem.map((menuItem,i) => (
+                                <li><Heading as="h3"  color="light" caps size="sm">{menus.footerLeft?.title}</Heading></li>
+                                {menus.footerLeft?.menuItem.map((menuItem,i) => (
                                     <li key={i} ><Link href={menuItem.page? "/" + menuItem.page.full_slug : menuItem.url || "#"} color="light"><Text size="sm">{menuItem.title}</Text></Link></li>
                                 ))}
                             </MenuList>
                             <MenuList>
-                                <li><Heading as="h3"  color="light" caps size="sm">{menus.footerRight.title}</Heading></li>
-                                {menus.footerRight.menuItem.map((menuItem,i) => (
+                                <li><Heading as="h3"  color="light" caps size="sm">{menus.footerRight?.title}</Heading></li>
+                                {menus.footerRight?.menuItem.map((menuItem,i) => (
                                     <li key={i}><Link href={menuItem.page? "/" + menuItem.page.full_slug : menuItem.url || "#"} color="light"><Text size="sm">{menuItem.title}</Text></Link></li>
                                 ))}
                             </MenuList>

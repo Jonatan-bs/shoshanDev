@@ -115,7 +115,7 @@ const LoadingPage = () => {
         variants={animations.pageTransition}
         onAnimationComplete={animations.scrollTop}
         >
-            <Wrapper wide>
+            <Wrapper maxWidth="100%">
                 {/* <Vignette pct="15" z="3"/> */}
                 {/* <RoseWrap>
                     <Rose width="730" height="494" src="/images/rose.jpg" priority/>
