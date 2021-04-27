@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {fetchAPI } from "./../../lib/api";
-// import HeaderLogo from "./../../components/partials/HeaderLogo"
+import HeaderLogo from "./../../components/partials/HeaderLogo"
 import DynamicContent from "./../../components/partials/DynamicContent"
 import {useRouter} from 'next/router'
 import DefaultErrorPage from 'next/error'
@@ -75,7 +75,7 @@ const Page = ({page, menus}) => {
         >
 
             <Layout menus={menus}>  
-                    {/* <HeaderLogo/> */}
+                    <HeaderLogo/>
                     {page.hide_title || <Header title={page.title}/>}
                     <DynamicContent content={page.content || {}}/>
             </Layout> 
