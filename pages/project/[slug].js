@@ -96,9 +96,7 @@ export default Project;
 export async function getStaticProps({params}){
     const {slug} = params
     let project = await fetchAPI('/projects?slug=' + slug)
-    
-    let projects = await fetchAPI('/projects')
-    
+        
     project = project.length? project.error || project[0] : null
     return {props: {project}, revalidate: 5}    
 }

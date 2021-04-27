@@ -99,11 +99,15 @@ export async function getStaticProps({params}){
     }    
 }
 
+
 export async function getStaticPaths() {
     let pages = await fetchAPI('/pages?no_front=false')
+
+    //Only get pages whit one parent
+    let filteredPages = pages?.filter((page) => page.full_slug.split('/').length === 1 ) || []
     
     return {
-      paths: pages?.map((page) => `/${page.slug}`) || [],
+      paths: filteredPages?.map((page) => `/${page.full_slug}`) || [],
       fallback: true,
     }
 }
