@@ -2,11 +2,10 @@
 
 
 Seed database:
-mongorestore --uri mongodb+srv://jonatanbs:<PASSWORD>@cluster0.sbzvi.mongodb.net 
+mongorestore --gzip --uri mongodb+srv://jonatanbs:<PASSWORD>@cluster0.sbzvi.mongodb.net --db <NEW DATABASE NAME> <PATH>
 
 Dump from database (to directory: ./dump/DB):
-mongodump --uri mongodb+srv://jonatanbs:<PASSWORD>@cluster0.sbzvi.mongodb.net/ --gzip -o ./dump/DB
-mongodump --gzip -o ./dump/DBdump --uri mongodb+srv://jonatanbs:<PASSWORD>@cluster0.sbzvi.mongodb.net/ 
+mongodump --gzip -o ./dump/DB/<DATE> --uri mongodb+srv://jonatanbs:<PASSWORD>@cluster0.sbzvi.mongodb.net/<DATABASE NAME>
 
 Database:
 https://cloud.mongodb.com/v2
