@@ -27,6 +27,11 @@
     "paddingX": {
       "type": "float",
       "min": 0
+    },
+    "hideOnDevice": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.hide-on-device"
     }
   }
 }

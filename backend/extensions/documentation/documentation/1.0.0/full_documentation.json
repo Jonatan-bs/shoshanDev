@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "04/27/2021 1:08:15 PM"
+    "x-generation-date": "04/27/2021 3:20:02 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -5318,6 +5318,37 @@
                     },
                     "paddingX": {
                       "type": "number"
+                    },
+                    "hideOnDevice": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "sm": {
+                          "type": "boolean",
+                          "default": false
+                        },
+                        "md": {
+                          "type": "boolean",
+                          "default": false
+                        },
+                        "lg": {
+                          "type": "boolean",
+                          "default": false
+                        },
+                        "xl": {
+                          "type": "boolean",
+                          "default": false
+                        }
+                      }
                     }
                   },
                   "required": [
@@ -5973,6 +6004,37 @@
                     },
                     "paddingX": {
                       "type": "number"
+                    },
+                    "hideOnDevice": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "sm": {
+                          "type": "boolean",
+                          "default": false
+                        },
+                        "md": {
+                          "type": "boolean",
+                          "default": false
+                        },
+                        "lg": {
+                          "type": "boolean",
+                          "default": false
+                        },
+                        "xl": {
+                          "type": "boolean",
+                          "default": false
+                        }
+                      }
                     }
                   },
                   "required": [
@@ -6678,6 +6740,37 @@
                     },
                     "paddingX": {
                       "type": "number"
+                    },
+                    "hideOnDevice": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "sm": {
+                          "type": "boolean",
+                          "default": false
+                        },
+                        "md": {
+                          "type": "boolean",
+                          "default": false
+                        },
+                        "lg": {
+                          "type": "boolean",
+                          "default": false
+                        },
+                        "xl": {
+                          "type": "boolean",
+                          "default": false
+                        }
+                      }
                     }
                   },
                   "required": [
@@ -7224,6 +7317,37 @@
                     },
                     "paddingX": {
                       "type": "number"
+                    },
+                    "hideOnDevice": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "sm": {
+                          "type": "boolean",
+                          "default": false
+                        },
+                        "md": {
+                          "type": "boolean",
+                          "default": false
+                        },
+                        "lg": {
+                          "type": "boolean",
+                          "default": false
+                        },
+                        "xl": {
+                          "type": "boolean",
+                          "default": false
+                        }
+                      }
                     }
                   },
                   "required": [

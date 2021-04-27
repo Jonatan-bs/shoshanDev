@@ -7,39 +7,15 @@ import mq from "../styles/breakpoints";
 
 //Adjustment templates
 const templates = {
-    hide({hide}){
-        
+    hide({sm, md, lg, xl}, display="block"){
+
         let style = "";
 
-        hide && hide.map( display => {
-            switch(display){
-                case("smUp"):
-                    style += mq('sm','display:none')
-                    break;
-                case("mdUp"):
-                    style += mq('md','display:none')
-                    break;
-                case("lgUp"):
-                    style += mq('lg','display:none')
-                    break;
-                case("xlUp"):
-                    style += mq('xl','display:none')
-                    break;
-                case("smDown"):
-                    style += mq('sm','display:none', true)
-                    break;
-                case("mdDown"):
-                    style += mq('md','display:none', true)
-                    break;
-                case("lgDown"):
-                    style += mq('lg','display:none', true)
-                    break;
-                case("xlDown"):
-                    style += mq('xl','display:none', true)
-                    break;
-            }   
-        })
-
+        sm? style += 'display:none;' : style += "display:" + display + ";"; 
+        md? style += mq('sm','display:none;') : style += mq('sm', "display:" + display) + ";" 
+        lg? style += mq('md','display:none;') : style += mq('md', "display:" + display) + ";" 
+        xl? style += mq('lg','display:none;') : style += mq('lg', "display:" + display)  + ";"
+        
         return style
         
     },
@@ -247,6 +223,7 @@ export const Section = styled.section`
 //  Container
 //
 export const Container = styled.div`
+    ${({hide,display})=> templates.hide(hide || {}, display )}
     overflow: hidden;
     padding-left: 20px;
     padding-right: 20px;
